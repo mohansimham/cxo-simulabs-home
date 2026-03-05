@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CXO Simulabs — Apply What You've Learned</title>
   <meta name="description" content="You've done the courses. Now apply what you've learned. Business simulations that turn your knowledge into real decision-making skill.">
+  <link rel="canonical" href="https://www.cxosimulabs.com/">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CXO Simulabs — Apply What You've Learned">
+  <meta property="og:description" content="Courses, MBAs, YouTube — the world is full of business learning. CXO Simulabs is where you finally put it all to work through real company simulations.">
+  <meta property="og:url" content="https://www.cxosimulabs.com/">
+  <meta property="og:site_name" content="CXO Simulabs">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CXO Simulabs — Apply What You've Learned">
+  <meta name="twitter:description" content="Business simulations that turn your knowledge into real decision-making skill.">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"CXO Simulabs","url":"https://www.cxosimulabs.com","description":"Business simulations that turn your knowledge into real decision-making skill."}
+  </script>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -610,8 +629,17 @@
   function handleForm(e, msgId) {
     e.preventDefault();
     document.getElementById(msgId).style.display = 'block';
+    const cohort = msgId==='msg-individual'?'individual':msgId==='msg-team'?'team':'campus';
+    gtag('event','lead_signup',{cohort:cohort});
     e.target.querySelector('input').value = '';
   }
+  document.querySelectorAll('a[href*="CPO-SIM"]').forEach(a => {
+    a.addEventListener('click', ()=>{
+      const url = a.getAttribute('href');
+      const sim = url.match(/CPO-SIM-\d+-\w+/)?.[0] || url;
+      gtag('event','sim_clicked',{sim:sim,location:a.classList.contains('sim-link')?'sim_list':'cta_button'});
+    });
+  });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
