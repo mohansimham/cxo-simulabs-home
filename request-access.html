@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request Access — CXO Simulabs</title>
-  <meta name="description" content="Verify your email to unlock all CPO Track simulations on CXO Simulabs. Free access with email verification.">
+  <title>Unlock Simulation — CXO Simulabs</title>
+  <meta name="description" content="Verify your email to unlock this CPO Track simulation on CXO Simulabs.">
   <link rel="canonical" href="https://www.cxosimulabs.com/request-access.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Request Access — CXO Simulabs">
-  <meta property="og:description" content="Verify your email to unlock all CPO Track simulations. Real company decisions, expert feedback, personalised certificates.">
+  <meta property="og:title" content="Unlock Simulation — CXO Simulabs">
+  <meta property="og:description" content="Verify your email to unlock this CPO Track simulation. Real company decisions, expert feedback, personalised certificates.">
   <meta property="og:url" content="https://www.cxosimulabs.com/request-access.html">
   <meta property="og:site_name" content="CXO Simulabs">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Request Access — CXO Simulabs">
-  <meta name="twitter:description" content="Verify your email to unlock all CPO Track simulations. Real company decisions, expert feedback, personalised certificates.">
+  <meta name="twitter:title" content="Unlock Simulation — CXO Simulabs">
+  <meta name="twitter:description" content="Verify your email to unlock this CPO Track simulation. Real company decisions, expert feedback, personalised certificates.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Request Access — CXO Simulabs","url":"https://www.cxosimulabs.com/request-access.html","description":"Verify your email to unlock all CPO Track simulations on CXO Simulabs.","provider":{"@type":"Organization","name":"CXO Simulabs","url":"https://www.cxosimulabs.com"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Unlock Simulation — CXO Simulabs","url":"https://www.cxosimulabs.com/request-access.html","description":"Verify your email to unlock a CPO Track simulation on CXO Simulabs.","provider":{"@type":"Organization","name":"CXO Simulabs","url":"https://www.cxosimulabs.com"}}
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -27,7 +27,6 @@
     :root {
       --navy: #1a1a2e;
       --navy-mid: #16213e;
-      --navy-light: #0f3460;
       --red: #e23744;
       --red-dark: #c42f3a;
       --white: #ffffff;
@@ -39,71 +38,57 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); line-height: 1.6; }
 
-    /* NAV */
     .nav { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
     .nav-logo { color: #fff; font-weight: 800; font-size: 1.1em; letter-spacing: .5px; text-decoration: none; }
     .nav-logo span { color: var(--red); }
     .nav-back { color: #778; text-decoration: none; font-size: .85em; padding: 6px 14px; border-radius: 6px; transition: all .2s; }
     .nav-back:hover { color: #fff; background: rgba(255,255,255,.07); }
 
-    /* HERO BAND */
     .hero-band { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 48px 32px 40px; text-align: center; }
     .eyebrow { display: inline-block; background: rgba(226,55,68,.15); border: 1px solid rgba(226,55,68,.35); color: #ff9aa2; padding: 5px 16px; border-radius: 20px; font-size: .75em; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
     .hero-band h1 { color: var(--white); font-size: 2.2em; font-weight: 800; margin-bottom: 10px; }
     .hero-band p { color: #99aabb; font-size: 1em; max-width: 520px; margin: 0 auto; }
 
-    /* CENTER */
     .center-wrap { max-width: 480px; margin: -32px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
-
-    /* CARD */
     .card { background: var(--white); border-radius: 14px; padding: 36px 32px; box-shadow: 0 4px 24px rgba(0,0,0,.06); border: 1px solid var(--border); }
 
-    /* PHASE */
     .phase { display: none; }
     .phase.active { display: block; }
 
-    /* FORM */
+    /* SIM context badge */
+    .sim-context { background: var(--light); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .sim-context-num { background: var(--navy); color: var(--white); font-size: .72em; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap; }
+    .sim-context-info { flex: 1; }
+    .sim-context-name { font-size: .9em; font-weight: 700; color: var(--navy); }
+    .sim-context-co { font-size: .78em; color: var(--muted); }
+
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: .82em; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
     .form-group input { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: .95em; font-family: inherit; outline: none; transition: border-color .2s; }
     .form-group input:focus { border-color: var(--red); }
     .form-note { font-size: .78em; color: var(--muted); margin-top: 5px; }
 
-    /* BUTTONS */
     .btn-primary { width: 100%; background: var(--red); color: var(--white); border: none; padding: 13px; border-radius: 8px; font-size: .95em; font-weight: 700; cursor: pointer; font-family: inherit; transition: background .2s, transform .1s; }
     .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
     .btn-primary:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 
-    /* MESSAGES */
     .error-msg { display: none; color: #dc2626; font-size: .84em; font-weight: 500; margin-bottom: 10px; padding: 8px 12px; background: #fef2f2; border-radius: 6px; }
     .success-msg { display: none; color: #16a34a; font-size: .84em; font-weight: 500; margin-bottom: 10px; padding: 8px 12px; background: #f0fdf4; border-radius: 6px; }
 
-    /* OTP INPUT */
     .otp-input { text-align: center; font-size: 1.6em; font-weight: 700; letter-spacing: 12px; padding: 14px !important; }
     .otp-timer { text-align: center; font-size: .82em; color: var(--muted); margin-top: 8px; }
     .resend-link { color: var(--red); font-weight: 600; cursor: pointer; }
     .resend-link:hover { text-decoration: underline; }
 
-    /* CONFIRMED */
-    .confirmed-icon { font-size: 3em; text-align: center; margin-bottom: 16px; }
-    .confirmed-wrap h2 { font-size: 1.3em; color: var(--navy); font-weight: 800; text-align: center; margin-bottom: 10px; }
-    .confirmed-wrap p { font-size: .92em; color: var(--muted); text-align: center; line-height: 1.6; margin-bottom: 16px; }
-    .confirmed-wrap .detail { background: var(--light); border-radius: 8px; padding: 16px; margin-bottom: 20px; }
-    .confirmed-wrap .detail-row { display: flex; justify-content: space-between; font-size: .88em; padding: 4px 0; }
-    .confirmed-wrap .detail-label { color: var(--muted); }
-    .confirmed-wrap .detail-value { color: var(--navy); font-weight: 600; }
-    .btn-outline { display: block; width: 100%; text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; color: var(--navy); font-weight: 700; font-size: .92em; text-decoration: none; transition: all .2s; }
+    .redirect-wrap { text-align: center; }
+    .redirect-wrap .check-icon { font-size: 3em; margin-bottom: 12px; color: #16a34a; }
+    .redirect-wrap h2 { font-size: 1.3em; color: var(--navy); font-weight: 800; margin-bottom: 10px; }
+    .redirect-wrap p { font-size: .92em; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .redirect-wrap .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid var(--border); border-top-color: var(--red); border-radius: 50%; animation: spin .8s linear infinite; vertical-align: middle; margin-right: 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-outline { display: block; width: 100%; text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; color: var(--navy); font-weight: 700; font-size: .92em; text-decoration: none; transition: all .2s; margin-top: 10px; }
     .btn-outline:hover { border-color: var(--red); color: var(--red); }
 
-    /* SIM GRID PREVIEW */
-    .sims-preview { margin-top: 20px; }
-    .sims-preview h4 { font-size: .82em; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 10px; }
-    .sims-mini-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
-    .sims-mini-item { font-size: .78em; color: var(--text); padding: 6px 8px; background: var(--light); border-radius: 6px; border: 1px solid var(--border); text-decoration: none; transition: all .2s; }
-    .sims-mini-item:hover { border-color: var(--red); background: #fff; }
-    .sims-mini-item strong { color: var(--navy); }
-
-    /* FOOTER */
     footer { background: #0d1117; color: #445566; padding: 36px 32px; }
     .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-logo { color: white; font-size: 1.1em; font-weight: 800; }
@@ -117,13 +102,11 @@
       .hero-band h1 { font-size: 1.7em; }
       .center-wrap { padding: 0 16px; }
       .card { padding: 28px 22px; }
-      .sims-mini-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo">CXO <span>Simulabs</span></a>
   <a href="index.html" class="nav-back">&larr; Back to Home</a>
@@ -132,14 +115,19 @@
 <!-- PHASE 1: EMAIL -->
 <div id="phase-email" class="phase active">
   <div class="hero-band">
-    <div class="eyebrow">CPO Track — Unlock Simulations</div>
-    <h1>Request Access</h1>
-    <p>Verify your email to unlock all 15 CPO Track simulations. It takes 30 seconds.</p>
+    <div class="eyebrow">CPO Track</div>
+    <h1>Unlock Simulation</h1>
+    <p>Verify your email to access this simulation. Takes 30 seconds.</p>
   </div>
   <div class="center-wrap">
     <div class="card">
-      <h2 style="font-size:1.15em;font-weight:800;color:var(--navy);margin-bottom:6px;">Verify your email</h2>
-      <p style="font-size:.86em;color:var(--muted);margin-bottom:20px;">We'll send a 6-digit code to verify your email. Once verified, all simulations are unlocked.</p>
+      <div class="sim-context" id="ctx-email">
+        <div class="sim-context-num" id="ctx-email-num"></div>
+        <div class="sim-context-info">
+          <div class="sim-context-name" id="ctx-email-name"></div>
+          <div class="sim-context-co" id="ctx-email-co"></div>
+        </div>
+      </div>
       <div class="form-group">
         <label>Your Name</label>
         <input type="text" id="input-name" placeholder="First and last name" autocomplete="name">
@@ -158,12 +146,19 @@
 <!-- PHASE 2: OTP -->
 <div id="phase-otp" class="phase">
   <div class="hero-band">
-    <div class="eyebrow">CPO Track — Unlock Simulations</div>
+    <div class="eyebrow">CPO Track</div>
     <h1>Enter Your Code</h1>
     <p>We sent a 6-digit code to <strong id="otp-email-display"></strong></p>
   </div>
   <div class="center-wrap">
     <div class="card">
+      <div class="sim-context" id="ctx-otp">
+        <div class="sim-context-num" id="ctx-otp-num"></div>
+        <div class="sim-context-info">
+          <div class="sim-context-name" id="ctx-otp-name"></div>
+          <div class="sim-context-co" id="ctx-otp-co"></div>
+        </div>
+      </div>
       <div class="form-group">
         <label>Verification Code</label>
         <input type="text" id="input-otp" class="otp-input" maxlength="6" placeholder="------" inputmode="numeric" autocomplete="one-time-code">
@@ -171,68 +166,32 @@
       <div class="otp-timer">Code expires in <strong id="otp-timer">10:00</strong></div>
       <div id="otp-error" class="error-msg">Incorrect code. Please try again.</div>
       <div id="otp-success" class="success-msg">Email verified!</div>
-      <button class="btn-primary" onclick="verifyOTP()" style="margin-top:12px;">Verify</button>
+      <button class="btn-primary" onclick="verifyOTP()" style="margin-top:12px;">Verify & Launch Simulation</button>
       <p style="font-size:.82em;color:var(--muted);margin-top:14px;text-align:center;">Didn't get it? <span class="resend-link" onclick="resendOTP()">Resend code</span></p>
     </div>
   </div>
 </div>
 
-<!-- PHASE 3: CONFIRMED -->
-<div id="phase-confirmed" class="phase">
+<!-- PHASE 3: REDIRECTING -->
+<div id="phase-redirect" class="phase">
   <div class="hero-band">
-    <div class="eyebrow">CPO Track — Unlock Simulations</div>
+    <div class="eyebrow">CPO Track</div>
     <h1>You're In</h1>
-    <p>All 15 CPO Track simulations are now unlocked for you.</p>
+    <p>Launching your simulation now.</p>
   </div>
-  <div class="center-wrap" style="max-width:600px;">
+  <div class="center-wrap">
     <div class="card">
-      <div class="confirmed-wrap">
-        <div class="confirmed-icon">&#10003;</div>
-        <h2>Access Unlocked</h2>
-        <p>Your email has been verified. All 15 simulations are ready for you. Pick any one and start.</p>
-        <div class="detail">
-          <div class="detail-row">
-            <span class="detail-label">Name</span>
-            <span class="detail-value" id="conf-name"></span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Email</span>
-            <span class="detail-value" id="conf-email"></span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Status</span>
-            <span class="detail-value" style="color:#16a34a;">Verified</span>
-          </div>
-        </div>
-
-        <div class="sims-preview">
-          <h4>Your Simulations</h4>
-          <div class="sims-mini-grid">
-            <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="sims-mini-item"><strong>SIM 1</strong> — Airbnb</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" target="_blank" class="sims-mini-item"><strong>SIM 2</strong> — Spotify</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" target="_blank" class="sims-mini-item"><strong>SIM 3</strong> — Netflix</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" target="_blank" class="sims-mini-item"><strong>SIM 4</strong> — Amazon</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" target="_blank" class="sims-mini-item"><strong>SIM 5</strong> — Uber</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" target="_blank" class="sims-mini-item"><strong>SIM 6</strong> — Zomato</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" target="_blank" class="sims-mini-item"><strong>SIM 7</strong> — Slack</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" target="_blank" class="sims-mini-item"><strong>SIM 8</strong> — Google</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" target="_blank" class="sims-mini-item"><strong>SIM 9</strong> — Meta</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" target="_blank" class="sims-mini-item"><strong>SIM 10</strong> — Shopify</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/" target="_blank" class="sims-mini-item"><strong>SIM 11</strong> — Duolingo</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-12-LinkedIn/" target="_blank" class="sims-mini-item"><strong>SIM 12</strong> — LinkedIn</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-13-Pinterest/" target="_blank" class="sims-mini-item"><strong>SIM 13</strong> — Pinterest</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-14-Canva/" target="_blank" class="sims-mini-item"><strong>SIM 14</strong> — Canva</a>
-            <a href="https://mohansimham.github.io/CPO-SIM-15-Zoom/" target="_blank" class="sims-mini-item"><strong>SIM 15</strong> — Zoom</a>
-          </div>
-        </div>
-
-        <a href="index.html" class="btn-outline" style="margin-top:20px;">Back to Home</a>
+      <div class="redirect-wrap">
+        <div class="check-icon">&#10003;</div>
+        <h2>Email Verified</h2>
+        <p><span class="spinner"></span>Redirecting to <strong id="redirect-sim-name"></strong>...</p>
+        <a id="redirect-link" href="#" target="_blank" class="btn-primary" style="display:block;text-align:center;text-decoration:none;">Open Simulation</a>
+        <a href="index.html" class="btn-outline">Back to Home</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">CXO <span>Simulabs</span></div>
@@ -249,6 +208,42 @@
 </footer>
 
 <script>
+// ─── SIM DATA ───────────────────────────────────────────
+const SIMS = {
+  3:  { name: 'User Research & A/B Testing',           co: 'Netflix',    repo: 'CPO-SIM-3-Netflix' },
+  4:  { name: 'Prioritisation Frameworks',             co: 'Amazon',     repo: 'CPO-SIM-4-Amazon' },
+  5:  { name: 'Market Sizing & Unit Economics',        co: 'Uber',       repo: 'CPO-SIM-5-Uber' },
+  6:  { name: 'Marketplace Prioritisation',            co: 'Zomato',     repo: 'CPO-SIM-6-Zomato' },
+  7:  { name: 'Rapid Prototyping & MVP Strategy',      co: 'Slack',      repo: 'CPO-SIM-7-Slack' },
+  8:  { name: 'PRDs & Product Documentation',          co: 'Google',     repo: 'CPO-SIM-8-Google' },
+  9:  { name: 'Building AI Features',                  co: 'Meta',       repo: 'CPO-SIM-9-Meta' },
+  10: { name: 'Product Roadmapping',                   co: 'Shopify',    repo: 'CPO-SIM-10-Shopify' },
+  11: { name: 'Data Storytelling & Presentations',     co: 'Duolingo',   repo: 'CPO-SIM-11-Duolingo' },
+  12: { name: 'Advanced Metrics & Growth',             co: 'LinkedIn',   repo: 'CPO-SIM-12-LinkedIn' },
+  13: { name: 'Platform Decisions & Strategic Thinking',co: 'Pinterest', repo: 'CPO-SIM-13-Pinterest' },
+  14: { name: 'User Testing & Validation',             co: 'Canva',      repo: 'CPO-SIM-14-Canva' },
+  15: { name: 'Go-to-Market Strategy',                 co: 'Zoom',       repo: 'CPO-SIM-15-Zoom' }
+};
+
+// ─── RESOLVE SIM FROM URL ───────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const simNum = parseInt(params.get('sim'), 10);
+const sim = SIMS[simNum];
+
+if (!sim) {
+  // No valid sim param — redirect home
+  window.location.href = 'index.html';
+}
+
+const simUrl = 'https://mohansimham.github.io/' + sim.repo + '/';
+
+// Populate context badges
+['email', 'otp'].forEach(phase => {
+  document.getElementById('ctx-' + phase + '-num').textContent = 'SIM ' + simNum;
+  document.getElementById('ctx-' + phase + '-name').textContent = sim.name;
+  document.getElementById('ctx-' + phase + '-co').textContent = sim.co;
+});
+
 // ─── CONFIG ─────────────────────────────────────────────
 const EJS_KEY      = 'ABWpMkWPOTsO_gQWG';
 const EJS_SERVICE  = 'service_a6x573k';
@@ -294,15 +289,15 @@ function sendOTP() {
     to_name: name,
     to_email: email,
     otp: code,
-    sim_name: 'CXO Simulabs — Request Access',
-    message: `Hi ${name},\n\nYour CXO Simulabs verification code is:\n\n${code}\n\nThis code expires in 10 minutes. Do not share it with anyone.\n\n\u2014 CXO Simulabs Team\ncxosimulabs.com`
+    sim_name: 'CPO SIM ' + simNum + ': ' + sim.co,
+    message: 'Hi ' + name + ',\n\nYour verification code to access SIM ' + simNum + ' (' + sim.co + ' \u2014 ' + sim.name + ') is:\n\n' + code + '\n\nThis code expires in 10 minutes. Do not share it with anyone.\n\n\u2014 CXO Simulabs Team\ncxosimulabs.com'
   }).then(() => {
-    gtag('event', 'access_otp_requested', { page: 'request-access' });
+    gtag('event', 'access_otp_requested', { sim: sim.repo });
     document.getElementById('otp-email-display').textContent = email;
     showPhase('otp');
     startOTPTimer();
   }).catch(() => {
-    gtag('event', 'access_otp_failed', { page: 'request-access' });
+    gtag('event', 'access_otp_failed', { sim: sim.repo });
     btn.textContent = 'Send Verification Code';
     btn.disabled = false;
     errEl.textContent = 'Failed to send code. Please try again.';
@@ -318,7 +313,7 @@ function startOTPTimer() {
     const m = Math.floor(remaining / 60000);
     const s = Math.floor((remaining % 60000) / 1000);
     const el = document.getElementById('otp-timer');
-    if (el) el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+    if (el) el.textContent = m + ':' + s.toString().padStart(2, '0');
     if (remaining === 0) { clearInterval(state.timerInterval); }
   }, 1000);
 }
@@ -341,18 +336,15 @@ function verifyOTP() {
   }
   clearInterval(state.timerInterval);
   okEl.style.display = 'block';
-  gtag('event', 'access_email_verified', { page: 'request-access' });
+  gtag('event', 'access_email_verified', { sim: sim.repo });
 
-  // Store verified access request
-  localStorage.setItem('cxo_access_name', state.name);
-  localStorage.setItem('cxo_access_email', state.email);
-  localStorage.setItem('cxo_access_verified', 'true');
-  localStorage.setItem('cxo_access_date', new Date().toISOString());
-
+  // Show redirect phase, then auto-redirect
   setTimeout(() => {
-    document.getElementById('conf-name').textContent = state.name;
-    document.getElementById('conf-email').textContent = state.email;
-    showPhase('confirmed');
+    document.getElementById('redirect-sim-name').textContent = 'SIM ' + simNum + ' \u2014 ' + sim.co;
+    document.getElementById('redirect-link').href = simUrl;
+    showPhase('redirect');
+    // Auto-redirect after 2 seconds
+    setTimeout(() => { window.location.href = simUrl; }, 2000);
   }, 800);
 }
 
@@ -364,19 +356,6 @@ function resendOTP() {
   document.getElementById('send-otp-btn').textContent = 'Send Verification Code';
   document.getElementById('send-otp-btn').disabled = false;
 }
-
-// ─── CHECK EXISTING ACCESS ──────────────────────────────
-(function checkAccess() {
-  if (localStorage.getItem('cxo_access_verified') === 'true') {
-    const name = localStorage.getItem('cxo_access_name') || '';
-    const email = localStorage.getItem('cxo_access_email') || '';
-    state.name = name;
-    state.email = email;
-    document.getElementById('conf-name').textContent = name;
-    document.getElementById('conf-email').textContent = email;
-    showPhase('confirmed');
-  }
-})();
 </script>
 
 </body>
