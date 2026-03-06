@@ -176,41 +176,37 @@
     .who-card ul li:last-child { border-bottom: none; }
     .who-card ul li::before { content: '→  '; color: var(--red); font-weight: 700; }
 
-    /* ── SIMULATIONS DEMO ── */
-    .demo-section { padding: 80px 48px; max-width: 1080px; margin: 0 auto; }
-    .demo-card {
-      background: var(--navy);
-      border-radius: 16px;
-      overflow: hidden;
+    /* ── SIMULATIONS ── */
+    .demo-section { background: var(--navy); padding: 80px 48px; }
+    .demo-inner { max-width: 1200px; margin: 0 auto; }
+    .demo-section .section-label { color: #ff9aa2; }
+    .demo-section h2 { color: var(--white); }
+    .demo-section .section-sub { color: #778899; }
+    .sim-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 44px;
     }
-    .demo-left { padding: 52px 44px; }
-    .demo-left .section-label { color: #ff9aa2; }
-    .demo-left h2 { color: white; margin-bottom: 14px; }
-    .demo-left p { color: #8899aa; font-size: 0.95em; margin-bottom: 28px; line-height: 1.7; }
-    .demo-left .btn-red { display: inline-block; }
-    .demo-right { background: rgba(0,0,0,0.25); padding: 40px 36px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
-    .sim-item {
-      background: rgba(255,255,255,0.06);
+    .sim-tile {
+      background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 14px 18px;
+      border-radius: 12px;
+      padding: 22px 20px;
+      text-decoration: none;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.2s;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.25s;
+      position: relative;
+      min-height: 140px;
     }
-    .sim-item:hover { background: rgba(255,255,255,0.1); }
-    .sim-item-info { }
-    .sim-week { font-size: 0.72em; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-    .sim-name { color: white; font-size: 0.95em; font-weight: 600; }
-    .sim-frameworks { font-size: 0.75em; color: #556677; margin-top: 2px; }
-    .sim-link { color: #556677; font-size: 0.8em; text-decoration: none; padding: 5px 12px; border: 1px solid #334; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
-    .sim-link:hover { color: white; border-color: #667; }
-    .sim-link.free { color: var(--red); border-color: rgba(226,55,68,0.3); }
-    .sim-link.free:hover { background: rgba(226,55,68,0.1); }
-    .sim-link.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .sim-tile:hover { background: rgba(255,255,255,0.08); border-color: rgba(226,55,68,0.35); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .sim-tile .sim-num { font-size: 0.7em; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sim-tile .sim-name { color: var(--white); font-size: 0.92em; font-weight: 700; line-height: 1.35; flex: 1; }
+    .sim-tile .sim-co { font-size: 0.78em; color: #556677; font-weight: 500; }
+    .sim-tile .sim-play { font-size: 0.75em; color: var(--red); font-weight: 700; opacity: 0; transition: opacity 0.2s; margin-top: 4px; }
+    .sim-tile:hover .sim-play { opacity: 1; }
 
     /* ── WAITLIST ── */
     .waitlist-section { background: linear-gradient(135deg, var(--navy), var(--navy-light)); padding: 90px 48px; }
@@ -249,7 +245,7 @@
       .hero h1 { font-size: 2.2em; }
       .experience-grid, .who-grid, .waitlist-grid { grid-template-columns: 1fr; }
       .exp-card { border-right: none; border-bottom: 1px solid var(--border); }
-      .demo-card { grid-template-columns: 1fr; }
+      .sim-grid { grid-template-columns: repeat(2, 1fr); }
       .section, .demo-section { padding: 60px 24px; }
       .tracks-section, .who-section, .waitlist-section { padding: 60px 24px; }
       .exp-bar { gap: 20px; padding: 14px 24px; }
@@ -342,6 +338,7 @@
           <li><strong>Advanced Metrics & Growth</strong> — LinkedIn</li>
           <li><strong>Platform Decisions & Strategic Thinking</strong> — Pinterest</li>
           <li><strong>User Testing & Validation</strong> — Canva</li>
+          <li><strong>Go-to-Market Strategy</strong> — Zoom</li>
         </ul>
         <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="track-cta">Try the Airbnb simulation free →</a>
       </div>
@@ -436,153 +433,117 @@
 
 <!-- SIMULATIONS -->
 <div class="demo-section" id="simulations">
-  <div class="section-label">Track 1 — CPO Simulations</div>
-  <h2>15 Companies. <span>15 Real Decisions.</span></h2>
-  <p class="section-sub">Each simulation is inspired by publicly available case studies from world-class companies. All 8 simulations are free during beta.</p>
+  <div class="demo-inner">
+    <div class="section-label">Track 1 — CPO Simulations</div>
+    <h2>15 Companies. <span>15 Real Decisions.</span></h2>
+    <p class="section-sub">Each simulation is inspired by publicly available case studies from world-class companies. All simulations are free during beta.</p>
 
-  <div class="demo-card">
-    <div class="demo-left">
-      <div class="section-label">Try It Now</div>
-      <h2 style="color:white;">See What a Simulation<br>Actually Feels Like</h2>
-      <p>Platform Decisions & Strategic Thinking — free, no signup needed. Step into an Airbnb-inspired scenario, apply real frameworks, and get AI feedback on your reasoning.</p>
-      <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="btn btn-red">Launch Free Simulation →</a>
-    </div>
-    <div class="demo-right">
+    <div class="sim-grid">
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 1 — Free</div>
-          <div class="sim-name">Platform Decisions & Strategic Thinking</div>
-          <div class="sim-frameworks">Airbnb</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 1</div>
+        <div class="sim-name">Platform Decisions & Strategic Thinking</div>
+        <div class="sim-co">Airbnb</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 2 — Free</div>
-          <div class="sim-name">Strategic Business Modelling</div>
-          <div class="sim-frameworks">Spotify</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 2</div>
+        <div class="sim-name">Strategic Business Modelling</div>
+        <div class="sim-co">Spotify</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 3 — Free</div>
-          <div class="sim-name">User Research & A/B Testing</div>
-          <div class="sim-frameworks">Netflix</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 3</div>
+        <div class="sim-name">User Research & A/B Testing</div>
+        <div class="sim-co">Netflix</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 4 — Free</div>
-          <div class="sim-name">Prioritisation Frameworks</div>
-          <div class="sim-frameworks">Amazon</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 4</div>
+        <div class="sim-name">Prioritisation Frameworks</div>
+        <div class="sim-co">Amazon</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 5 — Free</div>
-          <div class="sim-name">Market Sizing & Unit Economics</div>
-          <div class="sim-frameworks">Uber</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 5</div>
+        <div class="sim-name">Market Sizing & Unit Economics</div>
+        <div class="sim-co">Uber</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 6 — Free</div>
-          <div class="sim-name">Marketplace Prioritisation</div>
-          <div class="sim-frameworks">Zomato</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 6</div>
+        <div class="sim-name">Marketplace Prioritisation</div>
+        <div class="sim-co">Zomato</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 7 — Free</div>
-          <div class="sim-name">Rapid Prototyping & MVP Strategy</div>
-          <div class="sim-frameworks">Slack</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 7</div>
+        <div class="sim-name">Rapid Prototyping & MVP Strategy</div>
+        <div class="sim-co">Slack</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 8 — Free</div>
-          <div class="sim-name">PRDs & Product Documentation</div>
-          <div class="sim-frameworks">Google</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 8</div>
+        <div class="sim-name">PRDs & Product Documentation</div>
+        <div class="sim-co">Google</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 9 — Free</div>
-          <div class="sim-name">Building AI Features</div>
-          <div class="sim-frameworks">Meta</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 9</div>
+        <div class="sim-name">Building AI Features</div>
+        <div class="sim-co">Meta</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 10 — Free</div>
-          <div class="sim-name">Product Roadmapping</div>
-          <div class="sim-frameworks">Shopify</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 10</div>
+        <div class="sim-name">Product Roadmapping</div>
+        <div class="sim-co">Shopify</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 11 — Free</div>
-          <div class="sim-name">Data Storytelling & Presentations</div>
-          <div class="sim-frameworks">Duolingo</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 11</div>
+        <div class="sim-name">Data Storytelling & Presentations</div>
+        <div class="sim-co">Duolingo</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 12 — Free</div>
-          <div class="sim-name">Advanced Metrics & Growth</div>
-          <div class="sim-frameworks">LinkedIn</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-12-LinkedIn/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-12-LinkedIn/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 12</div>
+        <div class="sim-name">Advanced Metrics & Growth</div>
+        <div class="sim-co">LinkedIn</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 13 — Free</div>
-          <div class="sim-name">Platform Decisions & Strategic Thinking</div>
-          <div class="sim-frameworks">Pinterest</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-13-Pinterest/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-13-Pinterest/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 13</div>
+        <div class="sim-name">Platform Decisions & Strategic Thinking</div>
+        <div class="sim-co">Pinterest</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 14 — Free</div>
-          <div class="sim-name">User Testing & Validation</div>
-          <div class="sim-frameworks">Canva</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-14-Canva/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-14-Canva/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 14</div>
+        <div class="sim-name">User Testing & Validation</div>
+        <div class="sim-co">Canva</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
-      <div class="sim-item">
-        <div class="sim-item-info">
-          <div class="sim-week">SIM 15 — Free</div>
-          <div class="sim-name">Go-to-Market Strategy</div>
-          <div class="sim-frameworks">Zoom</div>
-        </div>
-        <a href="https://mohansimham.github.io/CPO-SIM-15-Zoom/" target="_blank" class="sim-link free">Play →</a>
-      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-15-Zoom/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 15</div>
+        <div class="sim-name">Go-to-Market Strategy</div>
+        <div class="sim-co">Zoom</div>
+        <div class="sim-play">Play →</div>
+      </a>
 
     </div>
   </div>
@@ -726,7 +687,7 @@
     a.addEventListener('click', ()=>{
       const url = a.getAttribute('href');
       const sim = url.match(/CPO-SIM-\d+-\w+/)?.[0] || url;
-      gtag('event','sim_clicked',{sim:sim,location:a.classList.contains('sim-link')?'sim_list':'cta_button'});
+      gtag('event','sim_clicked',{sim:sim,location:a.classList.contains('sim-tile')?'sim_grid':'cta_button'});
     });
   });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
