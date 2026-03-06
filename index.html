@@ -347,37 +347,49 @@
         <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="track-cta">Try the Airbnb simulation free →</a>
       </div>
 
+      <div class="track-card live">
+        <span class="track-badge badge-live">✅ Available Now</span>
+        <h3>Track 2 — Chief Data Officer</h3>
+        <p class="track-role">Data & AI Strategy · Data Architecture · Build vs Buy · Cost Transformation</p>
+        <ul class="track-sims">
+          <li><strong>Data & AI Strategy — Warm Up</strong> — Ant Group</li>
+          <li><strong>Data & AI Strategy — Warm Up</strong> — Amazon</li>
+        </ul>
+        <p class="track-coming">18 simulations planned. 2 available now.</p>
+        <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" target="_blank" class="track-cta">Try the Ant Group simulation →</a>
+      </div>
+
       <div class="track-card">
         <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 2 — Chief Marketing Officer</h3>
+        <h3>Track 3 — Chief Marketing Officer</h3>
         <p class="track-role">Brand Strategy · Growth Marketing · Campaign ROI · Customer Insight</p>
         <p class="track-coming">Simulations in development across real marketing case studies. Join the waitlist to be first in.</p>
       </div>
 
       <div class="track-card">
         <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 3 — Chief Financial Officer</h3>
+        <h3>Track 4 — Chief Financial Officer</h3>
         <p class="track-role">Capital Allocation · Financial Modeling · Risk Decisions · M&A</p>
         <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
       </div>
 
       <div class="track-card">
         <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 4 — CEO / Strategy</h3>
+        <h3>Track 5 — CEO / Strategy</h3>
         <p class="track-role">Corporate Strategy · Market Entry · Crisis Leadership · Turnarounds</p>
         <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
       </div>
 
       <div class="track-card">
         <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 5 — Chief Sales Officer</h3>
+        <h3>Track 6 — Chief Sales Officer</h3>
         <p class="track-role">Enterprise Sales · Pipeline Strategy · Revenue Forecasting · Team Leadership</p>
         <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
       </div>
 
       <div class="track-card">
         <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 6 — Chief Technology Officer</h3>
+        <h3>Track 7 — Chief Technology Officer</h3>
         <p class="track-role">Tech Strategy · Build vs Buy · Architecture Tradeoffs · Engineering Leadership</p>
         <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
       </div>
@@ -553,6 +565,33 @@
   </div>
 </div>
 
+<!-- CDO SIMULATIONS -->
+<div class="demo-section">
+  <div class="demo-inner">
+    <div class="section-label">Track 2 — CDO Simulations</div>
+    <h2>Data & AI Strategy. <span>Real Decisions.</span></h2>
+    <p class="section-sub">Step into the CDO seat. Make the data and AI decisions that define whether a company leads or follows.</p>
+
+    <div class="sim-grid">
+
+      <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" target="_blank" class="sim-tile">
+        <div class="sim-num">SIM 1</div>
+        <div class="sim-name">Data & AI Strategy — Warm Up</div>
+        <div class="sim-co">Ant Group</div>
+        <div class="sim-play">Play →</div>
+      </a>
+
+      <a href="https://mohansimham.github.io/CDO-SIM-2-Amazon/" target="_blank" class="sim-tile locked">
+        <div class="sim-num">SIM 2</div>
+        <div class="sim-name">Data & AI Strategy — Warm Up</div>
+        <div class="sim-co">Amazon</div>
+        <div class="sim-play">Coming Soon</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
 <!-- NM SHARKS FREE TOOL -->
 <div style="background:#0d1117; padding:80px 48px;">
   <div style="max-width:1080px; margin:0 auto;">
@@ -687,10 +726,10 @@
     gtag('event','lead_signup',{cohort:cohort});
     e.target.querySelector('input').value = '';
   }
-  document.querySelectorAll('a[href*="CPO-SIM"]').forEach(a => {
+  document.querySelectorAll('a[href*="CPO-SIM"], a[href*="CDO-SIM"]').forEach(a => {
     a.addEventListener('click', ()=>{
       const url = a.getAttribute('href');
-      const sim = url.match(/CPO-SIM-\d+-\w+/)?.[0] || url;
+      const sim = url.match(/C[PD]O-SIM-\d+-\w+/)?.[0] || url;
       gtag('event','sim_clicked',{sim:sim,location:a.classList.contains('sim-tile')?'sim_grid':'cta_button'});
     });
   });
