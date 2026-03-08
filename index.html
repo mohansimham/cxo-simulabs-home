@@ -156,6 +156,33 @@
     .track-cta { display: inline-block; margin-top: 18px; color: var(--red); font-size: 0.88em; font-weight: 700; text-decoration: none; }
     .track-cta:hover { text-decoration: underline; }
 
+    /* ── PRODUCT GRID (3 revenue streams) ── */
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+
+    /* ── MBA STATS BAR ── */
+    .mba-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 44px; }
+    .mba-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .mba-stat-value { color: var(--red); font-size: 1.8em; font-weight: 900; margin-bottom: 4px; }
+    .mba-stat-label { color: #ccd6e0; font-size: 0.82em; }
+
+    /* ── MBA SUBJECT PILLS ── */
+    .mba-subjects { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 32px; }
+    .mba-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ccd6e0;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+
     /* ── WHO IT'S FOR ── */
     .who-section { background: var(--light); padding: 80px 48px; }
     .who-inner { max-width: 1080px; margin: 0 auto; }
@@ -247,7 +274,8 @@
       nav { padding: 0 20px; }
       .hero { padding: 70px 24px 60px; }
       .hero h1 { font-size: 2.2em; }
-      .experience-grid, .who-grid, .waitlist-grid { grid-template-columns: 1fr; }
+      .experience-grid, .who-grid, .waitlist-grid, .product-grid { grid-template-columns: 1fr; }
+      .mba-stats { grid-template-columns: repeat(2, 1fr); }
       .exp-card { border-right: none; border-bottom: 1px solid var(--border); }
       .sim-grid { grid-template-columns: repeat(2, 1fr); }
       .section, .demo-section { padding: 60px 24px; }
@@ -262,9 +290,10 @@
 <nav>
   <a href="#" class="logo">CXO <span>Simulabs</span></a>
   <div class="nav-links">
-    <a href="#tracks">Tracks</a>
+    <a href="#tracks">Products</a>
+    <a href="#simulations">CXO SIMs</a>
+    <a href="#mba-sims">MBA SIMs</a>
     <a href="#who">Who It's For</a>
-    <a href="#simulations">Simulations</a>
     <a href="#waitlist" class="nav-cta">Get Early Access</a>
   </div>
 </nav>
@@ -314,91 +343,65 @@
   </div>
 </div>
 
-<!-- TRACKS -->
+<!-- PRODUCTS — 3 REVENUE STREAMS -->
 <div class="tracks-section" id="tracks">
   <div class="tracks-inner">
-    <div class="section-label">Learning Tracks</div>
-    <h2>One Track for <span>Every CXO Role</span></h2>
-    <p class="section-sub">Each track complements your existing learning — courses, MBAs, certifications — with hands-on practice using real companies and real decisions.</p>
+    <div class="section-label">Our Products</div>
+    <h2>Three Ways to <span>Apply What You Know</span></h2>
+    <p class="section-sub">Each product line serves a different audience — but they all share one mission: turning knowledge into real decision-making skill.</p>
 
-    <div class="tracks-grid">
+    <div class="product-grid">
 
+      <!-- PRODUCT 1 — CXO SIMS -->
       <div class="track-card live">
-        <span class="track-badge badge-live">✅ Available Now</span>
-        <h3>Track 1 — Chief Product Officer</h3>
-        <p class="track-role">Product Strategy · Prioritization · User Research · Growth Decisions</p>
+        <span class="track-badge badge-live">LIVE — FREE BETA</span>
+        <h3>CXO Simulations</h3>
+        <p class="track-role">For Aspiring C-Suite Professionals</p>
+        <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">Scenario-driven simulations inspired by real companies. Pick a CXO role, face real decisions, and benchmark against peers. 23 simulations live today.</p>
         <ul class="track-sims">
-          <li><strong>Platform Decisions & Strategic Thinking</strong> — Airbnb</li>
-          <li><strong>Strategic Business Modelling</strong> — Spotify</li>
-          <li><strong>User Research & A/B Testing</strong> — Netflix</li>
-          <li><strong>Prioritisation Frameworks</strong> — Amazon</li>
-          <li><strong>Market Sizing & Unit Economics</strong> — Uber</li>
-          <li><strong>Marketplace Prioritisation</strong> — Zomato</li>
-          <li><strong>Rapid Prototyping & MVP Strategy</strong> — Slack</li>
-          <li><strong>PRDs & Product Documentation</strong> — Google</li>
-          <li><strong>Building AI Features</strong> — Meta</li>
-          <li><strong>Product Roadmapping</strong> — Shopify</li>
-          <li><strong>Data Storytelling & Presentations</strong> — Duolingo</li>
-          <li><strong>Advanced Metrics & Growth</strong> — LinkedIn</li>
-          <li><strong>Platform Decisions & Strategic Thinking</strong> — Pinterest</li>
-          <li><strong>User Testing & Validation</strong> — Canva</li>
-          <li><strong>Go-to-Market Strategy</strong> — Zoom</li>
+          <li><strong>CPO Track</strong> — 15 simulations (Live)</li>
+          <li><strong>CDO Track</strong> — 8 simulations (Live)</li>
+          <li><strong>CMO Track</strong> — Coming Soon</li>
+          <li><strong>CFO Track</strong> — Coming Soon</li>
+          <li><strong>CEO / Strategy</strong> — Coming Soon</li>
+          <li><strong>CSO Track</strong> — Coming Soon</li>
+          <li><strong>CTO Track</strong> — Coming Soon</li>
         </ul>
-        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="track-cta">Try the Airbnb simulation free →</a>
+        <a href="#simulations" class="track-cta">Explore 23 live simulations →</a>
       </div>
 
-      <div class="track-card live">
-        <span class="track-badge badge-live">✅ Available Now</span>
-        <h3>Track 2 — Chief Data Officer</h3>
-        <p class="track-role">Data & AI Strategy · Data Architecture · Build vs Buy · Cost Transformation</p>
+      <!-- PRODUCT 2 — MBA SIMS -->
+      <div class="track-card live" style="border-color:rgba(226,55,68,0.6); background:rgba(226,55,68,0.08);">
+        <span class="track-badge" style="background:rgba(226,55,68,0.25); color:#ff9aa2; border:1px solid rgba(226,55,68,0.4);">NEW — IN DEVELOPMENT</span>
+        <h3>MBA Simulations</h3>
+        <p class="track-role">For Business Schools & MBA Students</p>
+        <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">AI-powered case simulations across the MBA curriculum. Interact with AI agents who push back, defend your decisions under cross-examination, and get scored on a rubric.</p>
         <ul class="track-sims">
-          <li><strong>Data & AI Strategy — Warm Up</strong> — Ant Group</li>
-          <li><strong>Data & AI Strategy — Warm Up</strong> — Amazon</li>
+          <li><strong>AI-Powered Agents</strong> — Conversational, not multiple-choice</li>
+          <li><strong>Cross-Examination Panel</strong> — Defend your decisions live</li>
+          <li><strong>Rubric Scoring</strong> — AI grades against answer key</li>
+          <li><strong>Multiple Roles</strong> — 4 perspectives per case</li>
+          <li><strong>Adjustable Intensity</strong> — Guided to Brutal</li>
         </ul>
-        <p class="track-coming">18 simulations planned. 8 available now.</p>
-        <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" target="_blank" class="track-cta">Try SIM 1 — Ant Group →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-2-Amazon/" target="_blank" class="track-cta" style="margin-top:8px;">Try SIM 2 — Amazon →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-3-Target/" target="_blank" class="track-cta" style="margin-top:8px;">Try SIM 3 — Target →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-4-JPMorgan/" target="_blank" class="track-cta" style="margin-top:8px;" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-4-JPMorgan',location:'track_card'})">Try SIM 4 — JPMorgan Chase →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-5-Netflix/" target="_blank" class="track-cta" style="margin-top:8px;" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-5-Netflix',location:'track_card'})">Try SIM 5 — Netflix →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-6-Moderna/" target="_blank" class="track-cta" style="margin-top:8px;" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-6-Moderna',location:'track_card'})">Try SIM 6 — Moderna →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-7-Moderna/" target="_blank" class="track-cta" style="margin-top:8px;" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-7-Moderna',location:'track_card'})">Try SIM 7 — Moderna →</a>
-        <a href="https://mohansimham.github.io/CDO-SIM-8-Imagined/" target="_blank" class="track-cta" style="margin-top:8px;" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-8-Imagined',location:'track_card'})">Try SIM 8 — (Imagined) →</a>
+        <p class="track-coming">40 simulations planned. First SIM in development now.</p>
+        <a href="#mba-sims" class="track-cta">See the MBA roadmap →</a>
       </div>
 
+      <!-- PRODUCT 3 — INDUSTRY SIMS -->
       <div class="track-card">
-        <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 3 — Chief Marketing Officer</h3>
-        <p class="track-role">Brand Strategy · Growth Marketing · Campaign ROI · Customer Insight</p>
-        <p class="track-coming">Simulations in development across real marketing case studies. Join the waitlist to be first in.</p>
-      </div>
-
-      <div class="track-card">
-        <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 4 — Chief Financial Officer</h3>
-        <p class="track-role">Capital Allocation · Financial Modeling · Risk Decisions · M&A</p>
-        <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
-      </div>
-
-      <div class="track-card">
-        <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 5 — CEO / Strategy</h3>
-        <p class="track-role">Corporate Strategy · Market Entry · Crisis Leadership · Turnarounds</p>
-        <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
-      </div>
-
-      <div class="track-card">
-        <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 6 — Chief Sales Officer</h3>
-        <p class="track-role">Enterprise Sales · Pipeline Strategy · Revenue Forecasting · Team Leadership</p>
-        <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
-      </div>
-
-      <div class="track-card">
-        <span class="track-badge badge-soon">Coming Soon</span>
-        <h3>Track 7 — Chief Technology Officer</h3>
-        <p class="track-role">Tech Strategy · Build vs Buy · Architecture Tradeoffs · Engineering Leadership</p>
-        <p class="track-coming">Simulations in development. Join the waitlist to be first in.</p>
+        <span class="track-badge badge-soon">COMING SOON</span>
+        <h3>Industry Simulations</h3>
+        <p class="track-role">For Businesses & L&D Teams</p>
+        <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">Custom simulations tailored to your industry. Train teams on the exact decisions they face — from banking compliance to healthcare operations to tech strategy.</p>
+        <ul class="track-sims">
+          <li><strong>Banking & Financial Services</strong></li>
+          <li><strong>Healthcare & Life Sciences</strong></li>
+          <li><strong>Technology & SaaS</strong></li>
+          <li><strong>Manufacturing & Supply Chain</strong></li>
+          <li><strong>Retail & E-Commerce</strong></li>
+        </ul>
+        <p class="track-coming">Custom simulations built for your industry and your teams.</p>
+        <a href="#waitlist" class="track-cta">Request an industry simulation →</a>
       </div>
 
     </div>
@@ -638,6 +641,89 @@
       </a>
 
     </div>
+  </div>
+</div>
+
+<!-- MBA SIMULATIONS -->
+<div class="demo-section" id="mba-sims">
+  <div class="demo-inner">
+    <div class="section-label">MBA Simulations — AI-Powered</div>
+    <h2>40 Case Simulations. <span>One MBA Curriculum.</span></h2>
+    <p class="section-sub">Each simulation puts you in a real business scenario with AI agents who push back, cross-examine, and score your decisions.</p>
+
+    <div class="mba-stats">
+      <div class="mba-stat">
+        <div class="mba-stat-value">4</div>
+        <div class="mba-stat-label">Roles per SIM</div>
+      </div>
+      <div class="mba-stat">
+        <div class="mba-stat-value">AI</div>
+        <div class="mba-stat-label">Agents that push back</div>
+      </div>
+      <div class="mba-stat">
+        <div class="mba-stat-value">Panel</div>
+        <div class="mba-stat-label">Cross-examination</div>
+      </div>
+      <div class="mba-stat">
+        <div class="mba-stat-value">Scored</div>
+        <div class="mba-stat-label">AI rubric grading</div>
+      </div>
+    </div>
+
+    <div class="sim-grid">
+
+      <div class="sim-tile" style="border-color:rgba(226,55,68,0.4); background:rgba(226,55,68,0.06);">
+        <div class="sim-num">SIM 1</div>
+        <div class="sim-name">The Earnings Game</div>
+        <div class="sim-co">Financial Accounting & Reporting</div>
+        <div class="sim-play" style="opacity:1; color:#ff9aa2;">In Development</div>
+      </div>
+
+      <div class="sim-tile locked">
+        <div class="sim-num">SIM 2</div>
+        <div class="sim-name">The Capitalisation Trap</div>
+        <div class="sim-co">Corporate Finance</div>
+      </div>
+
+      <div class="sim-tile locked">
+        <div class="sim-num">SIM 3</div>
+        <div class="sim-name">The Write-Off Timing</div>
+        <div class="sim-co">Financial Reporting</div>
+      </div>
+
+      <div class="sim-tile locked">
+        <div class="sim-num">SIM 4 – 10</div>
+        <div class="sim-name">Coming Soon</div>
+        <div class="sim-co">Marketing · Operations · Strategy</div>
+      </div>
+
+      <div class="sim-tile locked">
+        <div class="sim-num">SIM 11 – 40</div>
+        <div class="sim-name">Full MBA Curriculum</div>
+        <div class="sim-co">40 simulations planned</div>
+      </div>
+
+    </div>
+
+    <div class="mba-subjects">
+      <span class="mba-pill">Financial Accounting</span>
+      <span class="mba-pill">Corporate Finance</span>
+      <span class="mba-pill">Marketing Management</span>
+      <span class="mba-pill">Operations Management</span>
+      <span class="mba-pill">Organizational Behavior</span>
+      <span class="mba-pill">Business Strategy</span>
+      <span class="mba-pill">Microeconomics</span>
+      <span class="mba-pill">Macroeconomics</span>
+      <span class="mba-pill">Business Analytics</span>
+      <span class="mba-pill">Leadership & Ethics</span>
+      <span class="mba-pill">Entrepreneurship</span>
+      <span class="mba-pill">Supply Chain</span>
+      <span class="mba-pill">International Business</span>
+      <span class="mba-pill">Mergers & Acquisitions</span>
+    </div>
+    <p style="text-align:center; color:#ffffff; font-size:1em; font-weight:700; margin-top:24px;">40 simulations across 14 MBA subject areas</p>
+    <p style="text-align:center; margin-top:16px;"><a href="#waitlist" class="btn btn-outline" style="font-size:0.9em; padding:12px 28px;">Join the MBA Waitlist</a></p>
+
   </div>
 </div>
 
