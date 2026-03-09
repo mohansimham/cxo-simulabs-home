@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CXO Simulabs — Apply What You've Learned</title>
+  <meta name="description" content="You've done the courses. Now apply what you've learned. Business simulations that turn your knowledge into real decision-making skill.">
+  <link rel="canonical" href="https://www.cxosimulabs.com/">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CXO Simulabs — Apply What You've Learned">
+  <meta property="og:description" content="Courses, MBAs, YouTube — the world is full of business learning. CXO Simulabs is where you finally put it all to work through real company simulations.">
+  <meta property="og:url" content="https://www.cxosimulabs.com/">
+  <meta property="og:site_name" content="CXO Simulabs">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CXO Simulabs — Apply What You've Learned">
+  <meta name="twitter:description" content="Business simulations that turn your knowledge into real decision-making skill.">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"CXO Simulabs","url":"https://www.cxosimulabs.com","description":"Business simulations that turn your knowledge into real decision-making skill."}
+  </script>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1a1a2e;
+      --navy-mid: #16213e;
+      --navy-light: #0f3460;
+      --red: #e23744;
+      --red-dark: #c42f3a;
+      --white: #ffffff;
+      --light: #f7f7f9;
+      --gray: #666;
+      --border: #e0e0e0;
+    }
+
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; background: var(--white); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { color: var(--white); font-size: 1.35em; font-weight: 800; letter-spacing: 0.5px; text-decoration: none; cursor: pointer; }
+    .logo span { color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      color: #ccd6e0;
+      text-decoration: none;
+      font-size: 0.85em;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .nav-links a.nav-active { color: var(--white); background: rgba(226,55,68,0.15); font-weight: 700; }
+    .nav-cta { background: var(--red) !important; color: var(--white) !important; font-weight: 700 !important; padding: 8px 20px !important; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .nav-cta.nav-active { background: var(--red) !important; }
+
+    /* ── MOBILE HAMBURGER ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #ccd6e0; margin: 5px 0; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 24px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: #ccd6e0;
+      text-decoration: none;
+      font-size: 0.95em;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .mobile-menu a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .mobile-menu a.nav-active { color: var(--white); background: rgba(226,55,68,0.15); font-weight: 700; }
+
+    /* ── PAGE VIEWS ── */
+    .page-view { display: none; }
+    .page-view.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 48px 0;
+      font-size: 0.82em;
+    }
+    .breadcrumb a { color: #ccd6e0; text-decoration: none; cursor: pointer; }
+    .breadcrumb a:hover { color: var(--white); text-decoration: underline; }
+    .breadcrumb .sep { color: #556; margin: 0 8px; }
+    .breadcrumb .current { color: var(--red); font-weight: 600; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+      color: var(--white);
+      padding: 100px 48px 80px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(226,55,68,0.15);
+      border: 1px solid rgba(226,55,68,0.35);
+      color: #ff9aa2;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.82em;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+    .hero h1 { font-size: 3.2em; font-weight: 900; line-height: 1.15; max-width: 740px; margin: 0 auto 20px; letter-spacing: -0.5px; }
+    .hero h1 span { color: var(--red); }
+    .hero-sub { font-size: 1.15em; color: #ffffff; max-width: 560px; margin: 0 auto 42px; }
+    .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1em; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+    .btn-red { background: var(--red); color: var(--white); }
+    .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(226,55,68,0.35); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.25); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
+
+    /* ── EXPERIENCE BAR ── */
+    .exp-bar {
+      background: var(--red);
+      padding: 14px 48px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .exp-item { color: white; font-size: 0.9em; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .exp-item::before { content: '\25CF'; font-size: 0.6em; opacity: 0.6; }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section { padding: 80px 48px; max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 0.78em; text-transform: uppercase; letter-spacing: 2.5px; color: var(--red); font-weight: 700; margin-bottom: 10px; }
+    h2 { font-size: 2em; color: var(--navy); margin-bottom: 12px; font-weight: 800; }
+    h2 span { color: var(--red); }
+    .section-sub { color: var(--gray); font-size: 1.05em; margin-bottom: 44px; max-width: 600px; }
+
+    /* ── THE EXPERIENCE ── */
+    .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .exp-card { padding: 36px 28px; border-right: 1px solid var(--border); }
+    .exp-card:last-child { border-right: none; }
+    .exp-number { font-size: 2.8em; font-weight: 900; color: var(--red); opacity: 0.15; line-height: 1; margin-bottom: 10px; }
+    .exp-card h3 { font-size: 1.05em; color: var(--navy); font-weight: 700; margin-bottom: 10px; }
+    .exp-card p { color: var(--gray); font-size: 0.9em; line-height: 1.65; }
+
+    /* ── PRODUCTS (GATEWAY CARDS) ── */
+    .tracks-section { background: var(--navy); padding: 80px 48px; }
+    .tracks-inner { max-width: 1080px; margin: 0 auto; }
+    .tracks-section .section-label { color: #ff9aa2; }
+    .tracks-section h2 { color: var(--white); }
+    .tracks-section .section-sub { color: #ffffff; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .track-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      padding: 28px;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .track-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); }
+    .track-card.live { border-color: rgba(226,55,68,0.45); background: rgba(226,55,68,0.06); }
+    .track-card.gateway:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); cursor: pointer; }
+    .track-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.74em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .badge-live { background: var(--red); color: white; }
+    .badge-soon { background: rgba(255,255,255,0.08); color: #ccd6e0; }
+    .track-card h3 { color: var(--white); font-size: 1.05em; margin-bottom: 6px; font-weight: 700; }
+    .track-card .track-role { color: #ccd6e0; font-size: 0.82em; margin-bottom: 16px; }
+    .track-sims { list-style: none; padding: 0; margin-bottom: 4px; }
+    .track-sims li { font-size: 0.85em; color: #dde4eb; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .track-sims li:last-child { border-bottom: none; }
+    .track-sims li strong { color: #aabbcc; }
+    .track-coming { font-size: 0.84em; color: #ccd6e0; font-style: italic; }
+    .track-cta { display: inline-block; margin-top: 18px; color: var(--red); font-size: 0.88em; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .track-cta:hover { text-decoration: underline; }
+
+    /* ── SIMULATIONS ── */
+    .demo-section { background: var(--navy); padding: 80px 48px; }
+    .demo-inner { max-width: 1200px; margin: 0 auto; }
+    .demo-section .section-label { color: #ff9aa2; }
+    .demo-section h2 { color: var(--white); }
+    .demo-section .section-sub { color: #ffffff; }
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 44px;
+    }
+    .sim-tile {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 22px 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.25s;
+      position: relative;
+      min-height: 140px;
+    }
+    .sim-tile:hover { background: rgba(255,255,255,0.08); border-color: rgba(226,55,68,0.35); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .sim-tile .sim-num { font-size: 0.7em; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sim-tile .sim-name { color: var(--white); font-size: 0.92em; font-weight: 700; line-height: 1.35; flex: 1; }
+    .sim-tile .sim-co { font-size: 0.78em; color: #ccd6e0; font-weight: 500; }
+    .sim-tile .sim-play { font-size: 0.75em; color: var(--red); font-weight: 700; opacity: 0; transition: opacity 0.2s; margin-top: 4px; }
+    .sim-tile:hover .sim-play { opacity: 1; }
+    .sim-tile.locked { opacity: 0.55; }
+    .sim-tile.locked:hover { opacity: 1; }
+    .sim-tile.locked .sim-num { color: #99aabb; }
+    .sim-tile.locked .sim-play { color: #ccd6e0; }
+
+    /* ── MBA STATS BAR ── */
+    .mba-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 44px; }
+    .mba-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .mba-stat-value { color: var(--red); font-size: 1.8em; font-weight: 900; margin-bottom: 4px; }
+    .mba-stat-label { color: #ccd6e0; font-size: 0.82em; }
+
+    /* ── MBA SUBJECT PILLS ── */
+    .mba-subjects { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 32px; }
+    .mba-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ccd6e0;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .who-section { background: var(--light); padding: 80px 48px; }
+    .who-inner { max-width: 1080px; margin: 0 auto; }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+    .who-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .who-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .who-icon { font-size: 2em; margin-bottom: 14px; }
+    .who-card h3 { color: var(--navy); font-size: 1.1em; font-weight: 700; margin-bottom: 10px; }
+    .who-card p { color: var(--gray); font-size: 0.9em; line-height: 1.65; margin-bottom: 18px; }
+    .who-card ul { list-style: none; padding: 0; }
+    .who-card ul li { font-size: 0.87em; color: #555; padding: 5px 0; border-bottom: 1px solid #f0f0f0; }
+    .who-card ul li:last-child { border-bottom: none; }
+    .who-card ul li::before { content: '\2192  '; color: var(--red); font-weight: 700; }
+
+    /* ── WAITLIST ── */
+    .waitlist-section { background: linear-gradient(135deg, var(--navy), var(--navy-light)); padding: 90px 48px; }
+    .waitlist-inner { max-width: 1080px; margin: 0 auto; text-align: center; }
+    .waitlist-section h2 { color: white; font-size: 2.2em; margin-bottom: 12px; }
+    .waitlist-section p.lead { color: #ffffff; font-size: 1.05em; max-width: 540px; margin: 0 auto 52px; }
+    .waitlist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+    .wl-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 30px;
+    }
+    .wl-card h3 { color: white; font-size: 1em; margin-bottom: 6px; font-weight: 700; }
+    .wl-card p { color: #ccd6e0; font-size: 0.86em; margin-bottom: 20px; line-height: 1.6; }
+    .wl-card input { width: 100%; padding: 11px 14px; border-radius: 8px; border: none; font-size: 0.93em; margin-bottom: 10px; background: rgba(255,255,255,0.88); color: #333; outline: none; }
+    .wl-card input:focus { background: white; }
+    .wl-card button { width: 100%; background: var(--red); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.92em; cursor: pointer; transition: background 0.2s; }
+    .wl-card button:hover { background: var(--red-dark); }
+    .wl-note { font-size: 0.78em; color: #ccd6e0; margin-top: 8px; text-align: center; }
+    .success-msg { font-size: 0.85em; color: #7dffb3; margin-top: 10px; text-align: center; display: none; }
+
+    /* ── FOOTER ── */
+    footer { background: #0d1117; color: #ffffff; padding: 36px 48px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { color: white; font-size: 1.15em; font-weight: 800; }
+    .footer-logo span { color: var(--red); }
+    .footer-links a { color: #ffffff; text-decoration: none; margin-left: 20px; font-size: 0.85em; transition: color 0.2s; cursor: pointer; }
+    .footer-links a:hover { color: #aab; }
+    .footer-bottom { max-width: 1080px; margin: 20px auto 0; border-top: 1px solid #1a2030; padding-top: 20px; font-size: 0.8em; text-align: center; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .hero { padding: 70px 24px 60px; }
+      .hero h1 { font-size: 2.2em; }
+      .experience-grid, .who-grid, .waitlist-grid, .product-grid { grid-template-columns: 1fr; }
+      .mba-stats { grid-template-columns: repeat(2, 1fr); }
+      .exp-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .sim-grid { grid-template-columns: repeat(2, 1fr); }
+      .section, .demo-section { padding: 60px 24px; }
+      .tracks-section, .who-section, .waitlist-section { padding: 60px 24px; }
+      .exp-bar { gap: 20px; padding: 14px 24px; }
+      .breadcrumb { padding: 12px 24px 0; }
+      .demo-inner [style*="grid-template-columns:repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+      .demo-inner [style*="grid-template-columns:repeat(6"] { grid-template-columns: repeat(2, 1fr) !important; }
+      .demo-inner [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+      .demo-inner [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .sharks-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" onclick="navigateTo('home')">CXO <span>Simulabs</span></a>
+  <div class="nav-links">
+    <a data-nav="home" onclick="navigateTo('home')">Home</a>
+    <a data-nav="cxo" onclick="navigateTo('cxo')">CXO SIMs</a>
+    <a data-nav="mba" onclick="navigateTo('mba')">MBA SIMs</a>
+    <a data-nav="sharks" onclick="navigateTo('sharks')">Sharks</a>
+    <a data-nav="who" onclick="navigateTo('who')">Who It's For</a>
+    <a data-nav="access" onclick="navigateTo('access')" class="nav-cta">Get Early Access</a>
+  </div>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a data-nav="home" onclick="navigateTo('home')">Home</a>
+  <a data-nav="cxo" onclick="navigateTo('cxo')">CXO SIMs</a>
+  <a data-nav="mba" onclick="navigateTo('mba')">MBA SIMs</a>
+  <a data-nav="sharks" onclick="navigateTo('sharks')">Sharks</a>
+  <a data-nav="who" onclick="navigateTo('who')">Who It's For</a>
+  <a data-nav="access" onclick="navigateTo('access')">Get Early Access</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: HOME                                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view active" data-page="home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">The Application Layer for Business Learning</div>
+    <h1>Knowledge Is Everywhere.<br><span>Application Isn't.</span></h1>
+    <p class="hero-sub">Courses, MBAs, YouTube, certifications — the world is full of business learning. CXO Simulabs is where you finally put it all to work.</p>
+    <div class="hero-buttons">
+      <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="btn btn-red">Try a Free Simulation</a>
+      <a class="btn btn-outline" onclick="navigateTo('cxo')">Explore Tracks</a>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE BAR -->
+  <div class="exp-bar">
+    <div class="exp-item">Inspired by real companies</div>
+    <div class="exp-item">Live multiplayer sessions</div>
+    <div class="exp-item">AI feedback on your reasoning</div>
+    <div class="exp-item">Peer benchmarking</div>
+    <div class="exp-item">Every CXO role covered</div>
+  </div>
+
+  <!-- THE EXPERIENCE -->
+  <div class="section">
+    <div class="section-label">The Experience</div>
+    <h2>What a Session <span>Feels Like</span></h2>
+    <p class="section-sub">You've studied the frameworks. Now step into a real scenario from a real company and put them to work.</p>
+
+    <div class="experience-grid">
+      <div class="exp-card">
+        <div class="exp-number">01</div>
+        <h3>You're in the room</h3>
+        <p>You've learned about product strategy in a course. Now you're a PM at Netflix. A CMO at Airbnb. A CFO facing a downturn. The clock starts. You apply what you know.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-number">02</div>
+        <h3>Others are watching</h3>
+        <p>Peers make different calls. You see their reasoning in real time. Suddenly you realise your gut instinct was wrong — or right, and you didn't know why.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-number">03</div>
+        <h3>AI tells you the truth</h3>
+        <p>When the round ends, AI breaks down your decisions. It connects your choices back to the frameworks you've studied — showing you where you applied them well and where to go deeper.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS — 3 GATEWAY CARDS -->
+  <div class="tracks-section">
+    <div class="tracks-inner">
+      <div class="section-label">Our Products</div>
+      <h2>Three Ways to <span>Apply What You Know</span></h2>
+      <p class="section-sub">Each product line serves a different audience — but they all share one mission: turning knowledge into real decision-making skill.</p>
+
+      <div class="product-grid">
+
+        <!-- PRODUCT 1 — CXO SIMS -->
+        <div class="track-card live gateway" onclick="navigateTo('cxo')">
+          <span class="track-badge badge-live">LIVE — FREE BETA</span>
+          <h3>CXO Simulations</h3>
+          <p class="track-role">For Aspiring C-Suite Professionals</p>
+          <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">Scenario-driven simulations inspired by real companies. Pick a CXO role, face real decisions, and benchmark against peers. 23 simulations live today.</p>
+          <ul class="track-sims">
+            <li><strong>CPO Track</strong> — 15 simulations (Live)</li>
+            <li><strong>CDO Track</strong> — 8 simulations (Live)</li>
+          </ul>
+          <span class="track-cta">Explore 23 live simulations &rarr;</span>
+        </div>
+
+        <!-- PRODUCT 2 — MBA SIMS -->
+        <div class="track-card live gateway" style="border-color:rgba(226,55,68,0.6); background:rgba(226,55,68,0.08);" onclick="navigateTo('mba')">
+          <span class="track-badge" style="background:rgba(226,55,68,0.25); color:#ff9aa2; border:1px solid rgba(226,55,68,0.4);">NEW — IN DEVELOPMENT</span>
+          <h3>MBA Simulations</h3>
+          <p class="track-role">For Business Schools & MBA Students</p>
+          <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">AI-powered case simulations across the MBA curriculum. Interact with AI agents who push back, defend your decisions under cross-examination, and get scored on a rubric.</p>
+          <ul class="track-sims">
+            <li><strong>AI-Powered Agents</strong> — Conversational, not multiple-choice</li>
+            <li><strong>Cross-Examination Panel</strong> — Defend your decisions live</li>
+          </ul>
+          <span class="track-cta">See the MBA methodology &rarr;</span>
+        </div>
+
+        <!-- PRODUCT 3 — INDUSTRY SIMS -->
+        <div class="track-card gateway" onclick="navigateTo('access')">
+          <span class="track-badge badge-soon">COMING SOON</span>
+          <h3>Industry Simulations</h3>
+          <p class="track-role">For Businesses & L&D Teams</p>
+          <p style="color:#dde4eb; font-size:0.88em; line-height:1.65; margin-bottom:18px;">Custom simulations tailored to your industry. Train teams on the exact decisions they face — from banking compliance to healthcare operations to tech strategy.</p>
+          <ul class="track-sims">
+            <li><strong>Banking & Financial Services</strong></li>
+            <li><strong>Healthcare & Life Sciences</strong></li>
+          </ul>
+          <span class="track-cta">Request an industry simulation &rarr;</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: CXO SIMS                                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view" data-page="cxo">
+
+  <!-- CPO TRACK -->
+  <div class="demo-section">
+    <div class="demo-inner">
+      <div class="breadcrumb"><a onclick="navigateTo('home')">Home</a><span class="sep">/</span><span class="current">CXO Simulations</span></div>
+    </div>
+  </div>
+  <div class="demo-section" style="padding-top:40px;">
+    <div class="demo-inner">
+      <div class="section-label">Track 1 — CPO Simulations</div>
+      <h2>15 Companies. <span>15 Real Decisions.</span></h2>
+      <p class="section-sub">Each simulation is inspired by publicly available case studies from world-class companies. All simulations are free during beta.</p>
+
+      <div class="sim-grid">
+        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" target="_blank" class="sim-tile">
+          <div class="sim-num">SIM 1</div>
+          <div class="sim-name">Platform Decisions & Strategic Thinking</div>
+          <div class="sim-co">Airbnb</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" target="_blank" class="sim-tile">
+          <div class="sim-num">SIM 2</div>
+          <div class="sim-name">Strategic Business Modelling</div>
+          <div class="sim-co">Spotify</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="request-access.html?sim=3" class="sim-tile locked">
+          <div class="sim-num">SIM 3</div>
+          <div class="sim-name">User Research & A/B Testing</div>
+          <div class="sim-co">Netflix</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=4" class="sim-tile locked">
+          <div class="sim-num">SIM 4</div>
+          <div class="sim-name">Prioritisation Frameworks</div>
+          <div class="sim-co">Amazon</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=5" class="sim-tile locked">
+          <div class="sim-num">SIM 5</div>
+          <div class="sim-name">Market Sizing & Unit Economics</div>
+          <div class="sim-co">Uber</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=6" class="sim-tile locked">
+          <div class="sim-num">SIM 6</div>
+          <div class="sim-name">Marketplace Prioritisation</div>
+          <div class="sim-co">Zomato</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=7" class="sim-tile locked">
+          <div class="sim-num">SIM 7</div>
+          <div class="sim-name">Rapid Prototyping & MVP Strategy</div>
+          <div class="sim-co">Slack</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=8" class="sim-tile locked">
+          <div class="sim-num">SIM 8</div>
+          <div class="sim-name">PRDs & Product Documentation</div>
+          <div class="sim-co">Google</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=9" class="sim-tile locked">
+          <div class="sim-num">SIM 9</div>
+          <div class="sim-name">Building AI Features</div>
+          <div class="sim-co">Meta</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=10" class="sim-tile locked">
+          <div class="sim-num">SIM 10</div>
+          <div class="sim-name">Product Roadmapping</div>
+          <div class="sim-co">Shopify</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=11" class="sim-tile locked">
+          <div class="sim-num">SIM 11</div>
+          <div class="sim-name">Data Storytelling & Presentations</div>
+          <div class="sim-co">Duolingo</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=12" class="sim-tile locked">
+          <div class="sim-num">SIM 12</div>
+          <div class="sim-name">Advanced Metrics & Growth</div>
+          <div class="sim-co">LinkedIn</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=13" class="sim-tile locked">
+          <div class="sim-num">SIM 13</div>
+          <div class="sim-name">Platform Decisions & Strategic Thinking</div>
+          <div class="sim-co">Pinterest</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=14" class="sim-tile locked">
+          <div class="sim-num">SIM 14</div>
+          <div class="sim-name">User Testing & Validation</div>
+          <div class="sim-co">Canva</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+        <a href="request-access.html?sim=15" class="sim-tile locked">
+          <div class="sim-num">SIM 15</div>
+          <div class="sim-name">Go-to-Market Strategy</div>
+          <div class="sim-co">Zoom</div>
+          <div class="sim-play">Request Access</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CDO TRACK -->
+  <div class="demo-section">
+    <div class="demo-inner">
+      <div class="section-label">Track 2 — CDO Simulations</div>
+      <h2>Data & AI Strategy. <span>Real Decisions.</span></h2>
+      <p class="section-sub">Step into the CDO seat. Make the data and AI decisions that define whether a company leads or follows.</p>
+
+      <div class="sim-grid">
+        <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" target="_blank" class="sim-tile">
+          <div class="sim-num">SIM 1</div>
+          <div class="sim-name">Data & AI Strategy — Warm Up</div>
+          <div class="sim-co">Ant Group</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-2-Amazon/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-2-Amazon',location:'cdo_grid'})">
+          <div class="sim-num">SIM 2</div>
+          <div class="sim-name">Data & AI Strategy — Warm Up</div>
+          <div class="sim-co">Amazon</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-3-Target/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-3-Target',location:'cdo_grid'})">
+          <div class="sim-num">SIM 3</div>
+          <div class="sim-name">Governance, Ethics & Compliance</div>
+          <div class="sim-co">Target</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-4-JPMorgan/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-4-JPMorgan',location:'cdo_grid'})">
+          <div class="sim-num">SIM 4</div>
+          <div class="sim-name">Responsible AI Governance</div>
+          <div class="sim-co">JPMorgan Chase</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-5-Netflix/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-5-Netflix',location:'cdo_grid'})">
+          <div class="sim-num">SIM 5</div>
+          <div class="sim-name">Technical Fluency</div>
+          <div class="sim-co">Netflix</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-6-Moderna/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-6-Moderna',location:'cdo_grid'})">
+          <div class="sim-num">SIM 6</div>
+          <div class="sim-name">Technical Fluency</div>
+          <div class="sim-co">Moderna</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-7-Moderna/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-7-Moderna',location:'cdo_grid'})">
+          <div class="sim-num">SIM 7</div>
+          <div class="sim-name">Transformational Leadership</div>
+          <div class="sim-co">Moderna</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+        <a href="https://mohansimham.github.io/CDO-SIM-8-Imagined/" target="_blank" class="sim-tile" onclick="gtag('event','sim_clicked',{sim:'CDO-SIM-8-Imagined',location:'cdo_grid'})">
+          <div class="sim-num">SIM 8</div>
+          <div class="sim-name">Data Asset Valuation & Infonomics</div>
+          <div class="sim-co">(Imagined)</div>
+          <div class="sim-play">Play &rarr;</div>
+        </a>
+      </div>
+
+      <!-- Coming Soon Tracks -->
+      <div style="margin-top:44px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.08);">
+        <p style="color:#94a3b8; font-size:0.85em; font-weight:600; margin-bottom:16px;">More tracks coming soon</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#667788; padding:6px 16px; border-radius:20px; font-size:0.8em;">CMO Track</span>
+          <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#667788; padding:6px 16px; border-radius:20px; font-size:0.8em;">CFO Track</span>
+          <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#667788; padding:6px 16px; border-radius:20px; font-size:0.8em;">CEO / Strategy</span>
+          <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#667788; padding:6px 16px; border-radius:20px; font-size:0.8em;">CSO Track</span>
+          <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#667788; padding:6px 16px; border-radius:20px; font-size:0.8em;">CTO Track</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: MBA SIMS                                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view" data-page="mba">
+
+  <div class="demo-section" id="mba-sims">
+    <div class="demo-inner">
+      <div class="breadcrumb"><a onclick="navigateTo('home')">Home</a><span class="sep">/</span><span class="current">MBA Simulations</span></div>
+    </div>
+  </div>
+  <div class="demo-section" style="padding-top:40px;">
+    <div class="demo-inner">
+      <div class="section-label">MBA Simulations — AI-Powered</div>
+      <h2>40 Case Simulations. <span>One MBA Curriculum.</span></h2>
+      <p class="section-sub">Each simulation is a live boardroom. AI agents push back, cross-examine your decisions, and score you on a rubric. Same skills, different companies, different industries — that's where pattern recognition is built.</p>
+
+      <!-- KEY NUMBERS -->
+      <div class="mba-stats">
+        <div class="mba-stat">
+          <div class="mba-stat-value">40</div>
+          <div class="mba-stat-label">Simulations planned</div>
+        </div>
+        <div class="mba-stat">
+          <div class="mba-stat-value">14</div>
+          <div class="mba-stat-label">MBA subject areas</div>
+        </div>
+        <div class="mba-stat">
+          <div class="mba-stat-value">4</div>
+          <div class="mba-stat-label">Roles per simulation</div>
+        </div>
+        <div class="mba-stat">
+          <div class="mba-stat-value">6</div>
+          <div class="mba-stat-label">Bloom's levels tested</div>
+        </div>
+      </div>
+
+      <!-- ── The 5 Phases ── -->
+      <div style="margin-bottom:64px;">
+        <div style="text-align:center; margin-bottom:32px;">
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">How It Works</p>
+          <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Five Phases. One Decision.</h3>
+          <p style="color:#ccd6e0; font-size:0.92em; max-width:600px; margin:0 auto;">Every simulation follows the same rigorous structure. No shortcuts. No hand-holding. Your decision is final.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px;">
+          <div style="background:rgba(226,55,68,0.12); border:1px solid rgba(226,55,68,0.3); border-radius:12px; padding:22px 16px; text-align:center;">
+            <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 1</div>
+            <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">BRIEF</div>
+            <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Study the case. Run the numbers. Complete the calculation worksheet.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+            <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 2</div>
+            <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">CONSULT</div>
+            <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Question AI agents in the boardroom. Extract information. Read the room.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+            <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 3</div>
+            <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">DECIDE</div>
+            <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Make your call. Write your reasoning. Lock in your confidence level.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+            <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 4</div>
+            <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">PANEL</div>
+            <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Defend your decision under AI cross-examination. No safety net.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+            <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 5</div>
+            <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">SCORED</div>
+            <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">AI rubric grading. Debrief report. Certificate and badge.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Bloom's Taxonomy ── -->
+      <div style="margin-bottom:64px;">
+        <div style="text-align:center; margin-bottom:32px;">
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Pedagogical Rigour</p>
+          <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Full Bloom's Taxonomy Coverage</h3>
+          <p style="color:#ccd6e0; font-size:0.92em; max-width:620px; margin:0 auto;">Every simulation tests all six cognitive levels. Most case studies stop at Analyse. We go all the way to Create.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:10px;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 1</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Remember</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Recall concepts via learning cards and agent probing</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">BRIEF + CONSULT</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 2</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Understand</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Articulate understanding in agent conversations</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">CONSULT</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 3</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Apply</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Use formulas on real data in the calculation worksheet</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">BRIEF</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 4</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Analyse</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Spot anomalies and red flags in financial statements</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">DECIDE</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 5</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Evaluate</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Make the right judgement call for your role</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">DECIDE</div>
+          </div>
+          <div style="background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.25); border-radius:10px; padding:18px 14px; text-align:center;">
+            <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 6</div>
+            <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Create</div>
+            <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Defend and synthesise under live cross-examination</p>
+            <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">PANEL</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Boardroom Dynamics ── -->
+      <div style="margin-bottom:64px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+          <!-- Left: Boardroom Pulse -->
+          <div>
+            <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Boardroom Pulse</p>
+            <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:12px;">The Room Has a Mood</h3>
+            <p style="color:#ccd6e0; font-size:0.88em; line-height:1.65; margin-bottom:20px;">Every AI agent has a real-time mood that shifts based on your questions. Ask the right things and the room opens up. Push too hard and agents shut down, deflect, or turn hostile.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="background:rgba(220,38,38,0.15); border:1px solid rgba(220,38,38,0.3); color:#fca5a5; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Hostile 0-15</span>
+              <span style="background:rgba(234,88,12,0.15); border:1px solid rgba(234,88,12,0.3); color:#fdba74; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Frustrated 16-30</span>
+              <span style="background:rgba(217,119,6,0.15); border:1px solid rgba(217,119,6,0.3); color:#fcd34d; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Skeptical 31-45</span>
+              <span style="background:rgba(148,163,184,0.15); border:1px solid rgba(148,163,184,0.3); color:#cbd5e1; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Neutral 46-55</span>
+              <span style="background:rgba(14,165,233,0.15); border:1px solid rgba(14,165,233,0.3); color:#7dd3fc; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Engaged 56-70</span>
+              <span style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3); color:#86efac; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Supportive 71-85</span>
+              <span style="background:rgba(163,230,53,0.15); border:1px solid rgba(163,230,53,0.3); color:#d9f99d; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Impressed 86-100</span>
+            </div>
+          </div>
+          <!-- Right: Scoring Rubric -->
+          <div>
+            <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">AI Rubric Scoring</p>
+            <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:12px;">Four Dimensions. One Score.</h3>
+            <p style="color:#ccd6e0; font-size:0.88em; line-height:1.65; margin-bottom:20px;">Calculation accuracy is deterministic — your numbers are compared against the answer key with tolerance. The remaining 70% is scored by AI against a structured rubric.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="width:48px; height:48px; border-radius:10px; background:rgba(226,55,68,0.15); border:1px solid rgba(226,55,68,0.3); display:flex; align-items:center; justify-content:center; color:#e23744; font-weight:900; font-size:0.85em; flex-shrink:0;">30%</div>
+                <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Ratio Calculation Accuracy</div><div style="color:#8899aa; font-size:0.75em;">Deterministic — numbers vs answer key</div></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">25%</div>
+                <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Anomaly Identification</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — what you spotted and how</div></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">25%</div>
+                <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Recommendation Coherence</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — right call for your role</div></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">20%</div>
+                <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Panel Cross-Examination</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — defence under pressure</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Intensity Levers ── -->
+      <div style="margin-bottom:64px;">
+        <div style="text-align:center; margin-bottom:28px;">
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Adjustable Difficulty</p>
+          <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:8px;">Three Independent Intensity Levers</h3>
+          <p style="color:#ccd6e0; font-size:0.88em; max-width:580px; margin:0 auto;">Start guided your first time, then crank it up. Each lever changes the experience independently.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+            <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever A — Agent Behaviour</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Guided</strong> <span style="color:#8899aa;">— Agents volunteer information and help you think</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Standard</strong> <span style="color:#8899aa;">— Agents answer what you ask, nothing more</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Brutal</strong> <span style="color:#8899aa;">— Agents mislead, withhold, and have hidden agendas</span></div>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+            <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever B — Time Pressure</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Relaxed</strong> <span style="color:#8899aa;">— No clock. Think at your own pace.</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#7dd3fc;">Standard</strong> <span style="color:#8899aa;">— 25 minutes. Enough if you stay focused.</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Boardroom</strong> <span style="color:#8899aa;">— 15 minutes. The board is waiting.</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Crisis</strong> <span style="color:#8899aa;">— 8 minutes. Every second counts.</span></div>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+            <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever C — Starting Information</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Full Briefing</strong> <span style="color:#8899aa;">— Complete background, all documents</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Partial</strong> <span style="color:#8899aa;">— Role brief only, extract the rest from agents</span></div>
+              <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Cold Start</strong> <span style="color:#8899aa;">— One sentence. You figure out the rest.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Disciplines, SIMs, and Use Cases ── -->
+      <div style="margin-bottom:48px;">
+        <div style="text-align:center; margin-bottom:32px;">
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">The Curriculum</p>
+          <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Disciplines, Simulations, Use Cases</h3>
+          <p style="color:#ccd6e0; font-size:0.92em; max-width:640px; margin:0 auto;">Each MBA discipline contains multiple simulations. Each simulation contains multiple use cases — different companies, different industries, same underlying skills.</p>
+        </div>
+
+        <!-- S01: The Earnings Game -->
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:32px; margin-bottom:20px;">
+          <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:6px; flex-wrap:wrap;">
+            <span style="font-size:0.68em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; background:rgba(226,55,68,0.12); border:1px solid rgba(226,55,68,0.25); padding:4px 12px; border-radius:12px;">SIM 1</span>
+            <h4 style="color:#fff; font-size:1.2em; font-weight:800; margin:0;">The Earnings Game</h4>
+          </div>
+          <p style="color:#94a3b8; font-size:0.82em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Financial Accounting & Reporting</p>
+          <p style="color:#ccd6e0; font-size:0.88em; line-height:1.6; margin-bottom:20px;">A company has just reported earnings that beat expectations. The market is celebrating. But hidden in the financial statements are patterns that tell a very different story. Your job is to find the truth.</p>
+
+          <!-- Use Cases Grid -->
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px;">
+            <a href="http://localhost:3001" target="_blank" style="text-decoration:none; background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.3); border-radius:10px; padding:18px 16px; transition:all 0.2s; cursor:pointer; display:block;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.68em; color:#e23744; font-weight:700; letter-spacing:1px;">UC1</span>
+                <span style="font-size:0.68em; color:#86efac; font-weight:600;">PLAY NOW</span>
+              </div>
+              <div style="color:#fff; font-size:0.92em; font-weight:700; margin-bottom:4px;">Phantom Revenue</div>
+              <div style="color:#8899aa; font-size:0.78em;">FMCG — SunFresh Consumer Goods Ltd</div>
+              <div style="color:#667788; font-size:0.72em; margin-top:8px; line-height:1.4;">Channel stuffing, inflated receivables, divergent cash flows</div>
+            </a>
+            <a href="http://localhost:3001" target="_blank" style="text-decoration:none; background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.3); border-radius:10px; padding:18px 16px; transition:all 0.2s; cursor:pointer; display:block;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.68em; color:#e23744; font-weight:700; letter-spacing:1px;">UC2</span>
+                <span style="font-size:0.68em; color:#86efac; font-weight:600;">PLAY NOW</span>
+              </div>
+              <div style="color:#fff; font-size:0.92em; font-weight:700; margin-bottom:4px;">The Capitalisation Trap</div>
+              <div style="color:#8899aa; font-size:0.78em;">Infrastructure — NovaBuild Infra Pvt Ltd</div>
+              <div style="color:#667788; font-size:0.72em; margin-top:8px; line-height:1.4;">OpEx capitalised as CapEx, inflated EBITDA, covenant breach</div>
+            </a>
+            <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.12); border-radius:10px; padding:18px 16px; opacity:0.6;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">UC3</span>
+                <span style="font-size:0.68em; color:#667788; font-weight:600;">COMING SOON</span>
+              </div>
+              <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-bottom:4px;">The Write-Off Timing</div>
+              <div style="color:#667788; font-size:0.78em;">Pharma — MediCore Pharma Ltd</div>
+              <div style="color:#556677; font-size:0.72em; margin-top:8px; line-height:1.4;">Impairment deferrals, R&D capitalisation, goodwill overhang</div>
+            </div>
+          </div>
+
+          <!-- Roles -->
+          <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:14px; display:flex; gap:24px; flex-wrap:wrap;">
+            <span style="color:#667788; font-size:0.75em; font-weight:600;">4 ROLES:</span>
+            <span style="color:#ccd6e0; font-size:0.75em;">CFO (Medium) — Auditor (Hard) — Analyst (Easy) — Investor (Hardest)</span>
+          </div>
+        </div>
+
+        <!-- Future SIMs -->
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px;">
+          <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+            <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 2-5</span>
+            <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Corporate Finance</div>
+            <div style="color:#667788; font-size:0.78em; margin-top:4px;">Capital structure, valuation, M&A, working capital</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+            <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 6-10</span>
+            <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Marketing & Operations</div>
+            <div style="color:#667788; font-size:0.78em; margin-top:4px;">Pricing, segmentation, supply chain, capacity planning</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+            <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 11-40</span>
+            <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Full MBA Curriculum</div>
+            <div style="color:#667788; font-size:0.78em; margin-top:4px;">Strategy, OB, economics, analytics, leadership, M&A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subject Pills -->
+      <div class="mba-subjects">
+        <span class="mba-pill">Financial Accounting</span>
+        <span class="mba-pill">Corporate Finance</span>
+        <span class="mba-pill">Marketing Management</span>
+        <span class="mba-pill">Operations Management</span>
+        <span class="mba-pill">Organizational Behavior</span>
+        <span class="mba-pill">Business Strategy</span>
+        <span class="mba-pill">Microeconomics</span>
+        <span class="mba-pill">Macroeconomics</span>
+        <span class="mba-pill">Business Analytics</span>
+        <span class="mba-pill">Leadership & Ethics</span>
+        <span class="mba-pill">Entrepreneurship</span>
+        <span class="mba-pill">Supply Chain</span>
+        <span class="mba-pill">International Business</span>
+        <span class="mba-pill">Mergers & Acquisitions</span>
+      </div>
+      <p style="text-align:center; color:#ffffff; font-size:1em; font-weight:700; margin-top:24px;">40 simulations across 14 MBA subject areas</p>
+      <p style="text-align:center; margin-top:16px;"><a class="btn btn-outline" style="font-size:0.9em; padding:12px 28px;" onclick="navigateTo('access')">Join the MBA Waitlist</a></p>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: SHARKS                                               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view" data-page="sharks">
+
+  <div style="background:#0d1117; padding:80px 48px;">
+    <div style="max-width:1080px; margin:0 auto;">
+      <div class="breadcrumb" style="padding:0 0 32px;"><a onclick="navigateTo('home')">Home</a><span class="sep">/</span><span class="current">Simulab Sharks</span></div>
+      <div class="sharks-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+
+        <div>
+          <div class="section-label" style="color:#ff9aa2;">Free Tool — For Founders</div>
+          <h2 style="color:white; font-size:2em; margin-bottom:16px;">Pitch Your Startup to<br><span>6 AI Sharks</span></h2>
+          <p style="color:#ffffff; font-size:1em; line-height:1.75; margin-bottom:28px;">
+            Before you walk into a real investor room, walk into ours. Simulab Sharks puts your startup idea in front of 6 expert AI panelists — an investor, CFO, regulator, customer, marketing strategist, and tech architect. They ask the hard questions. You answer. They score you.
+          </p>
+          <ul style="list-style:none; padding:0; margin-bottom:32px;">
+            <li style="color:#dde4eb; font-size:0.92em; padding:6px 0; border-bottom:1px solid #1a2030;">&rarr;&nbsp;&nbsp;7 intake questions to define your pitch</li>
+            <li style="color:#dde4eb; font-size:0.92em; padding:6px 0; border-bottom:1px solid #1a2030;">&rarr;&nbsp;&nbsp;30 AI-generated questions across 6 expert personas</li>
+            <li style="color:#dde4eb; font-size:0.92em; padding:6px 0; border-bottom:1px solid #1a2030;">&rarr;&nbsp;&nbsp;Full scoring with Fund / Conditional / Pass verdict</li>
+            <li style="color:#dde4eb; font-size:0.92em; padding:6px 0;">&rarr;&nbsp;&nbsp;Investment memo with strengths, concerns and conditions</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <span style="background:#e23744; color:white; padding:13px 28px; border-radius:8px; font-weight:700; font-size:0.95em; opacity:0.6; cursor:default;">Coming Soon — Free</span>
+            <a style="color:#dde4eb; font-size:0.9em; text-decoration:none; border-bottom:1px solid #334; cursor:pointer;" onclick="navigateTo('access')">Get notified &rarr;</a>
+          </div>
+          <p style="color:#ccd6e0; font-size:0.78em; margin-top:14px;">Designed for startup founders, MBA students, and entrepreneurship programs.</p>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1e2a3a; border-radius:16px; padding:32px; position:relative; overflow:hidden;">
+          <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right,#e23744,#b8860b);"></div>
+          <div style="text-align:center; margin-bottom:24px;">
+            <div style="font-size:0.78em; text-transform:uppercase; letter-spacing:2px; color:#b8860b; font-weight:700; margin-bottom:8px;">The Panel</div>
+            <div style="color:white; font-weight:800; font-size:1.1em;">Simulab Sharks</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x1F4B0;</span>
+              <div><div style="color:#b8860b; font-size:0.82em; font-weight:700;">Raj Mehta</div><div style="color:#ccd6e0; font-size:0.78em;">Lead Investor — Market size & scalability</div></div>
+            </div>
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x1F4CA;</span>
+              <div><div style="color:#4fc08d; font-size:0.82em; font-weight:700;">Priya Sharma</div><div style="color:#ccd6e0; font-size:0.78em;">CFO — Unit economics & burn rate</div></div>
+            </div>
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x2696;</span>
+              <div><div style="color:#e05c5c; font-size:0.82em; font-weight:700;">Arun Nair</div><div style="color:#ccd6e0; font-size:0.78em;">Regulator — Compliance & legal risk</div></div>
+            </div>
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x1F3AF;</span>
+              <div><div style="color:#f1c40f; font-size:0.82em; font-weight:700;">Meera Iyer</div><div style="color:#ccd6e0; font-size:0.78em;">Customer Champion — User pain & research</div></div>
+            </div>
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x1F4E3;</span>
+              <div><div style="color:#a78bfa; font-size:0.82em; font-weight:700;">Vikram Das</div><div style="color:#ccd6e0; font-size:0.78em;">Marketing — GTM strategy & positioning</div></div>
+            </div>
+            <div style="background:#0d1117; border:1px solid #1e2a3a; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4em;">&#x2699;</span>
+              <div><div style="color:#38bdf8; font-size:0.82em; font-weight:700;">Ananya Rao</div><div style="color:#ccd6e0; font-size:0.78em;">Tech Architect — Feasibility & IP</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: WHO IT'S FOR                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view" data-page="who">
+
+  <div class="who-section">
+    <div class="who-inner">
+      <div class="breadcrumb" style="padding:0 0 32px;"><a onclick="navigateTo('home')">Home</a><span class="sep">/</span><span class="current">Who It's For</span></div>
+      <div class="section-label">Who It's For</div>
+      <h2>Built for <span>Three Audiences</span></h2>
+      <p class="section-sub">Whether you're applying your learning solo, with a team, or as part of a course — CXO Simulabs fits right alongside what you're already doing.</p>
+
+      <div class="who-grid">
+
+        <div class="who-card">
+          <div class="who-icon">&#x1F3AF;</div>
+          <h3>CXO Aspirants</h3>
+          <p>You're a working professional aiming for the C-suite. You've taken the courses, earned the certifications, read the books. Now test whether you can actually make the calls a CXO makes — and find out where to sharpen up.</p>
+          <ul>
+            <li>Apply frameworks you've learned to real scenarios</li>
+            <li>Benchmark your decisions against peers</li>
+            <li>Get AI feedback on your reasoning gaps</li>
+            <li>Build the judgment that levels you up to CXO</li>
+          </ul>
+        </div>
+
+        <div class="who-card">
+          <div class="who-icon">&#x1F3E2;</div>
+          <h3>Businesses & L&D Teams</h3>
+          <p>You invest in training your people. Now give them a place to apply it — simulations that build better decision-makers and stronger leadership pipelines across your organisation.</p>
+          <ul>
+            <li>Turn training spend into measurable skill</li>
+            <li>Identify and develop your next CXO bench</li>
+            <li>Run team simulations to build alignment</li>
+            <li>See how your talent actually thinks under pressure</li>
+          </ul>
+        </div>
+
+        <div class="who-card">
+          <div class="who-icon">&#x1F393;</div>
+          <h3>Educators & Students</h3>
+          <p>The classroom teaches the theory. CXO Simulabs adds the application layer — so students don't just learn about RICE, A/B testing, or unit economics, they actually use them to make decisions.</p>
+          <ul>
+            <li>Add hands-on practice to any business course</li>
+            <li>Students apply classroom frameworks in real scenarios</li>
+            <li>Works alongside MBAs, bootcamps, and online courses</li>
+            <li>Per-cohort licensing available for institutions</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PAGE: GET ACCESS                                           -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-view" data-page="access">
+
+  <div class="waitlist-section">
+    <div class="waitlist-inner">
+      <div class="breadcrumb" style="padding:0 0 32px; text-align:left;"><a onclick="navigateTo('home')">Home</a><span class="sep">/</span><span class="current">Get Early Access</span></div>
+      <h2>Ready to Apply What You've Learned?</h2>
+      <p class="lead">You've invested in learning. Now complete the loop with practice. Get early access — free during beta.</p>
+
+      <div class="waitlist-grid">
+
+        <div class="wl-card">
+          <h3>&#x1F3AF; I'm a CXO Aspirant</h3>
+          <p>I'm a working professional levelling up for a CXO role. I want to test my skills.</p>
+          <form onsubmit="handleForm(event, 'msg-individual')">
+            <input type="email" placeholder="your@email.com" required>
+            <button type="submit">Get Free Access</button>
+          </form>
+          <p class="wl-note">Free during beta. No credit card.</p>
+          <p class="success-msg" id="msg-individual">&#x2705; You're on the list!</p>
+        </div>
+
+        <div class="wl-card">
+          <h3>&#x1F3E2; I Represent a Business</h3>
+          <p>I want to build better talent and stronger leadership pipelines in my organisation.</p>
+          <form onsubmit="handleForm(event, 'msg-team')">
+            <input type="email" placeholder="work@company.com" required>
+            <button type="submit">Request Team Access</button>
+          </form>
+          <p class="wl-note">We'll reach out to discuss your needs.</p>
+          <p class="success-msg" id="msg-team">&#x2705; We'll be in touch!</p>
+        </div>
+
+        <div class="wl-card">
+          <h3>&#x1F393; I'm an Educator or Student</h3>
+          <p>I want to add application and practice to the theory I'm teaching or learning.</p>
+          <form onsubmit="handleForm(event, 'msg-campus')">
+            <input type="email" placeholder="you@university.edu" required>
+            <button type="submit">Explore Partnership</button>
+          </form>
+          <p class="wl-note">Campus licensing available. Let's talk.</p>
+          <p class="success-msg" id="msg-campus">&#x2705; Partnership request received!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER (always visible) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CXO <span>Simulabs</span></div>
+    <div class="footer-links">
+      <a onclick="navigateTo('home')">Home</a>
+      <a onclick="navigateTo('cxo')">CXO SIMs</a>
+      <a onclick="navigateTo('mba')">MBA SIMs</a>
+      <a onclick="navigateTo('who')">Who It's For</a>
+      <a href="mailto:hello@cxosimulabs.com">hello@cxosimulabs.com</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CXO Simulabs. All rights reserved.</p>
+    <p style="margin-top:12px;font-size:.75em;color:rgba(255,255,255,.6);max-width:740px;margin-left:auto;margin-right:auto;line-height:1.6;">CXO Simulabs is an independent educational platform. Company names and trademarks mentioned on this site belong to their respective owners. CXO Simulabs is not affiliated with, endorsed by, or sponsored by any of the companies featured in these simulations. All scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. Simulations are not professional certifications.</p>
+  </div>
+</footer>
+
+<script>
+  // ── Page Navigation ──
+  function navigateTo(page) {
+    // Hide all pages
+    document.querySelectorAll('.page-view').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    // Show target page
+    var target = document.querySelector('[data-page="' + page + '"]');
+    if (target) target.classList.add('active');
+
+    // Update nav active state
+    document.querySelectorAll('[data-nav]').forEach(function(el) {
+      el.classList.remove('nav-active');
+    });
+    document.querySelectorAll('[data-nav="' + page + '"]').forEach(function(el) {
+      el.classList.add('nav-active');
+    });
+
+    // Update hash
+    history.pushState(null, '', '#' + page);
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Close mobile menu
+    var mm = document.getElementById('mobileMenu');
+    if (mm) mm.classList.remove('open');
+    var hb = document.querySelector('.hamburger');
+    if (hb) hb.classList.remove('open');
+
+    // GA4 tracking
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', { page_title: page, page_location: location.href });
+    }
+  }
+
+  // ── Mobile Menu ──
+  function toggleMobile() {
+    var mm = document.getElementById('mobileMenu');
+    var hb = document.querySelector('.hamburger');
+    mm.classList.toggle('open');
+    hb.classList.toggle('open');
+  }
+
+  // ── Hash Routing ──
+  function routeFromHash() {
+    var hash = location.hash.replace('#', '') || 'home';
+    var valid = ['home', 'cxo', 'mba', 'sharks', 'who', 'access'];
+    if (valid.indexOf(hash) === -1) hash = 'home';
+    navigateTo(hash);
+  }
+
+  // ── Init ──
+  window.addEventListener('popstate', routeFromHash);
+  routeFromHash();
+
+  // ── Waitlist Forms ──
+  function handleForm(e, msgId) {
+    e.preventDefault();
+    document.getElementById(msgId).style.display = 'block';
+    var cohort = msgId === 'msg-individual' ? 'individual' : msgId === 'msg-team' ? 'team' : 'campus';
+    gtag('event', 'lead_signup', { cohort: cohort });
+    e.target.querySelector('input').value = '';
+  }
+
+  // ── SIM Click Tracking ──
+  document.querySelectorAll('a[href*="CPO-SIM"], a[href*="CDO-SIM"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      var url = a.getAttribute('href');
+      var sim = (url.match(/C[PD]O-SIM-\d+-\w+/) || [url])[0];
+      gtag('event', 'sim_clicked', { sim: sim, location: a.classList.contains('sim-tile') ? 'sim_grid' : 'cta_button' });
+    });
+  });
+</script>
+
+</body>
+</html>

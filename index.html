@@ -281,6 +281,11 @@
       .section, .demo-section { padding: 60px 24px; }
       .tracks-section, .who-section, .waitlist-section { padding: 60px 24px; }
       .exp-bar { gap: 20px; padding: 14px 24px; }
+      /* MBA methodology grids */
+      .demo-inner [style*="grid-template-columns:repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+      .demo-inner [style*="grid-template-columns:repeat(6"] { grid-template-columns: repeat(2, 1fr) !important; }
+      .demo-inner [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+      .demo-inner [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -383,7 +388,7 @@
           <li><strong>Multiple Roles</strong> — 4 perspectives per case</li>
           <li><strong>Adjustable Intensity</strong> — Guided to Brutal</li>
         </ul>
-        <p class="track-coming">40 simulations planned. First SIM in development now.</p>
+        <p class="track-coming">40 simulations planned. S01 engine complete — 2 use cases built.</p>
         <a href="#mba-sims" class="track-cta">See the MBA roadmap →</a>
       </div>
 
@@ -644,67 +649,280 @@
   </div>
 </div>
 
-<!-- MBA SIMULATIONS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- MBA SIMULATIONS — FULL METHODOLOGY SHOWCASE                -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<!-- SECTION 1: Hero + Headline -->
 <div class="demo-section" id="mba-sims">
   <div class="demo-inner">
     <div class="section-label">MBA Simulations — AI-Powered</div>
     <h2>40 Case Simulations. <span>One MBA Curriculum.</span></h2>
-    <p class="section-sub">Each simulation puts you in a real business scenario with AI agents who push back, cross-examine, and score your decisions.</p>
+    <p class="section-sub">Each simulation is a live boardroom. AI agents push back, cross-examine your decisions, and score you on a rubric. Same skills, different companies, different industries — that's where pattern recognition is built.</p>
 
+    <!-- KEY NUMBERS -->
     <div class="mba-stats">
       <div class="mba-stat">
+        <div class="mba-stat-value">40</div>
+        <div class="mba-stat-label">Simulations planned</div>
+      </div>
+      <div class="mba-stat">
+        <div class="mba-stat-value">14</div>
+        <div class="mba-stat-label">MBA subject areas</div>
+      </div>
+      <div class="mba-stat">
         <div class="mba-stat-value">4</div>
-        <div class="mba-stat-label">Roles per SIM</div>
+        <div class="mba-stat-label">Roles per simulation</div>
       </div>
       <div class="mba-stat">
-        <div class="mba-stat-value">AI</div>
-        <div class="mba-stat-label">Agents that push back</div>
-      </div>
-      <div class="mba-stat">
-        <div class="mba-stat-value">Panel</div>
-        <div class="mba-stat-label">Cross-examination</div>
-      </div>
-      <div class="mba-stat">
-        <div class="mba-stat-value">Scored</div>
-        <div class="mba-stat-label">AI rubric grading</div>
+        <div class="mba-stat-value">6</div>
+        <div class="mba-stat-label">Bloom's levels tested</div>
       </div>
     </div>
 
-    <div class="sim-grid">
-
-      <div class="sim-tile" style="border-color:rgba(226,55,68,0.4); background:rgba(226,55,68,0.06);">
-        <div class="sim-num">SIM 1</div>
-        <div class="sim-name">The Earnings Game</div>
-        <div class="sim-co">Financial Accounting & Reporting</div>
-        <div class="sim-play" style="opacity:1; color:#ff9aa2;">In Development</div>
+    <!-- ── SECTION 2: The 5 Phases ── -->
+    <div style="margin-bottom:64px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">How It Works</p>
+        <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Five Phases. One Decision.</h3>
+        <p style="color:#ccd6e0; font-size:0.92em; max-width:600px; margin:0 auto;">Every simulation follows the same rigorous structure. No shortcuts. No hand-holding. Your decision is final.</p>
       </div>
-
-      <div class="sim-tile locked">
-        <div class="sim-num">SIM 2</div>
-        <div class="sim-name">The Capitalisation Trap</div>
-        <div class="sim-co">Corporate Finance</div>
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px;">
+        <div style="background:rgba(226,55,68,0.12); border:1px solid rgba(226,55,68,0.3); border-radius:12px; padding:22px 16px; text-align:center;">
+          <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 1</div>
+          <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">BRIEF</div>
+          <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Study the case. Run the numbers. Complete the calculation worksheet.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+          <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 2</div>
+          <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">CONSULT</div>
+          <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Question AI agents in the boardroom. Extract information. Read the room.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+          <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 3</div>
+          <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">DECIDE</div>
+          <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Make your call. Write your reasoning. Lock in your confidence level.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+          <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 4</div>
+          <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">PANEL</div>
+          <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">Defend your decision under AI cross-examination. No safety net.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:22px 16px; text-align:center;">
+          <div style="color:#e23744; font-size:0.7em; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Phase 5</div>
+          <div style="color:#fff; font-size:1em; font-weight:700; margin-bottom:6px;">SCORED</div>
+          <p style="color:#ccd6e0; font-size:0.78em; line-height:1.5;">AI rubric grading. Debrief report. Certificate and badge.</p>
+        </div>
       </div>
-
-      <div class="sim-tile locked">
-        <div class="sim-num">SIM 3</div>
-        <div class="sim-name">The Write-Off Timing</div>
-        <div class="sim-co">Financial Reporting</div>
-      </div>
-
-      <div class="sim-tile locked">
-        <div class="sim-num">SIM 4 – 10</div>
-        <div class="sim-name">Coming Soon</div>
-        <div class="sim-co">Marketing · Operations · Strategy</div>
-      </div>
-
-      <div class="sim-tile locked">
-        <div class="sim-num">SIM 11 – 40</div>
-        <div class="sim-name">Full MBA Curriculum</div>
-        <div class="sim-co">40 simulations planned</div>
-      </div>
-
     </div>
 
+    <!-- ── SECTION 3: Bloom's Taxonomy ── -->
+    <div style="margin-bottom:64px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Pedagogical Rigour</p>
+        <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Full Bloom's Taxonomy Coverage</h3>
+        <p style="color:#ccd6e0; font-size:0.92em; max-width:620px; margin:0 auto;">Every simulation tests all six cognitive levels. Most case studies stop at Analyse. We go all the way to Create.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:10px;">
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 1</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Remember</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Recall concepts via learning cards and agent probing</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">BRIEF + CONSULT</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 2</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Understand</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Articulate understanding in agent conversations</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">CONSULT</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 3</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Apply</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Use formulas on real data in the calculation worksheet</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">BRIEF</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 4</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Analyse</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Spot anomalies and red flags in financial statements</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">DECIDE</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 5</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Evaluate</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Make the right judgement call for your role</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">DECIDE</div>
+        </div>
+        <div style="background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.25); border-radius:10px; padding:18px 14px; text-align:center;">
+          <div style="color:#94a3b8; font-size:0.65em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Level 6</div>
+          <div style="color:#fff; font-size:0.88em; font-weight:700; margin-bottom:6px;">Create</div>
+          <p style="color:#8899aa; font-size:0.72em; line-height:1.45;">Defend and synthesise under live cross-examination</p>
+          <div style="margin-top:8px; font-size:0.65em; color:#e23744; font-weight:600;">PANEL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: Boardroom Dynamics ── -->
+    <div style="margin-bottom:64px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+
+        <!-- Left: Boardroom Pulse -->
+        <div>
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Boardroom Pulse</p>
+          <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:12px;">The Room Has a Mood</h3>
+          <p style="color:#ccd6e0; font-size:0.88em; line-height:1.65; margin-bottom:20px;">Every AI agent has a real-time mood that shifts based on your questions. Ask the right things and the room opens up. Push too hard and agents shut down, deflect, or turn hostile.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:rgba(220,38,38,0.15); border:1px solid rgba(220,38,38,0.3); color:#fca5a5; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Hostile 0–15</span>
+            <span style="background:rgba(234,88,12,0.15); border:1px solid rgba(234,88,12,0.3); color:#fdba74; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Frustrated 16–30</span>
+            <span style="background:rgba(217,119,6,0.15); border:1px solid rgba(217,119,6,0.3); color:#fcd34d; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Skeptical 31–45</span>
+            <span style="background:rgba(148,163,184,0.15); border:1px solid rgba(148,163,184,0.3); color:#cbd5e1; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Neutral 46–55</span>
+            <span style="background:rgba(14,165,233,0.15); border:1px solid rgba(14,165,233,0.3); color:#7dd3fc; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Engaged 56–70</span>
+            <span style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3); color:#86efac; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Supportive 71–85</span>
+            <span style="background:rgba(163,230,53,0.15); border:1px solid rgba(163,230,53,0.3); color:#d9f99d; padding:5px 14px; border-radius:16px; font-size:0.75em; font-weight:600;">Impressed 86–100</span>
+          </div>
+        </div>
+
+        <!-- Right: Scoring Rubric -->
+        <div>
+          <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">AI Rubric Scoring</p>
+          <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:12px;">Four Dimensions. One Score.</h3>
+          <p style="color:#ccd6e0; font-size:0.88em; line-height:1.65; margin-bottom:20px;">Calculation accuracy is deterministic — your numbers are compared against the answer key with tolerance. The remaining 70% is scored by AI against a structured rubric.</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:48px; height:48px; border-radius:10px; background:rgba(226,55,68,0.15); border:1px solid rgba(226,55,68,0.3); display:flex; align-items:center; justify-content:center; color:#e23744; font-weight:900; font-size:0.85em; flex-shrink:0;">30%</div>
+              <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Ratio Calculation Accuracy</div><div style="color:#8899aa; font-size:0.75em;">Deterministic — numbers vs answer key</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">25%</div>
+              <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Anomaly Identification</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — what you spotted and how</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">25%</div>
+              <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Recommendation Coherence</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — right call for your role</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:48px; height:48px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#ccd6e0; font-weight:900; font-size:0.85em; flex-shrink:0;">20%</div>
+              <div><div style="color:#fff; font-size:0.88em; font-weight:700;">Panel Cross-Examination</div><div style="color:#8899aa; font-size:0.75em;">AI-scored — defence under pressure</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 5: Intensity Levers ── -->
+    <div style="margin-bottom:64px;">
+      <div style="text-align:center; margin-bottom:28px;">
+        <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Adjustable Difficulty</p>
+        <h3 style="color:#fff; font-size:1.4em; font-weight:800; margin-bottom:8px;">Three Independent Intensity Levers</h3>
+        <p style="color:#ccd6e0; font-size:0.88em; max-width:580px; margin:0 auto;">Start guided your first time, then crank it up. Each lever changes the experience independently.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+          <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever A — Agent Behaviour</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Guided</strong> <span style="color:#8899aa;">— Agents volunteer information and help you think</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Standard</strong> <span style="color:#8899aa;">— Agents answer what you ask, nothing more</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Brutal</strong> <span style="color:#8899aa;">— Agents mislead, withhold, and have hidden agendas</span></div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+          <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever B — Time Pressure</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Relaxed</strong> <span style="color:#8899aa;">— No clock. Think at your own pace.</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#7dd3fc;">Standard</strong> <span style="color:#8899aa;">— 25 minutes. Enough if you stay focused.</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Boardroom</strong> <span style="color:#8899aa;">— 15 minutes. The board is waiting.</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Crisis</strong> <span style="color:#8899aa;">— 8 minutes. Every second counts.</span></div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 20px;">
+          <div style="color:#e23744; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Lever C — Starting Information</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#86efac;">Full Briefing</strong> <span style="color:#8899aa;">— Complete background, all documents</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fcd34d;">Partial</strong> <span style="color:#8899aa;">— Role brief only, extract the rest from agents</span></div>
+            <div style="color:#fff; font-size:0.85em;"><strong style="color:#fca5a5;">Cold Start</strong> <span style="color:#8899aa;">— One sentence. You figure out the rest.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 6: Disciplines, SIMs, and Use Cases ── -->
+    <div style="margin-bottom:48px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <p style="font-size:0.78em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">The Curriculum</p>
+        <h3 style="color:#fff; font-size:1.6em; font-weight:800; margin-bottom:8px;">Disciplines, Simulations, Use Cases</h3>
+        <p style="color:#ccd6e0; font-size:0.92em; max-width:640px; margin:0 auto;">Each MBA discipline contains multiple simulations. Each simulation contains multiple use cases — different companies, different industries, same underlying skills.</p>
+      </div>
+
+      <!-- S01: The Earnings Game -->
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:32px; margin-bottom:20px;">
+        <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:6px; flex-wrap:wrap;">
+          <span style="font-size:0.68em; color:#e23744; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; background:rgba(226,55,68,0.12); border:1px solid rgba(226,55,68,0.25); padding:4px 12px; border-radius:12px;">SIM 1</span>
+          <h4 style="color:#fff; font-size:1.2em; font-weight:800; margin:0;">The Earnings Game</h4>
+        </div>
+        <p style="color:#94a3b8; font-size:0.82em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Financial Accounting & Reporting</p>
+        <p style="color:#ccd6e0; font-size:0.88em; line-height:1.6; margin-bottom:20px;">A company has just reported earnings that beat expectations. The market is celebrating. But hidden in the financial statements are patterns that tell a very different story. Your job is to find the truth.</p>
+
+        <!-- Use Cases Grid -->
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px;">
+          <a href="http://localhost:3001" target="_blank" style="text-decoration:none; background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.3); border-radius:10px; padding:18px 16px; transition:all 0.2s; cursor:pointer; display:block;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+              <span style="font-size:0.68em; color:#e23744; font-weight:700; letter-spacing:1px;">UC1</span>
+              <span style="font-size:0.68em; color:#86efac; font-weight:600;">PLAY NOW</span>
+            </div>
+            <div style="color:#fff; font-size:0.92em; font-weight:700; margin-bottom:4px;">Phantom Revenue</div>
+            <div style="color:#8899aa; font-size:0.78em;">FMCG — SunFresh Consumer Goods Ltd</div>
+            <div style="color:#667788; font-size:0.72em; margin-top:8px; line-height:1.4;">Channel stuffing, inflated receivables, divergent cash flows</div>
+          </a>
+          <a href="http://localhost:3001" target="_blank" style="text-decoration:none; background:rgba(226,55,68,0.08); border:1px solid rgba(226,55,68,0.3); border-radius:10px; padding:18px 16px; transition:all 0.2s; cursor:pointer; display:block;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+              <span style="font-size:0.68em; color:#e23744; font-weight:700; letter-spacing:1px;">UC2</span>
+              <span style="font-size:0.68em; color:#86efac; font-weight:600;">PLAY NOW</span>
+            </div>
+            <div style="color:#fff; font-size:0.92em; font-weight:700; margin-bottom:4px;">The Capitalisation Trap</div>
+            <div style="color:#8899aa; font-size:0.78em;">Infrastructure — NovaBuild Infra Pvt Ltd</div>
+            <div style="color:#667788; font-size:0.72em; margin-top:8px; line-height:1.4;">OpEx capitalised as CapEx, inflated EBITDA, covenant breach</div>
+          </a>
+          <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.12); border-radius:10px; padding:18px 16px; opacity:0.6;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+              <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">UC3</span>
+              <span style="font-size:0.68em; color:#667788; font-weight:600;">COMING SOON</span>
+            </div>
+            <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-bottom:4px;">The Write-Off Timing</div>
+            <div style="color:#667788; font-size:0.78em;">Pharma — MediCore Pharma Ltd</div>
+            <div style="color:#556677; font-size:0.72em; margin-top:8px; line-height:1.4;">Impairment deferrals, R&D capitalisation, goodwill overhang</div>
+          </div>
+        </div>
+
+        <!-- Roles -->
+        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:14px; display:flex; gap:24px; flex-wrap:wrap;">
+          <span style="color:#667788; font-size:0.75em; font-weight:600;">4 ROLES:</span>
+          <span style="color:#ccd6e0; font-size:0.75em;">CFO (Medium) — Auditor (Hard) — Analyst (Easy) — Investor (Hardest)</span>
+        </div>
+      </div>
+
+      <!-- Future SIMs -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px;">
+        <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+          <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 2–5</span>
+          <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Corporate Finance</div>
+          <div style="color:#667788; font-size:0.78em; margin-top:4px;">Capital structure, valuation, M&A, working capital</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+          <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 6–10</span>
+          <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Marketing & Operations</div>
+          <div style="color:#667788; font-size:0.78em; margin-top:4px;">Pricing, segmentation, supply chain, capacity planning</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:12px; padding:22px 20px; opacity:0.5;">
+          <span style="font-size:0.68em; color:#667788; font-weight:700; letter-spacing:1px;">SIM 11–40</span>
+          <div style="color:#94a3b8; font-size:0.92em; font-weight:700; margin-top:8px;">Full MBA Curriculum</div>
+          <div style="color:#667788; font-size:0.78em; margin-top:4px;">Strategy, OB, economics, analytics, leadership, M&A</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subject Pills -->
     <div class="mba-subjects">
       <span class="mba-pill">Financial Accounting</span>
       <span class="mba-pill">Corporate Finance</span>
