@@ -107,29 +107,32 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 .featured-card p{color:var(--text-light);font-size:.92em;line-height:1.65;margin-bottom:16px}
 
 /* ── Track Detail ── */
-.track-hero{padding:80px 48px 50px}
+.track-hero{padding:80px 48px 40px}
 .track-hero h1{font-size:2.8em;margin-bottom:4px}
-.track-hero .track-abbr-large{font-size:4em;font-weight:900;color:rgba(255,255,255,.08);position:absolute;top:20px;right:48px;letter-spacing:4px;pointer-events:none}
-.track-stats{display:flex;gap:32px;margin-top:20px;justify-content:center}
-.track-stat{text-align:center;padding:12px 24px;background:rgba(255,255,255,.06);border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+.track-stats{display:flex;gap:32px;margin-top:24px;justify-content:center}
+.track-stat{text-align:center;padding:14px 28px;background:rgba(255,255,255,.05);border-radius:10px;border:1px solid rgba(255,255,255,.08)}
 .track-stat .val{font-size:2em;font-weight:900;color:#fff}
 .track-stat .lbl{font-size:.72em;color:var(--text-light);text-transform:uppercase;letter-spacing:1.5px;margin-top:2px}
+.track-body-dark{background:var(--navy);padding:0 48px 60px}
+.track-body-inner{max-width:1200px;margin:0 auto}
 
-/* ── Discipline Grid ── */
-.disc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.disc-card{background:#fff;border-radius:12px;padding:22px 24px;border:1px solid var(--border);display:flex;flex-direction:column}
-.disc-card:hover{border-color:rgba(226,55,68,.3);box-shadow:0 4px 16px rgba(0,0,0,.05)}
-.disc-card .disc-num{font-size:.65em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
-.disc-card h3{font-size:1em;font-weight:800;color:var(--navy);margin:0 0 12px}
-.disc-sims{display:flex;flex-direction:column;gap:8px;flex:1}
-.disc-sim-row{display:flex;align-items:center;gap:10px}
-.disc-sim-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.disc-sim-company{font-size:.82em;font-weight:600;color:var(--text-dark);flex:1}
-.disc-sim-actions{display:flex;gap:6px;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--bg-light);flex-wrap:wrap}
-.sim-tier{font-size:.6em;padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
-.tier1-badge{background:#dbeafe;color:#1e40af}
-.tier2-badge{background:rgba(226,55,68,.12);color:var(--red)}
-.sim-link{color:var(--red);text-decoration:none;font-size:.78em;font-weight:700;white-space:nowrap;padding:5px 12px;border-radius:6px;border:1px solid rgba(226,55,68,.2);transition:all .2s}.sim-link:hover{background:rgba(226,55,68,.06);border-color:var(--red)}
+/* ── Discipline Sections (Dark Cloak) ── */
+.disc-section{margin-bottom:32px}
+.disc-section-header{margin-bottom:14px}
+.disc-section-num{font-size:.7em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:2px}
+.disc-section-title{font-size:1.1em;font-weight:800;color:#fff;margin-top:2px}
+.sim-grid-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.sim-tile-t{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;gap:8px;transition:all .25s;text-decoration:none;min-height:130px}
+.sim-tile-t:hover{background:rgba(255,255,255,.08);border-color:rgba(226,55,68,.35);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.sim-tile-t .st-num{font-size:.7em;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.sim-tile-t .st-company{color:#fff;font-size:.92em;font-weight:700;line-height:1.35;flex:1}
+.sim-tile-t .st-accent{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.sim-tile-t .st-tiers{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.sim-tile-t .st-tier{font-size:.62em;padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.st-tier-1{background:rgba(59,130,246,.15);color:#93c5fd}
+.st-tier-2{background:rgba(226,55,68,.15);color:#ff9aa2}
+.sim-tile-t .st-action{font-size:.75em;color:var(--red);font-weight:700;opacity:0;transition:opacity .2s;margin-top:4px}
+.sim-tile-t:hover .st-action{opacity:1}
 
 /* ── Forms ── */
 .form-container{max-width:520px;margin:0 auto;padding:0 24px}
@@ -326,12 +329,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .disclaimer-bar{padding:20px 16px}
   .bp-panel{flex-direction:column}
   .bp-temp{flex:none}
-  .track-hero{padding:40px 20px 36px}.track-hero h1{font-size:2em}
-  .track-abbr-large{display:none!important}
+  .track-hero{padding:40px 20px 30px}.track-hero h1{font-size:2em}
+  .track-body-dark{padding:0 20px 40px}
   .track-stats{gap:12px;flex-wrap:wrap}
   .track-stat{padding:10px 18px}
-  .disc-grid{grid-template-columns:1fr}
-  .disc-card{padding:18px 16px}
+  .sim-grid-track{grid-template-columns:repeat(2,1fr)}
   [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important}
@@ -343,6 +345,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .hero h1{font-size:1.7em}
   [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr!important}
+  .sim-grid-track{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -505,8 +508,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 <!-- VIEW 2: TRACK DETAIL                                      -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="view-track" class="view">
-  <div class="hero track-hero" style="position:relative;overflow:hidden" id="track-hero"></div>
-  <div class="section" style="max-width:860px;padding-top:32px;padding-bottom:48px" id="track-body"></div>
+  <div class="hero track-hero" id="track-hero"></div>
+  <div class="track-body-dark" id="track-body"></div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
@@ -1108,54 +1111,53 @@ function openTrack(trackId) {
   var simCount = track.sims;
 
   document.getElementById('track-hero').innerHTML =
-    '<div class="track-abbr-large">' + track.abbr + '</div>' +
     '<div class="hero-eyebrow">' + track.abbr + ' Track</div>' +
     '<h1>' + track.title + '</h1>' +
-    '<p style="max-width:600px;margin:0 auto">' + track.desc + '</p>' +
+    '<p style="max-width:600px;margin:0 auto;color:#fff">' + track.desc + '</p>' +
     '<div class="track-stats">' +
       '<div class="track-stat"><div class="val">' + simCount + '</div><div class="lbl">Simulations</div></div>' +
       '<div class="track-stat"><div class="val">' + discCount + '</div><div class="lbl">Disciplines</div></div>' +
-      '<div class="track-stat"><div class="val">' + (track.id === 'cpo' ? '15' : '8') + '</div><div class="lbl">Companies</div></div>' +
     '</div>';
 
-  var bodyHtml = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px">' +
-    '<div><div class="section-label" style="margin-bottom:4px">Disciplines &amp; Simulations</div>' +
-    '<p style="font-size:.85em;color:var(--text-muted);margin:0">Competency is the hero. The company provides context.</p></div>' +
+  var bodyHtml = '<div class="track-body-inner">';
+
+  bodyHtml += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;padding-top:36px;flex-wrap:wrap;gap:12px">' +
+    '<div><div style="font-size:.78em;text-transform:uppercase;letter-spacing:2.5px;color:#ff9aa2;font-weight:700;margin-bottom:4px">Disciplines &amp; Simulations</div>' +
+    '<p style="font-size:.88em;color:#ccd6e0;margin:0">Competency is the hero. The company provides context.</p></div>' +
     '<span onclick="showView(\'view-landing\')" style="color:var(--red);font-size:.82em;font-weight:700;cursor:pointer">All Tracks</span>' +
     '</div>';
 
-  bodyHtml += '<div class="disc-grid">';
   var discIndex = 0;
   disciplines.forEach(function(d) {
     discIndex++;
-    bodyHtml += '<div class="disc-card">' +
-      '<div class="disc-num">Discipline ' + discIndex + '</div>' +
-      '<h3>' + escapeHtml(d.name) + '</h3>' +
-      '<div class="disc-sims">';
-    d.sims.forEach(function(s) {
-      bodyHtml += '<div class="disc-sim-row">' +
-        '<div class="disc-sim-dot" style="background:' + s.accent + '"></div>' +
-        '<span class="disc-sim-company">' + s.num + ': ' + escapeHtml(s.company) + '</span>' +
-        '</div>';
-    });
-    bodyHtml += '</div><div class="disc-sim-actions">';
+    bodyHtml += '<div class="disc-section">' +
+      '<div class="disc-section-header">' +
+        '<div class="disc-section-num">Discipline ' + discIndex + '</div>' +
+        '<div class="disc-section-title">' + escapeHtml(d.name) + '</div>' +
+      '</div>' +
+      '<div class="sim-grid-track">';
     d.sims.forEach(function(s) {
       var ghUrl = 'https://CXO-Simulabs.github.io/' + s.repo + '/';
-      if (s.tier1) {
-        bodyHtml += '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="sim-link" onclick="trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})">' + s.num + ' MCQ</a>';
-      }
-      if (s.tier2) {
-        bodyHtml += '<span class="sim-link" style="cursor:pointer;border-color:var(--red);color:var(--red)" onclick="launchSim();trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier2\'})">Boardroom</span>';
-      }
+      var clickAction = s.tier1 ? 'onclick="window.open(\'' + ghUrl + '\',\'_blank\');trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})"' : '';
+      bodyHtml += '<div class="sim-tile-t" style="cursor:pointer" ' + clickAction + '>' +
+        '<div class="st-num">' + s.num + '</div>' +
+        '<div class="st-company"><span class="st-accent" style="background:' + s.accent + '"></span>' + escapeHtml(s.company) + '</div>' +
+        '<div class="st-tiers">';
+      if (s.tier1) bodyHtml += '<span class="st-tier st-tier-1">Tier 1: MCQ</span>';
+      if (s.tier2) bodyHtml += '<span class="st-tier st-tier-2">Tier 2: Boardroom</span>';
+      bodyHtml += '</div>' +
+        '<div class="st-action">' + (s.tier2 ? 'Enter Boardroom' : 'Open SIM') + '</div>' +
+        '</div>';
     });
     bodyHtml += '</div></div>';
   });
-  bodyHtml += '</div>';
 
-  bodyHtml += '<div style="text-align:center;margin-top:32px;padding:28px;background:var(--navy);border-radius:12px">' +
-    '<p style="color:var(--text-light);font-size:.92em;margin-bottom:14px">Ready to test your ' + track.title + ' skills?</p>' +
+  bodyHtml += '<div style="text-align:center;margin-top:40px;padding:36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px">' +
+    '<p style="color:#fff;font-size:.95em;font-weight:700;margin-bottom:14px">Ready to test your ' + track.title + ' skills?</p>' +
     '<button class="btn btn-red" onclick="showView(\'view-request\')" style="font-size:.9em;padding:12px 32px">Request Access</button>' +
     '</div>';
+
+  bodyHtml += '</div>';
 
   document.getElementById('track-body').innerHTML = bodyHtml;
   document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
