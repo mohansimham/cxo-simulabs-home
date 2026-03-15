@@ -82,12 +82,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 
 /* ── Track Cards Grid ── */
 .track-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.track-card{background:#fff;border-radius:12px;padding:24px;border:2px solid var(--border);transition:all .2s;cursor:pointer;position:relative}
+.track-card{background:#fff;border-radius:12px;padding:24px;border:2px solid var(--border);transition:all .2s;cursor:pointer;position:relative;display:flex;flex-direction:column}
 .track-card:hover:not(.coming-soon){border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(226,55,68,.12)}
 .track-card.coming-soon{opacity:.45;cursor:default}
 .track-card .tc-abbr{font-size:1.6em;font-weight:900;color:var(--navy);margin-bottom:2px}
 .track-card .tc-title{font-size:.82em;font-weight:700;color:var(--text-dark);margin-bottom:6px}
-.track-card .tc-desc{font-size:.75em;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
+.track-card .tc-desc{font-size:.75em;color:var(--text-muted);line-height:1.5;margin-bottom:10px;flex:1}
 .track-card .tc-status{font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block}
 .tc-live{background:rgba(22,163,74,.1);color:#16a34a;border:1px solid rgba(22,163,74,.3)}
 .tc-soon{background:var(--bg-light);color:#94a3b8;border:1px solid var(--border)}
