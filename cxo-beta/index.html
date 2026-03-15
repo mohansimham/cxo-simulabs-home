@@ -1071,8 +1071,13 @@ function updateNav(view) {
 }
 
 window.addEventListener('popstate', function(e) {
-  if (e.state && e.state.view) showView(e.state.view, false);
-  else showView('view-landing', false);
+  if (e.state && e.state.view) {
+    if (e.state.view === 'view-track' && e.state.trackId) {
+      openTrack(e.state.trackId);
+    } else {
+      showView(e.state.view, false);
+    }
+  } else showView('view-landing', false);
 });
 
 // ═══════════════════════════════════════════════════════════════
@@ -1157,7 +1162,11 @@ function openTrack(trackId) {
     '</div>';
 
   document.getElementById('track-body').innerHTML = bodyHtml;
-  showView('view-track');
+  document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
+  document.getElementById('view-track').classList.add('active');
+  window.scrollTo(0,0);
+  history.pushState({ view: 'view-track', trackId: trackId }, '', '#track');
+  updateNav('view-track');
   trackEvent('track_viewed', { track: trackId });
 }
 
@@ -1860,7 +1869,12 @@ renderSelection();
 // Handle direct hash navigation
 (function() {
   var hash = window.location.hash.replace('#','');
-  if (hash && document.getElementById('view-' + hash)) {
+  if (hash === 'track' && currentTrack) {
+    openTrack(currentTrack);
+  } else if (hash === 'track') {
+    // No track selected, default to CPO
+    openTrack('cpo');
+  } else if (hash && document.getElementById('view-' + hash)) {
     showView('view-' + hash, false);
   }
 })();
