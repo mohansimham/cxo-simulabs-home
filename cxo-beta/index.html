@@ -1489,11 +1489,14 @@ async function sendBoardroomMessage(message) {
 
   addLoading();
   try {
+    var _bc = new AbortController(); var _bt = setTimeout(function(){ _bc.abort(); }, 5000);
     var resp = await fetch(API_BASE + '/boardroom', {
       method: 'POST',
       headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
       body: JSON.stringify({ sessionId:sessionId, message:message }),
+      signal: _bc.signal,
     });
+    clearTimeout(_bt);
     removeLoading();
     if (!resp.ok) {
       var err = await resp.json().catch(function(){ return {}; });
@@ -1556,36 +1559,36 @@ async function submitDecision() {
 
   if (offlineMode) {
     await _delay(1200);
-    renderFallbackResults(text);
-    showPhase('phase-results');
-    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
-    return;
+  } else {
+    try {
+      var _sc1 = new AbortController(); var _st1 = setTimeout(function(){ _sc1.abort(); }, 3000);
+      await fetch(API_BASE + '/submit', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
+        body: JSON.stringify({ sessionId:sessionId, decision:text.substring(0,500), reasoning:text, confidence:75 }),
+        signal: _sc1.signal,
+      });
+      clearTimeout(_st1);
+      var _sc2 = new AbortController(); var _st2 = setTimeout(function(){ _sc2.abort(); }, 3000);
+      var scoreResp = await fetch(API_BASE + '/score', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
+        body: JSON.stringify({ sessionId:sessionId }),
+        signal: _sc2.signal,
+      });
+      clearTimeout(_st2);
+      if (scoreResp.ok) {
+        var scoreData = await scoreResp.json();
+        renderResults(scoreData);
+        showPhase('phase-results');
+        trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
+        return;
+      }
+    } catch (err) { /* fall through to fallback */ }
   }
-
-  try {
-    await fetch(API_BASE + '/submit', {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
-      body: JSON.stringify({ sessionId:sessionId, decision:text.substring(0,500), reasoning:text, confidence:75 }),
-    });
-    var scoreResp = await fetch(API_BASE + '/score', {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
-      body: JSON.stringify({ sessionId:sessionId }),
-    });
-    if (scoreResp.ok) {
-      var scoreData = await scoreResp.json();
-      renderResults(scoreData);
-    } else {
-      renderFallbackResults(text);
-    }
-    showPhase('phase-results');
-    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
-  } catch (err) {
-    renderFallbackResults(text);
-    showPhase('phase-results');
-    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
-  }
+  renderFallbackResults(text);
+  showPhase('phase-results');
+  trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
 }
 
 function renderResults(data) {
