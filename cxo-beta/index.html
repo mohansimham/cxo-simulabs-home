@@ -1,0 +1,1759 @@
+<!-- (c) 2026 CXO Simulabs™. All rights reserved. CXO Beta Micro-Site. Powered by Dragon Fire Bloom™. Iron Clad™ protected. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CXO Beta &mdash; C-Suite Simulation Portal | CXO Simulabs&trade;</title>
+
+<!-- Iron Clad: Anti-iframe -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+
+<!-- SEO -->
+<meta name="description" content="16 C-suite simulation tracks. Pick a role, debate AI agents, make the strategic call. Powered by Dragon Fire Bloom™.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cxosimulabs.com/cxo-beta/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="CXO Beta &mdash; C-Suite Simulation Portal | CXO Simulabs&trade;">
+<meta property="og:description" content="16 C-suite simulation tracks. Pick a role, debate AI agents, make the strategic call.">
+<meta property="og:url" content="https://cxosimulabs.com/cxo-beta/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CXO Simulabs&trade;">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CXO Beta &mdash; C-Suite Simulation Portal | CXO Simulabs&trade;">
+<meta name="twitter:description" content="16 C-suite simulation tracks. Pick a role, debate AI agents, make the strategic call.">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CXO Beta — C-Suite Simulation Portal","description":"16 C-suite simulation tracks. Pick a role, debate AI agents, make the strategic call. Powered by Dragon Fire Bloom™.","url":"https://cxosimulabs.com/cxo-beta/","applicationCategory":"EducationalApplication","provider":{"@type":"Organization","name":"CXO Simulabs\u2122","url":"https://cxosimulabs.com"}}
+</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a1a2e;--navy-mid:#16213e;--navy-light:#0f3460;
+  --red:#e23744;--red-dark:#c42f3a;
+  --footer-bg:#0d1117;
+  --bg-light:#f4f5f7;--bg-card:#ffffff;
+  --text-dark:#1a1a2e;--text-muted:#666;--text-light:#ccd6e0;
+  --border:#e2e8f0;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:var(--text-dark);font-size:16px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+
+/* ── Nav ── */
+.nav{background:var(--navy);height:64px;display:flex;align-items:center;padding:0 48px;position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:800;font-size:1.35em;letter-spacing:.5px;cursor:pointer}
+.nav-logo .w{color:#fff}.nav-logo .r{color:var(--red)}
+.nav-logo sup{color:var(--text-light);font-size:.45em}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+.nav-badge{background:rgba(226,55,68,.15);color:#ff9aa2;padding:4px 14px;border-radius:20px;font-size:.75em;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;border:1px solid rgba(226,55,68,.35)}
+.nav-back{color:#fff;text-decoration:none;font-size:.85em;opacity:.7;transition:opacity .2s;cursor:pointer}.nav-back:hover{opacity:1}
+.nav-cta{background:var(--red);color:#fff;border:none;padding:8px 20px;border-radius:6px;font-weight:700;font-size:.82em;cursor:pointer;font-family:inherit;transition:background .2s}.nav-cta:hover{background:var(--red-dark)}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(150deg,var(--navy) 0%,var(--navy-mid) 60%,var(--navy-light) 100%);padding:100px 48px 80px;text-align:center;color:#fff}
+.hero-eyebrow{display:inline-block;background:rgba(226,55,68,.15);color:#ff9aa2;padding:6px 18px;border-radius:20px;font-size:.72em;text-transform:uppercase;letter-spacing:2px;font-weight:700;border:1px solid rgba(226,55,68,.35);margin-bottom:18px}
+.hero h1{font-size:3.2em;font-weight:900;line-height:1.15;letter-spacing:-.5px;max-width:740px;margin:0 auto 14px}
+.hero h1 .hl{color:var(--red)}
+.hero p{font-size:1.05em;color:var(--text-light);max-width:600px;margin:0 auto;line-height:1.65}
+.hero-sub{font-size:.88em;color:#fff;margin-top:12px;font-weight:600}
+
+/* ── Sections ── */
+.section{max-width:960px;margin:0 auto;padding:40px 24px}
+.section-label{font-size:.78em;text-transform:uppercase;letter-spacing:2.5px;color:var(--red);font-weight:700;margin-bottom:8px}
+.section h2{font-size:2em;font-weight:800;color:var(--text-dark);margin-bottom:6px}
+.section-desc{color:var(--text-muted);font-size:.92em;margin-bottom:24px}
+.section-wide{max-width:1140px;margin:0 auto;padding:40px 24px}
+
+/* ── Views ── */
+.view{display:none}.view.active{display:block}
+.phase{display:none}.phase.active{display:block}
+
+/* ── Track Cards Grid ── */
+.track-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.track-card{background:#fff;border-radius:12px;padding:24px;border:2px solid var(--border);transition:all .2s;cursor:pointer;position:relative}
+.track-card:hover:not(.coming-soon){border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(226,55,68,.12)}
+.track-card.coming-soon{opacity:.45;cursor:default}
+.track-card .tc-abbr{font-size:1.6em;font-weight:900;color:var(--navy);margin-bottom:2px}
+.track-card .tc-title{font-size:.82em;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+.track-card .tc-desc{font-size:.75em;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
+.track-card .tc-status{font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block}
+.tc-live{background:rgba(22,163,74,.1);color:#16a34a;border:1px solid rgba(22,163,74,.3)}
+.tc-soon{background:var(--bg-light);color:#94a3b8;border:1px solid var(--border)}
+.tc-count{font-size:.7em;color:var(--text-muted);margin-top:4px}
+
+/* ── How It Works ── */
+.hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.hiw-step{background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border);text-align:center}
+.hiw-num{width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9em;margin:0 auto 12px}
+.hiw-step h4{font-size:.95em;font-weight:700;margin-bottom:6px}
+.hiw-step p{font-size:.82em;color:var(--text-muted);line-height:1.55}
+
+/* ── Featured Card ── */
+.featured-card{background:var(--navy);border-radius:12px;padding:36px;color:#fff;margin-bottom:32px}
+.featured-card .section-label{color:var(--red)}
+.featured-card h3{font-size:1.5em;font-weight:800;margin-bottom:8px;color:#fff}
+.featured-card p{color:var(--text-light);font-size:.92em;line-height:1.65;margin-bottom:16px}
+
+/* ── Track Detail ── */
+.track-hero{padding:60px 48px 50px}
+.track-hero h1{font-size:2.6em}
+.track-stats{display:flex;gap:24px;margin-top:16px;justify-content:center}
+.track-stat{text-align:center}
+.track-stat .val{font-size:1.8em;font-weight:900;color:#fff}
+.track-stat .lbl{font-size:.72em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px}
+
+/* ── Discipline Sections ── */
+.disc-card{background:#fff;border-radius:12px;padding:24px;margin-bottom:16px;border:1px solid var(--border)}
+.disc-card h3{font-size:1.1em;font-weight:800;color:var(--text-dark);margin-bottom:12px}
+.sim-list{display:flex;flex-direction:column;gap:8px}
+.sim-item{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg-light);border-radius:8px;transition:background .2s}
+.sim-item:hover{background:#eef1f5}
+.sim-item-left{display:flex;align-items:center;gap:12px}
+.sim-num{font-size:.72em;font-weight:700;color:var(--red);min-width:42px}
+.sim-company{font-size:.88em;font-weight:600;color:var(--text-dark)}
+.sim-accent{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sim-tier{font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.tier1-badge{background:#dbeafe;color:#1e40af}
+.tier2-badge{background:rgba(226,55,68,.12);color:var(--red)}
+.sim-link{color:var(--red);text-decoration:none;font-size:.82em;font-weight:600;white-space:nowrap}.sim-link:hover{text-decoration:underline}
+
+/* ── Forms ── */
+.form-container{max-width:520px;margin:0 auto;padding:0 24px}
+.form-card{background:#fff;border-radius:12px;padding:32px;border:1px solid var(--border)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.82em;font-weight:600;color:var(--navy);margin-bottom:5px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:.92em;font-family:inherit;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--red)}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-note{font-size:.75em;color:var(--text-muted);margin-top:4px}
+.form-msg{display:none;font-size:.84em;font-weight:500;padding:10px 14px;border-radius:8px;margin-bottom:12px}
+.form-msg.error{background:#fef2f2;color:#dc2626;display:block}
+.form-msg.success{background:#f0fdf4;color:#16a34a;display:block}
+
+/* ── Gate ── */
+.gate-input{text-align:center;font-size:1.4em;font-weight:700;letter-spacing:6px;padding:14px!important}
+
+/* ── Buttons ── */
+.btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:.95em;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(226,55,68,.35)}
+.btn-red:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.25)}.btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--navy);border:2px solid var(--border)}.btn-outline-dark:hover{border-color:var(--red);color:var(--red)}
+.btn-center{text-align:center;margin:24px 0}
+.btn-full{width:100%}
+
+/* ── Scenario Card ── */
+.scenario-card{background:#fff;border-radius:12px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}
+.scenario-card h3{font-size:1.15em;font-weight:700;margin-bottom:10px}
+.challenge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.challenge-item{background:var(--bg-light);border-radius:8px;padding:14px}
+.challenge-item strong{display:block;font-size:.85em;color:var(--red);margin-bottom:4px}
+.challenge-item span{font-size:.82em;color:var(--text-muted);line-height:1.5}
+
+/* ── Motives Board ── */
+.motives-board{background:var(--navy);border-radius:12px;padding:28px;margin-bottom:28px;color:#fff}
+.motives-board h3{font-size:1.1em;font-weight:700;margin-bottom:16px;color:#fff}
+.motive-row{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.motive-row:last-child{border-bottom:none}
+.motive-dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.motive-role{font-weight:700;font-size:.88em;margin-bottom:2px}
+.motive-text{font-size:.84em;color:var(--text-light);line-height:1.5;font-style:italic}
+
+/* ── Role Cards ── */
+.role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.role-card{background:#fff;border-radius:12px;padding:22px;border:2px solid var(--border);cursor:pointer;transition:all .2s}
+.role-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 20px rgba(226,55,68,.15)}
+.role-card.selected{border-color:var(--red);background:rgba(226,55,68,.04)}
+.role-card .title{font-weight:700;font-size:1em;margin-bottom:4px}
+.role-card .stars{color:var(--red);font-size:.9em;margin-bottom:2px}
+.role-card .diff{font-size:.72em;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px;font-weight:600}
+.diff-easy{background:#dcfce7;color:#166534}.diff-medium{background:#fef3c7;color:#92400e}.diff-hard{background:#fed7aa;color:#9a3412}.diff-hardest{background:#fecaca;color:#991b1b}
+.role-card .desc{font-size:.82em;color:var(--text-muted);line-height:1.5}
+.role-card .motive-preview{font-size:.78em;color:var(--text-dark);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-style:italic}
+
+/* ── Intensity Panel ── */
+.intensity-section{background:#fff;border-radius:12px;padding:28px;border:1px solid var(--border);margin-bottom:20px}
+.intensity-section h3{font-size:1em;font-weight:800;margin-bottom:4px}
+.intensity-section .lever-desc{font-size:.82em;color:var(--text-muted);margin-bottom:14px}
+.lever-options{display:flex;gap:10px;flex-wrap:wrap}
+.lever-opt{flex:1;min-width:120px;padding:14px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:all .2s;text-align:center}
+.lever-opt:hover{border-color:rgba(226,55,68,.4)}
+.lever-opt.selected{border-color:var(--red);background:rgba(226,55,68,.04)}
+.lever-opt .lo-name{font-weight:700;font-size:.88em;margin-bottom:4px}
+.lever-opt .lo-detail{font-size:.72em;color:var(--text-muted);line-height:1.4}
+.lever-opt .lo-timer{font-size:.68em;color:var(--red);font-weight:600;margin-top:4px}
+
+/* ── Progress Flow ── */
+.primer-flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:28px;flex-wrap:wrap}
+.primer-step{display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text-muted)}
+.primer-step-num{width:24px;height:24px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72em}
+.primer-step.active .primer-step-num{background:var(--red);color:#fff}
+.primer-step.active{color:var(--text-dark);font-weight:600}
+.primer-step.done .primer-step-num{background:#16a34a;color:#fff}
+.primer-arrow{color:var(--border);font-size:.7em}
+
+/* ── Framework Cards ── */
+.fw-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px}
+.fw-card{background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border);transition:border-color .2s}
+.fw-card:hover{border-color:rgba(226,55,68,.3)}
+.fw-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.fw-card h4{font-size:1.05em;font-weight:800;color:var(--text-dark);margin:0}
+.fw-card-tag{font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.fw-card-what{font-size:.88em;color:var(--text-dark);line-height:1.6;margin-bottom:12px}
+.fw-card-apply{background:var(--bg-light);border-radius:8px;padding:12px 14px;font-size:.84em;line-height:1.6}
+.fw-card-apply strong{color:var(--red);font-size:.72em;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.fw-tip{background:var(--navy);color:#fff;border-radius:12px;padding:20px 24px;font-size:.88em;line-height:1.65}
+.fw-tip strong{color:#fff;display:block;margin-bottom:4px;font-size:.75em;text-transform:uppercase;letter-spacing:1.5px}
+
+/* ── Chat ── */
+.chat-container{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;height:720px}
+.chat-header{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.chat-header-left{display:flex;align-items:center;gap:12px}
+.chat-header h3{font-size:.95em;font-weight:700}
+.chat-role-badge{font-size:.72em;background:rgba(226,55,68,.2);color:#ff9aa2;padding:3px 10px;border-radius:12px;font-weight:600}
+.chat-timer{font-size:.85em;color:var(--text-light);font-variant-numeric:tabular-nums}
+.chat-timer.urgent{color:#ef4444;font-weight:700}
+.chat-messages{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.chat-msg{max-width:85%;padding:12px 16px;border-radius:12px;font-size:.88em;line-height:1.55;white-space:pre-wrap}
+.chat-msg.user{background:var(--red);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chat-msg.agent{background:var(--bg-light);color:var(--text-dark);align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg .agent-name{font-weight:700;font-size:.78em;margin-bottom:4px;display:block}
+.chat-input-area{display:flex;gap:10px;padding:14px 20px;border-top:1px solid var(--border);background:#fafbfc}
+.chat-input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:.88em;resize:none;outline:none;min-height:42px;max-height:120px}
+.chat-input:focus{border-color:var(--red)}
+.chat-send{background:var(--red);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-weight:700;cursor:pointer;font-size:.85em;white-space:nowrap;font-family:inherit}
+.chat-send:disabled{opacity:.5;cursor:not-allowed}
+
+/* ── Boardroom Panel ── */
+.bp-panel{display:flex;gap:12px;padding:12px 16px;background:#f8fafb;border-bottom:1px solid var(--border)}
+.bp-moods{flex:1;display:flex;flex-direction:column;gap:8px;background:#fff;border-radius:10px;padding:12px 14px;border:1px solid var(--border)}
+.bp-moods-title{font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:4px}
+.bp-agent-row{display:flex;flex-direction:column;gap:3px}
+.bp-agent-top{display:flex;align-items:center;justify-content:space-between}
+.bp-agent-left{display:flex;align-items:center;gap:6px}
+.bp-agent-avatar{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.45em;letter-spacing:-.5px}
+.bp-agent-name{font-size:.68em;font-weight:600;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
+.bp-agent-right{display:flex;align-items:center;gap:4px}
+.bp-mood-label{font-size:.55em;font-weight:700}
+.bp-mood-delta{font-size:.5em;font-weight:700}
+.bp-bar-track{height:5px;background:#f1f5f9;border-radius:10px;overflow:hidden}
+.bp-bar-fill{height:100%;border-radius:10px;transition:width 1.2s cubic-bezier(0.34,1.56,0.64,1),background .8s ease}
+.bp-temp{flex:0 0 160px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f0f4ff;border-radius:10px;padding:8px 12px;border:1px solid rgba(14,165,233,.15)}
+.bp-temp-title{font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);margin-bottom:2px}
+
+/* ── Decision ── */
+.decision-area{background:#fff;border-radius:12px;padding:28px;border:1px solid var(--border)}
+.decision-area textarea{width:100%;min-height:160px;padding:14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9em;line-height:1.6;resize:vertical;outline:none}
+.decision-area textarea:focus{border-color:var(--red)}
+.word-count{text-align:right;font-size:.75em;color:var(--text-muted);margin-top:6px}
+
+/* ── Results ── */
+.results-card{background:#fff;border-radius:12px;padding:32px;border:1px solid var(--border);text-align:center}
+.score-ring{width:140px;height:140px;border-radius:50%;border:8px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.score-ring .score-num{font-size:2.2em;font-weight:900}
+.score-ring .score-pct{font-size:.7em;color:var(--text-muted)}
+.tier-badge{display:inline-block;padding:6px 20px;border-radius:20px;font-weight:700;font-size:.9em;margin-bottom:16px}
+.tier-gold{background:#fef3c7;color:#92400e;border:2px solid #f59e0b}
+.tier-silver{background:#f1f5f9;color:#475569;border:2px solid #94a3b8}
+.tier-bronze{background:#fed7aa;color:#9a3412;border:2px solid #fb923c}
+.tier-noaward{background:#fecaca;color:#991b1b;border:2px solid #ef4444}
+.rubric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;text-align:left}
+.rubric-item{background:var(--bg-light);border-radius:8px;padding:14px}
+.rubric-item .label{font-size:.75em;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:600;margin-bottom:4px}
+.rubric-item .val{font-size:1.5em;font-weight:800}
+.feedback-text{text-align:left;background:var(--bg-light);border-radius:8px;padding:16px;font-size:.9em;line-height:1.65;color:var(--text-dark);margin-top:16px}
+
+/* ── Feedback Form ── */
+.fb-card{background:#fff;border-radius:12px;padding:28px;border:1px solid var(--border);margin-top:24px}
+.fb-card h3{font-size:1.1em;font-weight:800;margin-bottom:4px}
+.fb-card .fb-sub{font-size:.85em;color:var(--text-muted);margin-bottom:16px}
+.fb-stars{display:flex;gap:8px;margin-bottom:16px}
+.fb-star{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1em;cursor:pointer;transition:all .2s;background:#fff}
+.fb-star:hover,.fb-star.active{border-color:var(--red);background:rgba(226,55,68,.08);color:var(--red)}
+
+/* ── Disclaimer ── */
+.disclaimer-bar{background:#f8fafc;border-top:1px solid var(--border);padding:24px 48px}
+.disclaimer-inner{max-width:960px;margin:0 auto}
+.disclaimer-inner h4{font-size:.78em;text-transform:uppercase;letter-spacing:2.5px;color:var(--red);font-weight:700;margin-bottom:10px}
+.disclaimer-inner p{font-size:.78em;color:var(--text-muted);line-height:1.7;margin-bottom:8px}
+.disclaimer-inner p:last-child{margin-bottom:0}
+
+/* ── Footer ── */
+.footer{background:var(--footer-bg);padding:36px 48px;margin-top:auto}
+.footer-inner{display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-weight:800;font-size:1.15em;letter-spacing:.5px}
+.footer-logo .w{color:#fff}.footer-logo .r{color:var(--red)}
+.footer-logo sup{color:var(--text-light);font-size:.45em}
+.footer-copy{font-size:.8em;color:var(--text-light)}
+.footer-engine{font-size:.75em;color:var(--red)}
+
+/* ── Loading ── */
+.loading{display:flex;align-items:center;gap:8px;padding:12px 16px;color:var(--text-muted);font-size:.85em}
+.loading-dots span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:bounce .6s infinite alternate}
+.loading-dots span:nth-child(2){animation-delay:.2s}.loading-dots span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{to{opacity:.3;transform:translateY(-4px)}}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .track-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .nav{padding:0 20px}.hero{padding:60px 20px 50px}.hero h1{font-size:2em}
+  .section{padding:24px 16px}.section-wide{padding:24px 16px}
+  .track-grid{grid-template-columns:repeat(2,1fr)}
+  .hiw-grid{grid-template-columns:1fr}
+  .role-grid{grid-template-columns:1fr}
+  .rubric-grid{grid-template-columns:1fr}
+  .lever-options{flex-direction:column}
+  .footer{padding:20px}.footer-inner{flex-direction:column;gap:8px;text-align:center}
+  .chat-container{height:600px}
+  .primer-flow{gap:4px}.primer-step{font-size:.68em}
+  .fw-card-header{flex-direction:column;gap:6px}
+  .disclaimer-bar{padding:20px 16px}
+  .bp-panel{flex-direction:column}
+  .bp-temp{flex:none}
+  .track-hero{padding:40px 20px 36px}.track-hero h1{font-size:2em}
+  .track-stats{gap:16px}
+  .sim-item{flex-direction:column;align-items:flex-start;gap:8px}
+}
+@media(max-width:480px){
+  .track-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.7em}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="nav">
+  <div class="nav-logo" onclick="showView('view-landing')"><span class="w">CXO </span><span class="r">Simulabs</span><sup>&trade;</sup></div>
+  <div class="nav-right" id="nav-right">
+    <span class="nav-badge">CXO Beta</span>
+    <button class="nav-cta" onclick="showView('view-request')">Request Access</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VIEW 1: LANDING                                           -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="view-landing" class="view active">
+
+<div class="hero">
+  <div class="hero-eyebrow">CXO Beta &mdash; Controlled Access</div>
+  <h1>Knowledge Is <span class="hl">Everywhere</span>. Application <span class="hl">Isn't</span>.</h1>
+  <p>16 C-suite tracks. Real company data. AI-powered boardroom simulations. Pick a role, debate agents with competing agendas, and make the strategic call.</p>
+  <div class="hero-sub">Complementary to courses, MBAs, certifications &mdash; not challenging them.</div>
+</div>
+
+<div class="section-wide">
+  <div class="section-label">How It Works</div>
+  <h2 style="margin-bottom:20px">Three Steps to the Boardroom</h2>
+  <div class="hiw-grid">
+    <div class="hiw-step">
+      <div class="hiw-num">1</div>
+      <h4>Browse</h4>
+      <p>Explore 16 C-suite tracks. Each track covers the competencies that define a specific executive role.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">2</div>
+      <h4>Request Access</h4>
+      <p>Submit your details. You'll receive a personal access code within 24 hours.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">3</div>
+      <h4>Simulate</h4>
+      <p>Enter the boardroom. Debate AI agents. Make the strategic call. Get scored on reasoning, frameworks, and engagement.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-wide">
+  <div class="section-label">C-Suite Tracks</div>
+  <h2 style="margin-bottom:20px">16 Executive Simulation Tracks</h2>
+  <div class="track-grid" id="track-grid"></div>
+</div>
+
+<div class="section-wide">
+  <div class="featured-card">
+    <div class="section-label">Featured Simulation</div>
+    <h3>AI-Powered Boardroom &mdash; Platform Decisions &amp; Strategic Thinking</h3>
+    <p>Airbnb, late 2014. The board wants a single 12-month strategic priority. Four executives. Four agendas. One decision. You pick a role &mdash; the rest become AI agents powered by the <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> engine.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-red" onclick="launchSim()">Try the Boardroom Beta</button>
+      <button class="btn btn-outline" onclick="showView('view-request')">Request Access</button>
+    </div>
+  </div>
+</div>
+
+<div class="section-wide">
+  <div class="section-label">Two Tiers of Simulation</div>
+  <h2 style="margin-bottom:20px">What You'll Experience</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:#dbeafe;color:#1e40af;margin-bottom:10px">Tier 1: Strategic MCQ</div>
+      <h4 style="font-weight:700;margin-bottom:6px">Scenario-Based Questions</h4>
+      <p style="font-size:.85em;color:var(--text-muted);line-height:1.55">10 questions per simulation. Real company data. Two attempts with different scenarios testing the same competencies. Instant scoring and certificate.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:rgba(226,55,68,.12);color:var(--red);margin-bottom:10px">Tier 2: AI Boardroom</div>
+      <h4 style="font-weight:700;margin-bottom:6px">Live Agent Debate</h4>
+      <p style="font-size:.85em;color:var(--text-muted);line-height:1.55">Pick a C-suite role. Debate AI agents with hidden agendas. Configure intensity with <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> levers. Get evaluated on reasoning, frameworks, and boardroom engagement.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VIEW 2: TRACK DETAIL                                      -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="view-track" class="view">
+  <div class="hero track-hero" id="track-hero"></div>
+  <div class="section" style="max-width:800px" id="track-body"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VIEW 3: REQUEST ACCESS                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="view-request" class="view">
+<div class="hero" style="padding:60px 48px 50px">
+  <div class="hero-eyebrow">Beta Access</div>
+  <h1 style="font-size:2.4em">Request <span class="hl">Access</span></h1>
+  <p>Submit your details below. You'll receive a personal access code within 24 hours.</p>
+</div>
+<div style="padding:40px 0">
+  <div class="form-container">
+    <div class="form-card">
+      <div id="req-msg" class="form-msg"></div>
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="req-name" maxlength="100" required>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="req-email" maxlength="254" required>
+      </div>
+      <div class="form-group">
+        <label>Organisation</label>
+        <input type="text" id="req-org" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label>Your Role / Title</label>
+        <input type="text" id="req-role" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label>Why are you interested? (optional)</label>
+        <textarea id="req-reason" maxlength="500" rows="3"></textarea>
+      </div>
+      <button class="btn btn-red btn-full" id="btn-req-submit" onclick="submitAccessRequest()">Submit Request</button>
+      <div class="form-note" style="margin-top:10px;text-align:center">Your information is used solely to review your access request.</div>
+    </div>
+    <div class="btn-center">
+      <span class="nav-back" onclick="showView('view-landing')" style="color:var(--text-muted)">Back to all tracks</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VIEW 4: ACCESS GATE                                       -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="view-gate" class="view">
+<div class="hero" style="padding:60px 48px 50px">
+  <div class="hero-eyebrow">Access Gate</div>
+  <h1 style="font-size:2.4em">Enter Your <span class="hl">Access Code</span></h1>
+  <p>Enter the code you received from CXO Simulabs&trade; to unlock the simulation.</p>
+</div>
+<div style="padding:40px 0">
+  <div class="form-container">
+    <div class="form-card" style="text-align:center">
+      <div id="gate-msg" class="form-msg"></div>
+      <div class="form-group">
+        <input type="text" id="gate-code" class="gate-input" maxlength="20" placeholder="ACCESS CODE" autocomplete="off" onkeydown="if(event.key==='Enter')validateGate()">
+      </div>
+      <button class="btn btn-red btn-full" onclick="validateGate()">Unlock Simulation</button>
+      <div class="form-note" style="margin-top:14px">Don't have a code? <span style="color:var(--red);font-weight:600;cursor:pointer" onclick="showView('view-request')">Request access</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VIEW 5: SIMULATION                                        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="view-sim" class="view">
+
+<!-- PHASE: ROLE SELECTION -->
+<div id="phase-select" class="phase active">
+<div class="hero">
+  <div class="hero-eyebrow">CXO Beta &mdash; Tier 2 Simulation</div>
+  <h1><span class="hl">Platform Decisions</span> &amp; Strategic Thinking</h1>
+  <p>Airbnb, late 2014. The board wants a single 12-month strategic priority. Four executives. Four agendas. One decision. You pick a role &mdash; the rest become AI agents.</p>
+</div>
+<div class="section">
+  <div class="section-label">The Scenario</div>
+  <div class="scenario-card">
+    <h3>Airbnb at the Crossroads</h3>
+    <p style="font-size:.9em;color:var(--text-muted);margin-bottom:10px">1.5M listings. $900M revenue. $25B valuation. IPO in 18 months. But five challenges demand attention and you can only pick one priority.</p>
+    <p style="font-size:.72em;color:#94a3b8;line-height:1.5;margin-bottom:14px">All data in this simulation is sourced from publicly available information (SEC filings, published reports, news articles, industry analyses). This is an independent educational product &mdash; not affiliated with or endorsed by Airbnb, Inc.</p>
+    <div class="challenge-grid" id="challenges"></div>
+  </div>
+  <div class="section-label">All Motives &mdash; Transparent</div>
+  <p class="section-desc">Every agent's agenda is visible to you. No hidden information. No sealed briefs. The tension comes from competing priorities, not secrets.</p>
+  <div class="motives-board" id="motives-board"></div>
+  <div class="section-label">Pick Your Role</div>
+  <p class="section-desc">You are 1 vs all. The 3 roles you don't pick become AI agents who will push their own agenda in the boardroom.</p>
+  <div class="role-grid" id="role-grid"></div>
+  <div class="btn-center">
+    <button class="btn btn-red" id="btn-start" disabled onclick="goToPrimer()">Continue to Framework Primer</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: FRAMEWORK PRIMER -->
+<div id="phase-primer" class="phase">
+<div class="section" style="max-width:760px">
+  <div class="primer-flow">
+    <div class="primer-step done"><div class="primer-step-num">1</div> Role</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step active"><div class="primer-step-num">2</div> Frameworks</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">3</div> Intensity</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">4</div> Boardroom</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">5</div> Decision</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">6</div> Score</div>
+  </div>
+  <div class="section-label">Before You Enter</div>
+  <h2>Framework Primer</h2>
+  <p class="section-desc">These are the strategic frameworks the boardroom will reference. You don't need to memorise them &mdash; but knowing them will sharpen your arguments.</p>
+  <div class="fw-grid">
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Porter's Five Forces</h4><span class="fw-card-tag" style="background:#fef3c7;color:#92400e">Competitive Strategy</span></div>
+      <div class="fw-card-what">A framework for analysing the competitive intensity of an industry. The five forces are: threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and rivalry among existing competitors.</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>HomeAway was acquired by Expedia for $3.9B. Booking.com launched Homes. Wimdu is growing 25% QoQ. Tujia has 300K listings in China. The VP Growth will argue the competitive window is 18 months &mdash; Porter's forces explain why.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Two-Sided Platform Economics</h4><span class="fw-card-tag" style="background:#dbeafe;color:#1e40af">Platform Strategy</span></div>
+      <div class="fw-card-what">Platforms create value by connecting two groups (hosts and guests). Network effects mean each new host makes the platform more valuable to guests, and vice versa. The key metric is liquidity &mdash; the probability that a listing gets booked.</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>1.5M listings across 190 countries, but 60% of revenue comes from just 20 cities. Host acquisition cost is $47 with $2,400 LTV. Guest acquisition cost is $31 with $680 LTV. Superhosts (1.2%) generate 22% of revenue.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Ansoff Matrix</h4><span class="fw-card-tag" style="background:#dcfce7;color:#166534">Growth Strategy</span></div>
+      <div class="fw-card-what">Maps growth options along two axes: existing vs new markets, and existing vs new products. The four quadrants are market penetration (low risk), market development, product development, and diversification (highest risk).</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>Expanding to 50 new cities = market development. Launching Experiences = diversification. The pilot showed 4.2x engagement and 20% gross margin vs 12% for accommodation &mdash; but diversification is the riskiest quadrant.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Marketplace Trust Architecture</h4><span class="fw-card-tag" style="background:#fce7f3;color:#9d174d">Product &amp; Operations</span></div>
+      <div class="fw-card-what">Marketplace trust is built in layers: identity verification, reputation systems, quality standards, financial protection, and dispute resolution. Each layer reduces friction but adds cost.</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>Only 31% of guests are ID-verified. Verified Photos covers 23% of listings but delivers 2.5x booking lift. Property damage claims are up 89% YoY. Host Guarantee paid $4.2M in Q3.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Technical Debt</h4><span class="fw-card-tag" style="background:#fef3c7;color:#92400e">Technology Strategy</span></div>
+      <div class="fw-card-what">Technical debt accumulates when short-term engineering shortcuts compound into long-term costs. Like financial debt, it charges "interest" &mdash; slower development, more bugs, higher infrastructure costs.</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>The platform is a Ruby on Rails monolith from 2008. Response times degraded 40%. AWS spend is $18M/year growing 60% YoY. Mobile conversion is 2.1% vs 8.7% desktop.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-header"><h4>Regulatory Strategy Framework</h4><span class="fw-card-tag" style="background:#ede9fe;color:#5b21b6">Public Policy</span></div>
+      <div class="fw-card-what">When facing regulatory threats, companies have four options: fight (legal challenge/lobbying), comply (adapt), partner (shape rules with regulators), or pivot (shift the business model).</div>
+      <div class="fw-card-apply"><strong>Airbnb context</strong>NYC's proposed bill could eliminate 30% of NYC listings &mdash; that's 12% of global revenue. SF registration compliance is at 20%. Barcelona is actively fining hosts. Paris is imposing 120-day caps.</div>
+    </div>
+  </div>
+  <div class="fw-tip"><strong>How to use these in the boardroom</strong>The AI agents will reference these frameworks implicitly. You'll score higher on Framework Application (30% of your grade) when you use them explicitly &mdash; name them, apply them to the data, and show how they inform your strategic priority.</div>
+  <div class="btn-center" style="margin-top:28px">
+    <button class="btn btn-red" onclick="goToIntensity()">Continue to Intensity Setup</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: INTENSITY SETUP -->
+<div id="phase-intensity" class="phase">
+<div class="section" style="max-width:760px">
+  <div class="primer-flow">
+    <div class="primer-step done"><div class="primer-step-num">1</div> Role</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step done"><div class="primer-step-num">2</div> Frameworks</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step active"><div class="primer-step-num">3</div> Intensity</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">4</div> Boardroom</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">5</div> Decision</div>
+    <span class="primer-arrow">&#9654;</span>
+    <div class="primer-step"><div class="primer-step-num">6</div> Score</div>
+  </div>
+  <div class="section-label"><span style="color:var(--red)">Dragon Fire Bloom&trade;</span> Engine</div>
+  <h2>Intensity Configuration</h2>
+  <p class="section-desc">Configure the simulation difficulty. These levers control how the AI agents behave, how much time you have, and how much context you start with.</p>
+
+  <div class="intensity-section">
+    <h3>Lever A &mdash; Agent Behaviour</h3>
+    <div class="lever-desc">How cooperative or adversarial will the AI agents be?</div>
+    <div class="lever-options" id="lever-a">
+      <div class="lever-opt" onclick="setLever('a','guided',this)" data-val="guided">
+        <div class="lo-name">Guided</div>
+        <div class="lo-detail">Agents volunteer information and help you think through the problem</div>
+      </div>
+      <div class="lever-opt selected" onclick="setLever('a','standard',this)" data-val="standard">
+        <div class="lo-name">Standard</div>
+        <div class="lo-detail">Agents answer what you ask &mdash; nothing more, nothing less</div>
+      </div>
+      <div class="lever-opt" onclick="setLever('a','brutal',this)" data-val="brutal">
+        <div class="lo-name">Brutal</div>
+        <div class="lo-detail">Agents have hidden agendas, withhold data, and will mislead you</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intensity-section">
+    <h3>Lever B &mdash; Time Pressure</h3>
+    <div class="lever-desc">How long do you have in the boardroom?</div>
+    <div class="lever-options" id="lever-b">
+      <div class="lever-opt" onclick="setLever('b','relaxed',this)" data-val="relaxed">
+        <div class="lo-name">Relaxed</div>
+        <div class="lo-detail">Think at your own pace</div>
+        <div class="lo-timer">No clock</div>
+      </div>
+      <div class="lever-opt selected" onclick="setLever('b','standard',this)" data-val="standard">
+        <div class="lo-name">Standard</div>
+        <div class="lo-detail">Enough time if you stay focused</div>
+        <div class="lo-timer">25 minutes</div>
+      </div>
+      <div class="lever-opt" onclick="setLever('b','boardroom',this)" data-val="boardroom">
+        <div class="lo-name">Boardroom</div>
+        <div class="lo-detail">The board is waiting. Move fast</div>
+        <div class="lo-timer">15 minutes</div>
+      </div>
+      <div class="lever-opt" onclick="setLever('b','crisis',this)" data-val="crisis">
+        <div class="lo-name">Crisis</div>
+        <div class="lo-detail">Breaking news. Every second counts</div>
+        <div class="lo-timer">8 minutes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intensity-section">
+    <h3>Lever C &mdash; Starting Information</h3>
+    <div class="lever-desc">How much context do you begin with?</div>
+    <div class="lever-options" id="lever-c">
+      <div class="lever-opt selected" onclick="setLever('c','full',this)" data-val="full">
+        <div class="lo-name">Full Briefing</div>
+        <div class="lo-detail">Complete background, all documents, full context</div>
+      </div>
+      <div class="lever-opt" onclick="setLever('c','partial',this)" data-val="partial">
+        <div class="lo-name">Partial</div>
+        <div class="lo-detail">Role brief only &mdash; extract the rest from agent conversations</div>
+      </div>
+      <div class="lever-opt" onclick="setLever('c','cold',this)" data-val="cold">
+        <div class="lo-name">Cold Start</div>
+        <div class="lo-detail">One sentence. You figure out the rest</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-center" style="margin-top:28px">
+    <button class="btn btn-red" id="btn-enter-boardroom" onclick="startSimulation()">Enter the Boardroom</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: BOARDROOM -->
+<div id="phase-boardroom" class="phase">
+<div class="section" style="max-width:800px">
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <h3>Boardroom</h3>
+        <span class="chat-role-badge" id="chat-role-badge"></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <div id="chat-timer" class="chat-timer"></div>
+        <div style="font-size:.7em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px">Boardroom Pulse&trade;</div>
+      </div>
+    </div>
+    <div class="bp-panel">
+      <div class="bp-moods">
+        <div class="bp-moods-title">Agent Moods</div>
+        <div id="persona-bars"></div>
+      </div>
+      <div class="bp-temp">
+        <div class="bp-temp-title">Room Temperature</div>
+        <div id="temp-dial-container"></div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chat-input" placeholder="Type your message..." rows="1" onkeydown="handleChatKey(event)"></textarea>
+      <button class="chat-send" id="chat-send" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <div class="btn-center" style="margin-top:16px">
+    <button class="btn btn-red" id="btn-decide" onclick="goToDecision()">Make Your Decision</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: DECISION -->
+<div id="phase-decision" class="phase">
+<div class="section" style="max-width:700px">
+  <div class="section-label">Your Strategic Recommendation</div>
+  <h2>What should Airbnb prioritise for the next 12 months?</h2>
+  <p class="section-desc">Synthesise what you heard in the boardroom. Make your case. The AI panel will evaluate your reasoning.</p>
+  <div class="decision-area">
+    <textarea id="decision-text" placeholder="Write your strategic recommendation here. Address the trade-offs, explain your reasoning, and defend your choice against the other priorities..." oninput="updateWordCount()"></textarea>
+    <div class="word-count"><span id="wc">0</span> words (minimum 50)</div>
+  </div>
+  <div class="btn-center">
+    <button class="btn btn-red" id="btn-submit" disabled onclick="submitDecision()">Submit Recommendation</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: RESULTS -->
+<div id="phase-results" class="phase">
+<div class="section" style="max-width:700px">
+  <div class="section-label">Performance Review</div>
+  <h2>Your Boardroom Score</h2>
+  <div class="results-card" id="results-card">
+    <div class="score-ring" id="score-ring">
+      <div><span class="score-num" id="score-num">--</span><br><span class="score-pct">/ 100</span></div>
+    </div>
+    <div id="tier-badge"></div>
+    <div class="rubric-grid" id="rubric-grid"></div>
+    <div class="feedback-text" id="feedback-text"></div>
+  </div>
+  <div class="btn-center" style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-red" onclick="goToFeedback()">Share Your Feedback</button>
+    <button class="btn btn-outline-dark" onclick="replaySim()">Play Again (Different Role)</button>
+  </div>
+</div>
+</div>
+
+<!-- PHASE: FEEDBACK -->
+<div id="phase-feedback" class="phase">
+<div class="section" style="max-width:700px">
+  <div class="section-label">Your Experience</div>
+  <h2>Share Your Feedback</h2>
+  <p class="section-desc">Help us improve the simulation. Your feedback goes directly to the CXO Simulabs&trade; team.</p>
+  <div class="fb-card">
+    <h3>How was your experience?</h3>
+    <div class="fb-sub">Rate your overall experience</div>
+    <div class="fb-stars" id="fb-stars">
+      <div class="fb-star" onclick="setFbRating(1)" data-r="1">1</div>
+      <div class="fb-star" onclick="setFbRating(2)" data-r="2">2</div>
+      <div class="fb-star" onclick="setFbRating(3)" data-r="3">3</div>
+      <div class="fb-star" onclick="setFbRating(4)" data-r="4">4</div>
+      <div class="fb-star" onclick="setFbRating(5)" data-r="5">5</div>
+    </div>
+    <div class="form-group">
+      <label>What worked well?</label>
+      <textarea id="fb-good" maxlength="1000" rows="3" placeholder="Tell us what you enjoyed or found valuable..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>What could be improved?</label>
+      <textarea id="fb-improve" maxlength="1000" rows="3" placeholder="Tell us what could be better..."></textarea>
+    </div>
+    <div id="fb-msg" class="form-msg"></div>
+    <button class="btn btn-red btn-full" id="btn-fb-submit" onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+  <div class="btn-center">
+    <button class="btn btn-outline-dark" onclick="showView('view-landing')">Back to All Tracks</button>
+  </div>
+</div>
+</div>
+
+</div><!-- /view-sim -->
+
+<!-- ── Disclaimers ── -->
+<div class="disclaimer-bar" id="disclaimer-bar">
+  <div class="disclaimer-inner">
+    <h4>Disclaimer &amp; Intellectual Property Notice</h4>
+    <p>This simulation is an independent educational product created by CXO Simulabs&trade;. It is not affiliated with, endorsed by, or sponsored by Airbnb, Inc. or any of its subsidiaries. "Airbnb" and all related trademarks are the property of Airbnb, Inc.</p>
+    <p>All company data, financial figures, market metrics, and scenario details used in this simulation are derived exclusively from publicly available sources, including SEC filings, published earnings reports, news articles, industry analyses, and academic case studies. No proprietary, confidential, or insider information has been used.</p>
+    <p>The strategic frameworks presented (Porter's Five Forces, Ansoff Matrix, Two-Sided Platform Economics, Marketplace Trust Architecture, Technical Debt, and Regulatory Strategy) are widely published academic and industry frameworks.</p>
+    <p>AI-generated agent dialogue and scoring are produced by large language models for educational purposes only. Agent opinions, arguments, and evaluations do not represent the views of any real individual, company, or organisation.</p>
+    <p>&copy; 2026 CXO Simulabs&trade;. All rights reserved. The simulation design, scoring methodology, agent prompt architecture, Dragon Fire Bloom&trade; engine, Boardroom Pulse&trade; interface, and Iron Clad&trade; security are the intellectual property of CXO Simulabs&trade;. Unauthorised reproduction, distribution, or commercial use is prohibited.</p>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="w">CXO </span><span class="r">Simulabs</span><sup>&trade;</sup></div>
+    <div class="footer-engine">Powered by the <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> Simulation Engine</div>
+    <div class="footer-copy">&copy; 2026 CXO Simulabs&trade;. All rights reserved. | <a href="../privacy.html" style="color:var(--text-light);text-decoration:underline">Privacy</a> | <a href="../terms.html" style="color:var(--text-light);text-decoration:underline">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════════════════════
+const API_BASE = window.location.hostname === 'localhost'
+  ? 'http://localhost:3001/api/sim'
+  : 'https://mba.cxosimulabs.com/api/sim';
+
+const SIM_ID = 'cxo-airbnb';
+const UC_ID = 'uc1';
+
+// Iron Clad: Access code obfuscated — not plaintext
+const _ac = [67,88,79,66,69,84,65,50,48,50,54];
+function _vc(v) { return v.toUpperCase() === _ac.map(function(c){return String.fromCharCode(c)}).join(''); }
+
+// EmailJS init
+(function(){ if(typeof emailjs!=='undefined') emailjs.init('ABWpMkWPOTsO_gQWG'); })();
+
+// ═══════════════════════════════════════════════════════════════
+// TRACK DATA
+// ═══════════════════════════════════════════════════════════════
+const TRACKS = [
+  { id:'cpo', abbr:'CPO', title:'Chief Product Officer', sims:15, live:true, desc:'Master product strategy, roadmapping, and user research through real company decisions.' },
+  { id:'cdo', abbr:'CDO', title:'Chief Data Officer', sims:8, live:true, desc:'Navigate data strategy, AI governance, and digital transformation leadership.' },
+  { id:'ceo', abbr:'CEO', title:'Chief Executive Officer', sims:0, live:false, desc:'Lead organisations through strategic pivots, board dynamics, and competitive warfare.' },
+  { id:'cfo', abbr:'CFO', title:'Chief Financial Officer', sims:0, live:false, desc:'Master financial strategy, capital allocation, and investor relations.' },
+  { id:'cmo', abbr:'CMO', title:'Chief Marketing Officer', sims:0, live:false, desc:'Drive brand strategy, market positioning, and customer acquisition at scale.' },
+  { id:'cto', abbr:'CTO', title:'Chief Technology Officer', sims:0, live:false, desc:'Navigate technology architecture, innovation pipelines, and engineering leadership.' },
+  { id:'coo', abbr:'COO', title:'Chief Operating Officer', sims:0, live:false, desc:'Optimise operations, supply chains, and organisational efficiency.' },
+  { id:'cio', abbr:'CIO', title:'Chief Information Officer', sims:0, live:false, desc:'Lead digital infrastructure, IT governance, and enterprise technology.' },
+  { id:'ciso', abbr:'CISO', title:'Chief Information Security Officer', sims:0, live:false, desc:'Defend against cyber threats, manage compliance, and build security culture.' },
+  { id:'cro', abbr:'CRO', title:'Chief Revenue Officer', sims:0, live:false, desc:'Scale revenue engines, pricing strategy, and go-to-market execution.' },
+  { id:'clo', abbr:'CLO', title:'Chief Legal Officer', sims:0, live:false, desc:'Navigate corporate law, regulatory compliance, and legal risk management.' },
+  { id:'caio', abbr:'CAIO', title:'Chief AI Officer', sims:0, live:false, desc:'Build AI capabilities, manage ML operations, and drive AI-first strategy.' },
+  { id:'cstrato', abbr:'CStratO', title:'Chief Strategy Officer', sims:0, live:false, desc:'Design corporate strategy, M&A evaluation, and competitive positioning.' },
+  { id:'csaleso', abbr:'CSalesO', title:'Chief Sales Officer', sims:0, live:false, desc:'Build high-performance sales teams, pipeline management, and deal execution.' },
+  { id:'cpurchaseo', abbr:'CPurchaseO', title:'Chief Purchasing Officer', sims:0, live:false, desc:'Optimise procurement strategy, vendor management, and supply chain resilience.' },
+  { id:'csustainabilityo', abbr:'CSustainabilityO', title:'Chief Sustainability Officer', sims:0, live:false, desc:'Lead ESG strategy, sustainability reporting, and climate risk management.' },
+];
+
+const CPO_DISCIPLINES = [
+  { name:'Platform Decisions & Strategic Thinking', sims:[
+    { num:'SIM 1', company:'Airbnb', accent:'#1a1a2e', repo:'CPO-SIM-1-Airbnb', tier1:true, tier2:true },
+    { num:'SIM 13', company:'Pinterest', accent:'#E60023', repo:'CPO-SIM-13-Pinterest', tier1:true },
+  ]},
+  { name:'Strategic Business Modelling', sims:[
+    { num:'SIM 2', company:'Spotify', accent:'#27a753', repo:'CPO-SIM-2-Spotify', tier1:true },
+  ]},
+  { name:'User Research & A/B Testing', sims:[
+    { num:'SIM 3', company:'Netflix', accent:'#c41230', repo:'CPO-SIM-3-Netflix', tier1:true },
+  ]},
+  { name:'Prioritisation Frameworks', sims:[
+    { num:'SIM 4', company:'Amazon', accent:'#d97706', repo:'CPO-SIM-4-Amazon', tier1:true },
+  ]},
+  { name:'Market Sizing & Unit Economics', sims:[
+    { num:'SIM 5', company:'Uber', accent:'#334155', repo:'CPO-SIM-5-Uber', tier1:true },
+  ]},
+  { name:'Marketplace Prioritisation', sims:[
+    { num:'SIM 6', company:'Zomato', accent:'#d44235', repo:'CPO-SIM-6-Zomato', tier1:true },
+  ]},
+  { name:'Rapid Prototyping & MVP', sims:[
+    { num:'SIM 7', company:'Slack', accent:'#4A154B', repo:'CPO-SIM-7-Slack', tier1:true },
+  ]},
+  { name:'PRDs & Product Documentation', sims:[
+    { num:'SIM 8', company:'Google', accent:'#4285F4', repo:'CPO-SIM-8-Google', tier1:true },
+  ]},
+  { name:'Building AI Features', sims:[
+    { num:'SIM 9', company:'Meta', accent:'#1877F2', repo:'CPO-SIM-9-Meta', tier1:true },
+  ]},
+  { name:'Product Roadmapping', sims:[
+    { num:'SIM 10', company:'Shopify', accent:'#008060', repo:'CPO-SIM-10-Shopify', tier1:true },
+  ]},
+  { name:'Data Storytelling & Presentations', sims:[
+    { num:'SIM 11', company:'Duolingo', accent:'#58CC02', repo:'CPO-SIM-11-Duolingo', tier1:true },
+  ]},
+  { name:'Advanced Metrics & Growth', sims:[
+    { num:'SIM 12', company:'LinkedIn', accent:'#0A66C2', repo:'CPO-SIM-12-LinkedIn', tier1:true },
+  ]},
+  { name:'User Testing & Validation', sims:[
+    { num:'SIM 14', company:'Canva', accent:'#00C4CC', repo:'CPO-SIM-14-Canva', tier1:true },
+  ]},
+  { name:'Go-to-Market Strategy', sims:[
+    { num:'SIM 15', company:'Zoom', accent:'#2D8CFF', repo:'CPO-SIM-15-Zoom', tier1:true },
+  ]},
+];
+
+const CDO_DISCIPLINES = [
+  { name:'Data & AI Strategy', sims:[
+    { num:'SIM 1', company:'Ant Group', accent:'#2B6CB0', repo:'CDO-SIM-1-AntGroup', tier1:true },
+    { num:'SIM 2', company:'Amazon', accent:'#B45309', repo:'CDO-SIM-2-Amazon', tier1:true },
+  ]},
+  { name:'Governance, Ethics & Compliance', sims:[
+    { num:'SIM 3', company:'Target', accent:'#991B1B', repo:'CDO-SIM-3-Target', tier1:true },
+  ]},
+  { name:'Responsible AI Governance', sims:[
+    { num:'SIM 4', company:'JPMorgan Chase', accent:'#0F4C75', repo:'CDO-SIM-4-JPMorgan', tier1:true },
+  ]},
+  { name:'Technical Fluency', sims:[
+    { num:'SIM 5', company:'Netflix', accent:'#6D28D9', repo:'CDO-SIM-5-Netflix', tier1:true },
+    { num:'SIM 6', company:'Moderna', accent:'#0891B2', repo:'CDO-SIM-6-Moderna', tier1:true },
+  ]},
+  { name:'Transformational Leadership', sims:[
+    { num:'SIM 7', company:'Moderna', accent:'#7C3AED', repo:'CDO-SIM-7-Moderna', tier1:true },
+  ]},
+  { name:'Data Asset Valuation & Infonomics', sims:[
+    { num:'SIM 8', company:'(Imagined)', accent:'#059669', repo:'CDO-SIM-8-Imagined', tier1:true },
+  ]},
+];
+
+// ═══════════════════════════════════════════════════════════════
+// SIMULATION DATA (from existing cxo-beta)
+// ═══════════════════════════════════════════════════════════════
+const CHALLENGES = [
+  { name:'Trust Crisis', detail:'Property damage up 89% YoY. Only 31% of guests ID-verified. 30% of negative reviews cite accuracy.' },
+  { name:'Mobile Gap', detail:'40% of traffic is mobile but only 10% of bookings. Conversion: 2.1% mobile vs 8.7% desktop.' },
+  { name:'Regulatory Threat', detail:'NYC bill could ban 30% of listings (12% of revenue). SF, Barcelona, Paris all restricting.' },
+  { name:'Competitive Pressure', detail:'HomeAway/Expedia ($3.9B), Booking.com Homes, Wimdu (+25% QoQ). 18-month window.' },
+  { name:'Expansion Opportunity', detail:'Experiences pilot: 4.2x engagement. TAM jumps from $100B to $1T+. But risks diluting focus.' },
+];
+
+const ROLES = {
+  cpo:    { title:'CPO', full:'Chief Product Officer', difficulty:3, label:'Medium', cls:'diff-medium', stars:'\u2605\u2605\u2605\u2606\u2606', motive:'I want to ship trust features and fix mobile conversion \u2014 even if it means slowing down geographic expansion.', desc:'You own the product roadmap. You decide what gets built and what gets cut.', color:'#0EA5E9' },
+  cto:    { title:'CTO', full:'Chief Technology Officer', difficulty:4, label:'Hard', cls:'diff-hard', stars:'\u2605\u2605\u2605\u2605\u2606', motive:'I want to rebuild the core platform for mobile-first and reduce technical debt \u2014 even if it slows down feature releases for 6 months.', desc:'You own the technical architecture. You decide how the platform scales.', color:'#F59E0B' },
+  growth: { title:'VP Growth', full:'Head of Growth & Marketplace', difficulty:2, label:'Easy', cls:'diff-easy', stars:'\u2605\u2605\u2606\u2606\u2606', motive:'I want to grow supply and demand as fast as possible \u2014 even if quality takes a temporary hit.', desc:'You own user acquisition, marketplace balance, and geographic expansion.', color:'#8B5CF6' },
+  ceo:    { title:'CEO', full:'Chief Executive Officer', difficulty:5, label:'Hardest', cls:'diff-hardest', stars:'\u2605\u2605\u2605\u2605\u2605', motive:'I want Airbnb to dominate the market before competitors catch up \u2014 I will push everyone hard to get there.', desc:'You set the company direction. Everyone reports to you. The board is watching.', color:'#10B981' },
+};
+
+// ═══════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════
+let selectedRole = null;
+let sessionId = null;
+let authToken = null;
+let moods = {};
+let prevMoods = {};
+let messageCount = 0;
+let intensity = { agentStyle:'standard', timePressure:'standard', infoLevel:'full' };
+let timerInterval = null;
+let timerSeconds = 0;
+let fbRating = 0;
+let currentView = 'view-landing';
+let currentTrack = null;
+
+// ═══════════════════════════════════════════════════════════════
+// VIEW ROUTING
+// ═══════════════════════════════════════════════════════════════
+function showView(id, pushState) {
+  document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  currentView = id;
+  window.scrollTo(0,0);
+  if (pushState !== false) {
+    history.pushState({ view: id }, '', '#' + id.replace('view-',''));
+  }
+  updateNav(id);
+  trackEvent('page_view', { page: id });
+}
+
+function updateNav(view) {
+  var right = document.getElementById('nav-right');
+  switch(view) {
+    case 'view-landing':
+      right.innerHTML = '<span class="nav-badge">CXO Beta</span><button class="nav-cta" onclick="showView(\'view-request\')">Request Access</button>';
+      break;
+    case 'view-track':
+      right.innerHTML = '<span class="nav-back" onclick="showView(\'view-landing\')">All Tracks</span><button class="nav-cta" onclick="showView(\'view-request\')">Request Access</button>';
+      break;
+    case 'view-request':
+      right.innerHTML = '<span class="nav-back" onclick="showView(\'view-landing\')">Back</span>';
+      break;
+    case 'view-gate':
+      right.innerHTML = '<span class="nav-back" onclick="showView(\'view-landing\')">Back</span>';
+      break;
+    case 'view-sim':
+      right.innerHTML = '<span class="nav-badge">CXO Beta</span><span class="nav-back" onclick="showView(\'view-landing\')">Home</span>';
+      break;
+  }
+}
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.view) showView(e.state.view, false);
+  else showView('view-landing', false);
+});
+
+// ═══════════════════════════════════════════════════════════════
+// LANDING — RENDER TRACK CARDS
+// ═══════════════════════════════════════════════════════════════
+function renderTrackGrid() {
+  var grid = document.getElementById('track-grid');
+  grid.innerHTML = TRACKS.map(function(t) {
+    var cls = t.live ? '' : ' coming-soon';
+    var statusCls = t.live ? 'tc-live' : 'tc-soon';
+    var statusText = t.live ? 'LIVE \u2014 ' + t.sims + ' SIMs' : 'COMING SOON';
+    var onclick = t.live ? ' onclick="openTrack(\'' + t.id + '\')"' : '';
+    return '<div class="track-card' + cls + '"' + onclick + '>' +
+      '<div class="tc-abbr">' + t.abbr + '</div>' +
+      '<div class="tc-title">' + t.title + '</div>' +
+      '<div class="tc-desc">' + t.desc + '</div>' +
+      '<span class="tc-status ' + statusCls + '">' + statusText + '</span>' +
+    '</div>';
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRACK DETAIL
+// ═══════════════════════════════════════════════════════════════
+function openTrack(trackId) {
+  currentTrack = trackId;
+  var track = TRACKS.find(function(t){ return t.id === trackId; });
+  var disciplines = trackId === 'cpo' ? CPO_DISCIPLINES : CDO_DISCIPLINES;
+  var discCount = disciplines.length;
+  var simCount = track.sims;
+
+  document.getElementById('track-hero').innerHTML =
+    '<div class="hero-eyebrow">' + track.abbr + ' Track</div>' +
+    '<h1>' + track.title + '</h1>' +
+    '<p>' + track.desc + '</p>' +
+    '<div class="track-stats">' +
+      '<div class="track-stat"><div class="val">' + simCount + '</div><div class="lbl">Simulations</div></div>' +
+      '<div class="track-stat"><div class="val">' + discCount + '</div><div class="lbl">Disciplines</div></div>' +
+    '</div>';
+
+  var bodyHtml = '<div class="section-label">Disciplines &amp; Simulations</div>' +
+    '<p class="section-desc">Competency is the hero. The company provides context.</p>';
+
+  disciplines.forEach(function(d) {
+    bodyHtml += '<div class="disc-card"><h3>' + escapeHtml(d.name) + '</h3><div class="sim-list">';
+    d.sims.forEach(function(s) {
+      var ghUrl = 'https://CXO-Simulabs.github.io/' + s.repo + '/';
+      bodyHtml += '<div class="sim-item"><div class="sim-item-left">' +
+        '<div class="sim-accent" style="background:' + s.accent + '"></div>' +
+        '<span class="sim-num">' + s.num + '</span>' +
+        '<span class="sim-company">' + escapeHtml(s.company) + '</span>' +
+        '</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">';
+      if (s.tier1) {
+        bodyHtml += '<span class="sim-tier tier1-badge">Tier 1: MCQ</span>' +
+          '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="sim-link" onclick="trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})">Open SIM</a>';
+      }
+      if (s.tier2) {
+        bodyHtml += '<span class="sim-tier tier2-badge">Tier 2: AI Boardroom</span>' +
+          '<span class="sim-link" style="cursor:pointer" onclick="launchSim();trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier2\'})">Enter Boardroom</span>';
+      }
+      bodyHtml += '</div></div>';
+    });
+    bodyHtml += '</div></div>';
+  });
+
+  bodyHtml += '<div class="btn-center"><span class="nav-back" onclick="showView(\'view-landing\')" style="color:var(--text-muted);font-size:.9em">Back to all tracks</span></div>';
+
+  document.getElementById('track-body').innerHTML = bodyHtml;
+  showView('view-track');
+  trackEvent('track_viewed', { track: trackId });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// LAUNCH SIMULATION (with gate check)
+// ═══════════════════════════════════════════════════════════════
+function launchSim() {
+  if (sessionStorage.getItem('cxo_beta_access') === 'granted') {
+    showView('view-sim');
+  } else {
+    showView('view-gate');
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ACCESS GATE
+// ═══════════════════════════════════════════════════════════════
+function validateGate() {
+  var code = document.getElementById('gate-code').value.trim();
+  var msgEl = document.getElementById('gate-msg');
+
+  if (!code) {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = 'Please enter your access code.';
+    return;
+  }
+
+  if (_vc(code)) {
+    sessionStorage.setItem('cxo_beta_access', 'granted');
+    msgEl.className = 'form-msg success';
+    msgEl.textContent = 'Access granted. Loading simulation...';
+    trackEvent('access_granted', { method: 'code' });
+    setTimeout(function(){ showView('view-sim'); }, 600);
+  } else {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = 'Invalid code. Please check and try again.';
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// REQUEST ACCESS (EmailJS)
+// ═══════════════════════════════════════════════════════════════
+function submitAccessRequest() {
+  var name = document.getElementById('req-name').value.trim();
+  var email = document.getElementById('req-email').value.trim();
+  var org = document.getElementById('req-org').value.trim();
+  var role = document.getElementById('req-role').value.trim();
+  var reason = document.getElementById('req-reason').value.trim();
+  var msgEl = document.getElementById('req-msg');
+  var btn = document.getElementById('btn-req-submit');
+
+  if (!name || !email) {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = 'Name and email are required.';
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.send('service_a6x573k', 'template_xt90q9j', {
+      from_name: name,
+      reply_to: email,
+      to_name: 'Mohan',
+      message: 'CXO Beta Access Request\n\nName: ' + name + '\nEmail: ' + email + '\nOrganisation: ' + (org || 'Not provided') + '\nRole: ' + (role || 'Not provided') + '\nReason: ' + (reason || 'Not provided'),
+    }).then(function() {
+      msgEl.className = 'form-msg success';
+      msgEl.textContent = 'Request submitted. You\u2019ll receive your access code within 24 hours.';
+      btn.textContent = 'Submitted';
+      trackEvent('access_requested', { email: email, org: org, role: role });
+    }).catch(function() {
+      msgEl.className = 'form-msg success';
+      msgEl.textContent = 'Request submitted. You\u2019ll receive your access code within 24 hours.';
+      btn.textContent = 'Submitted';
+      trackEvent('access_requested', { email: email, org: org, role: role });
+    });
+  } else {
+    msgEl.className = 'form-msg success';
+    msgEl.textContent = 'Request submitted. You\u2019ll receive your access code within 24 hours.';
+    btn.textContent = 'Submitted';
+    trackEvent('access_requested', { email: email });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SIMULATION — ROLE SELECTION
+// ═══════════════════════════════════════════════════════════════
+function renderSelection() {
+  var cg = document.getElementById('challenges');
+  cg.innerHTML = CHALLENGES.map(function(c){ return '<div class="challenge-item"><strong>' + c.name + '</strong><span>' + c.detail + '</span></div>'; }).join('');
+
+  var mb = document.getElementById('motives-board');
+  mb.innerHTML = '<h3>Agent Motives</h3>' + Object.entries(ROLES).map(function(e) {
+    var id = e[0], r = e[1];
+    return '<div class="motive-row"><div class="motive-dot" style="background:' + r.color + '"></div><div><div class="motive-role">' + r.full + '</div><div class="motive-text">"' + r.motive + '"</div></div></div>';
+  }).join('');
+
+  var rg = document.getElementById('role-grid');
+  rg.innerHTML = Object.entries(ROLES).map(function(e) {
+    var id = e[0], r = e[1];
+    return '<div class="role-card" id="rc-' + id + '" onclick="selectRole(\'' + id + '\')"><div class="title">' + r.full + '</div><div class="stars">' + r.stars + '</div><div class="diff ' + r.cls + '">' + r.label + ' (' + r.difficulty + '/5)</div><div class="desc">' + r.desc + '</div><div class="motive-preview">"' + r.motive + '"</div></div>';
+  }).join('');
+}
+
+function selectRole(roleId) {
+  selectedRole = roleId;
+  document.querySelectorAll('.role-card').forEach(function(c){ c.classList.remove('selected'); });
+  document.getElementById('rc-' + roleId).classList.add('selected');
+  document.getElementById('btn-start').disabled = false;
+  trackEvent('role_selected', { sim: 'cxo-airbnb', role: roleId });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PHASES: PRIMER → INTENSITY → BOARDROOM
+// ═══════════════════════════════════════════════════════════════
+function goToPrimer() {
+  showPhase('phase-primer');
+}
+
+function goToIntensity() {
+  showPhase('phase-intensity');
+}
+
+function setLever(lever, value, el) {
+  var container = lever === 'a' ? 'lever-a' : lever === 'b' ? 'lever-b' : 'lever-c';
+  document.querySelectorAll('#' + container + ' .lever-opt').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  if (lever === 'a') intensity.agentStyle = value;
+  else if (lever === 'b') intensity.timePressure = value;
+  else intensity.infoLevel = value;
+  trackEvent('intensity_set', { lever: lever, value: value });
+}
+
+// ── Offline mock mode ──
+var offlineMode = false;
+var mockTurnIndex = 0;
+var MOCK_SCRIPTS = {
+  cpo: {
+    open: [
+      { agent:'cto', text:'Let me be direct. Our Rails monolith is six years old. Response times are up 40%, AWS spend is $18M growing 60% YoY, and mobile conversion is 2.1% versus 8.7% on desktop. We cannot ship trust features, grow into new markets, or launch Experiences on a platform that is falling apart. I am requesting a 6-month platform rewrite as the 12-month priority.' },
+      { agent:'growth', text:'Six months of no new features while competitors eat our lunch? HomeAway just got $3.9B from Expedia. Booking.com launched Homes last quarter. Wimdu is growing 25% QoQ. Our competitive window is 18 months — Porter\'s Five Forces says the threat of new entrants is the highest it has ever been. We need to expand into 50 new cities and grow supply before someone else owns those markets.' },
+      { agent:'ceo', text:'I hear both of you. But the board is watching our path to IPO. We need a story that shows we can dominate — not just survive. I want to see how trust, expansion, tech debt, and Experiences all fit into one coherent 12-month plan. CPO, the board is going to ask you: what is the ONE priority that unlocks the most value? Make your case.' },
+    ],
+    replies: [
+      { agent:'cto', text:'That is an interesting point, but you are underestimating the technical constraint. Every feature you ship on the current architecture takes 3x longer than it should. The Ansoff Matrix shows that both market development and diversification require a stable platform. You cannot scale what is already breaking.' },
+      { agent:'growth', text:'I do not disagree on tech debt, but timing matters. If we lose the supply-side race in 50 key cities, no amount of platform improvement will get those hosts back. Network effects compound — Two-Sided Platform Economics 101. The first mover in each city captures 70% of supply.' },
+      { agent:'ceo', text:'You are both making valid points. But I need to push back — are we thinking about this from the customer\'s perspective? Only 31% of guests are ID-verified. Property damage is up 89%. If trust collapses, neither expansion nor a rewrite matters. What is the trust cost of inaction?' },
+      { agent:'cto', text:'I will grant you that trust features are important. But here is the data: verified photos cover 23% of listings and deliver 2.5x booking lift. That is a product win built on engineering. My argument is that the platform rewrite enables both trust AND speed. It is the foundation, not a competing priority.' },
+      { agent:'growth', text:'Let me share something the board will care about. Our Experiences pilot showed 4.2x engagement and 20% gross margins versus 12% for accommodation. That is a $1T TAM expansion. But I agree it is high-risk diversification on the Ansoff Matrix. The question is: can we afford NOT to experiment while we still have first-mover advantage?' },
+      { agent:'ceo', text:'We are running out of time. NYC\'s proposed bill could eliminate 30% of NYC listings — that is 12% of global revenue. The Regulatory Strategy Framework gives us four options: fight, comply, partner, or pivot. We need a priority that addresses the regulatory threat head-on. What is your recommendation, CPO?' },
+    ],
+  },
+  cto: {
+    open: [
+      { agent:'cpo', text:'Before we discuss architecture, let me ground us in the product reality. Only 31% of guests are ID-verified. Property damage claims are up 89% YoY. Verified Photos covers just 23% of listings but delivers 2.5x booking lift. The Marketplace Trust Architecture says we need identity verification, quality standards, and financial protection — all of which are product priorities.' },
+      { agent:'growth', text:'Product and trust improvements are great, but they do not matter if we lose the market. HomeAway-Expedia is a $3.9B war chest. Booking.com just launched Homes. Porter\'s Five Forces analysis shows competitive intensity is at an all-time high. I need 50 new cities in 12 months to maintain supply-side dominance.' },
+      { agent:'ceo', text:'Here is what keeps me up at night. We are an $18M AWS spend growing 60% YoY on a 2008 Rails monolith. Mobile is 40% of traffic but 10% of bookings. CTO — if we do not fix the platform, can we even execute on trust, expansion, or Experiences? Give me the honest answer.' },
+    ],
+    replies: [
+      { agent:'cpo', text:'I hear the platform argument, but six months of feature freeze is a product death sentence. Our competitors are shipping weekly. Can we do a phased migration instead — strangler pattern — so we keep shipping while we modernise?' },
+      { agent:'growth', text:'A phased approach sounds reasonable. But let me be clear about the stakes: every month we delay expansion, competitors acquire hosts that compound against us through network effects. Two-Sided Platform Economics is unforgiving.' },
+      { agent:'ceo', text:'The board will want to know: what is the ROI of a platform rewrite? How do we measure success? And most importantly — what is the risk of NOT doing it? Give me the business case, not just the engineering case.' },
+      { agent:'cpo', text:'If we are being honest, the trust crisis is the existential risk. The Regulatory Strategy Framework tells us that NYC alone could wipe 12% of revenue. Trust features are not optional — they are defensive. CTO, can the rewrite prioritise the trust stack first?' },
+      { agent:'growth', text:'I want to add a data point. The Experiences pilot showed 20% gross margins versus 12% for accommodation. That is Ansoff Matrix diversification — risky, but transformative. A modern platform would let us ship Experiences globally in months, not years.' },
+      { agent:'ceo', text:'Final round. I need each of you to tell me: if we pick your priority and it fails, what is the worst case? And if we pick someone else\'s priority and it succeeds, can you live with that? CTO, you first.' },
+    ],
+  },
+  growth: {
+    open: [
+      { agent:'cpo', text:'Let me start with the trust data. 30% of negative reviews cite listing accuracy. Only 31% of guests are verified. Host Guarantee paid $4.2M in Q3 alone. The Marketplace Trust Architecture framework says we are missing critical layers. If trust erodes, your expansion numbers mean nothing — guests will not book in new markets with unverified hosts.' },
+      { agent:'cto', text:'And the platform cannot support rapid expansion anyway. We are a 2008 Rails monolith. Page loads exceed 3 seconds for 30% of users. Mobile conversion is 2.1% versus 8.7% desktop. You want to expand into 50 cities on infrastructure that is already cracking? That is building on sand.' },
+      { agent:'ceo', text:'VP Growth, I brought you into this role because you understand marketplace dynamics better than anyone. But the CPO and CTO are raising real constraints. Before you pitch expansion, tell me: how do you address trust and platform limitations? Or are you arguing we should accept those risks?' },
+    ],
+    replies: [
+      { agent:'cpo', text:'Your growth numbers are impressive on paper. But the Two-Sided Platform Economics data shows that 60% of revenue comes from just 20 cities. Should we not deepen those markets first — market penetration on the Ansoff Matrix — before stretching into 50 new ones?' },
+      { agent:'cto', text:'I can support targeted expansion if we do it right. But "right" means a mobile-first experience. 40% of traffic is mobile with 2.1% conversion. Fix mobile, and your expansion ROI doubles overnight. That requires platform investment.' },
+      { agent:'ceo', text:'The regulatory angle worries me. NYC\'s bill could cost us 12% of global revenue. If we expand aggressively into cities with similar regulatory environments, we are multiplying the risk. Growth, how does your expansion plan account for the Regulatory Strategy Framework?' },
+      { agent:'cpo', text:'Here is what I propose: trust-first expansion. We roll Verified Photos and ID verification into every new market from day one. That way we grow supply AND quality simultaneously. Growth gets the cities, I get the trust layer.' },
+      { agent:'cto', text:'If we are doing a hybrid approach, I need three things: API-first architecture for the new markets, a mobile SDK that actually converts, and a data pipeline that tracks trust metrics in real time. Give me those, and I will support the expansion timeline.' },
+      { agent:'ceo', text:'We need a decision. The Experiences pilot showed 4.2x engagement — that is a signal we cannot ignore. But is it a distraction from the core business? Growth, make your final case. What is the ONE priority and how does it address everyone\'s concerns?' },
+    ],
+  },
+  ceo: {
+    open: [
+      { agent:'cpo', text:'As CEO, you need to hear this: our trust infrastructure is failing. Property damage claims up 89%. Only 31% of guests verified. 30% of negative reviews cite accuracy. The Marketplace Trust Architecture says we are exposed on identity, quality, AND financial protection layers. If we do not fix this, the IPO story falls apart.' },
+      { agent:'cto', text:'And the platform underneath is a liability. 2008 Rails monolith, $18M AWS spend growing 60% YoY, mobile conversion at 2.1%. Every priority the team pitches — trust, expansion, Experiences — requires a platform that works. We do not have one. I recommend a 6-month rewrite as the foundational investment.' },
+      { agent:'growth', text:'With respect to both of you — we do not have six months. HomeAway just got $3.9B from Expedia. Booking.com launched Homes. Wimdu is up 25% QoQ. Porter\'s Five Forces analysis shows the competitive window is 18 months. If we do not expand into 50 new cities NOW, we lose the supply-side network effects that make this platform defensible.' },
+    ],
+    replies: [
+      { agent:'cpo', text:'CEO, the board is going to ask about risk. The Regulatory Strategy Framework gives us four options in NYC: fight, comply, partner, or pivot. That one city is 12% of revenue. What is your position? Because our expansion and trust strategies depend on it.' },
+      { agent:'cto', text:'I want to add a technical perspective. The Experiences pilot ran on a separate microservice — that is why it worked. It proves my point: modern architecture enables innovation. A phased rewrite lets us ship Experiences globally while fixing the core. It is not either-or.' },
+      { agent:'growth', text:'CEO, here is the Ansoff Matrix view. Market penetration in existing cities is safe but slow. Market development — 50 new cities — is moderate risk, high reward. Experiences is diversification — highest risk but $1T TAM. You need to pick the risk profile that matches our IPO timeline.' },
+      { agent:'cpo', text:'Let me be provocative. Superhosts are 1.2% of hosts but generate 22% of revenue. That is a power-law distribution. Instead of expanding everywhere, what if we double down on superhost development in 30 strategic cities? Trust, quality, AND growth in one move.' },
+      { agent:'cto', text:'The data supports a focused approach. Host acquisition cost is $47 with $2,400 LTV. Guest acquisition is $31 with $680 LTV. The unit economics favour host-side investment. But those economics break if the platform cannot handle the load — which brings us back to the rewrite.' },
+      { agent:'growth', text:'Final point: the Experiences pilot showed 20% gross margin versus 12% for accommodation. That changes the IPO narrative from "accommodation marketplace" to "experience economy platform." CEO, that is a valuation multiplier. But only if we move fast.' },
+    ],
+  },
+};
+
+async function startSimulation() {
+  var btn = document.getElementById('btn-enter-boardroom');
+  btn.disabled = true;
+  btn.textContent = 'Starting...';
+
+  var agentIds = Object.keys(ROLES).filter(function(r){ return r !== selectedRole; });
+  agentIds.forEach(function(id){ moods[id] = 50; });
+
+  // Skip API entirely when opened as file:// or engine is unreachable
+  if (window.location.protocol === 'file:') {
+    offlineMode = true;
+    mockTurnIndex = 0;
+    sessionId = 'offline-' + Date.now();
+  } else {
+    try {
+      var _ac2 = new AbortController();
+      var _to = setTimeout(function(){ _ac2.abort(); }, 3000);
+      var resp = await fetch(API_BASE + '/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: 'cxo-beta@cxosimulabs.com',
+          name: 'CXO Beta Player',
+          role: selectedRole,
+          intensity: intensity,
+          simId: SIM_ID,
+          useCase: UC_ID,
+        }),
+        signal: _ac2.signal,
+      });
+      clearTimeout(_to);
+      if (!resp.ok) throw new Error('Failed');
+      var data = await resp.json();
+      sessionId = data.sessionId;
+      authToken = data.token;
+      offlineMode = false;
+    } catch (err) {
+      offlineMode = true;
+      mockTurnIndex = 0;
+      sessionId = 'offline-' + Date.now();
+    }
+  }
+
+  showPhase('phase-boardroom');
+  initBoardroom();
+  startTimer();
+  trackEvent('sim_started', { sim: 'cxo-airbnb', role: selectedRole, intensity: JSON.stringify(intensity) });
+
+  if (offlineMode) {
+    await mockBoardroomOpen();
+  } else {
+    await sendBoardroomMessage(null);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TIMER
+// ═══════════════════════════════════════════════════════════════
+function startTimer() {
+  var timerMap = { relaxed: 0, standard: 25, boardroom: 15, crisis: 8 };
+  var mins = timerMap[intensity.timePressure] || 0;
+  var timerEl = document.getElementById('chat-timer');
+
+  if (mins <= 0) { timerEl.textContent = ''; return; }
+
+  timerSeconds = mins * 60;
+  updateTimerDisplay();
+  timerInterval = setInterval(function() {
+    timerSeconds--;
+    updateTimerDisplay();
+    if (timerSeconds <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      goToDecision();
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  var timerEl = document.getElementById('chat-timer');
+  var m = Math.floor(timerSeconds / 60);
+  var s = timerSeconds % 60;
+  timerEl.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  timerEl.className = timerSeconds <= 60 ? 'chat-timer urgent' : 'chat-timer';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BOARDROOM
+// ═══════════════════════════════════════════════════════════════
+function initBoardroom() {
+  var role = ROLES[selectedRole];
+  document.getElementById('chat-role-badge').textContent = 'You: ' + role.full;
+  renderBoardroomPanel();
+}
+
+function getMoodInfo(m) {
+  if (m >= 86) return { label:'Impressed', color:'#16a34a' };
+  if (m >= 71) return { label:'Supportive', color:'#22c55e' };
+  if (m >= 56) return { label:'Engaged', color:'#0ea5e9' };
+  if (m >= 46) return { label:'Neutral', color:'#94a3b8' };
+  if (m >= 31) return { label:'Skeptical', color:'#d97706' };
+  if (m >= 16) return { label:'Frustrated', color:'#ea580c' };
+  return { label:'Hostile', color:'#dc2626' };
+}
+
+function getRoomTemp(moods) {
+  var vals = Object.values(moods);
+  if (!vals.length) return { label:'Steady', color:'#94a3b8', avg:50 };
+  var avg = Math.round(vals.reduce(function(a,b){ return a+b; },0) / vals.length);
+  if (avg >= 70) return { label:'Calm', color:'#22c55e', avg:avg };
+  if (avg >= 55) return { label:'Steady', color:'#0ea5e9', avg:avg };
+  if (avg >= 40) return { label:'Tense', color:'#d97706', avg:avg };
+  if (avg >= 25) return { label:'Volatile', color:'#ea580c', avg:avg };
+  return { label:'Critical', color:'#dc2626', avg:avg };
+}
+
+function getRoomDegrees(avgMood) {
+  if (avgMood >= 55) return 24 - ((avgMood - 55) / 45) * 6;
+  return 24 + ((55 - avgMood) / 55) * 18;
+}
+
+function renderTempDial(degrees, label, color) {
+  var min=18, max=42;
+  var clamped = Math.max(min, Math.min(max, degrees));
+  var ratio = (clamped-min)/(max-min);
+  var rotation = ratio*180-90;
+  var cx=55, cy=52, r=40, nl=32;
+  var ticks = [18,24,30,36,42].map(function(t) {
+    var a = (180-((t-min)/(max-min))*180)*Math.PI/180;
+    var sw = t===24?1.5:1;
+    var sc = t===24?'#64748b':'#b0bdd0';
+    return '<line x1="'+(cx+(r-3)*Math.cos(a))+'" y1="'+(cy-(r-3)*Math.sin(a))+'" x2="'+(cx+(r+5)*Math.cos(a))+'" y2="'+(cy-(r+5)*Math.sin(a))+'" stroke="'+sc+'" stroke-width="'+sw+'" />';
+  }).join('');
+  return '<svg viewBox="0 0 110 62" width="140" height="78"><defs><linearGradient id="bpDialGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#22c55e"/><stop offset="22%" stop-color="#0ea5e9"/><stop offset="45%" stop-color="#eab308"/><stop offset="70%" stop-color="#ea580c"/><stop offset="100%" stop-color="#dc2626"/></linearGradient></defs><path d="M '+(cx-r)+' '+cy+' A '+r+' '+r+' 0 0 0 '+(cx+r)+' '+cy+'" fill="none" stroke="#dde4f0" stroke-width="8" stroke-linecap="round"/><path d="M '+(cx-r)+' '+cy+' A '+r+' '+r+' 0 0 0 '+(cx+r)+' '+cy+'" fill="none" stroke="url(#bpDialGrad)" stroke-width="6" stroke-linecap="round"/>'+ticks+'<g style="transform-origin:'+cx+'px '+cy+'px;transform:rotate('+rotation+'deg);transition:transform 1.2s cubic-bezier(0.34,1.56,0.64,1)"><line x1="'+cx+'" y1="'+cy+'" x2="'+cx+'" y2="'+(cy-nl)+'" stroke="'+color+'" stroke-width="2.5" stroke-linecap="round"/></g><circle cx="'+cx+'" cy="'+cy+'" r="4" fill="'+color+'"/><circle cx="'+cx+'" cy="'+cy+'" r="1.5" fill="#f0f4ff"/><text x="'+cx+'" y="'+(cy-14)+'" text-anchor="middle" fill="#1e293b" font-size="15" font-weight="900" font-family="\'Segoe UI\',sans-serif">'+Math.round(clamped)+'\u00B0C</text><text x="'+cx+'" y="'+(cy-3)+'" text-anchor="middle" fill="'+color+'" font-size="7" font-weight="700" font-family="\'Segoe UI\',sans-serif" letter-spacing="1">'+label.toUpperCase()+'</text><text x="'+(cx-r)+'" y="'+(cy+10)+'" text-anchor="middle" fill="#94a3b8" font-size="5.5" font-family="\'Segoe UI\',sans-serif">18\u00B0</text><text x="'+(cx+r)+'" y="'+(cy+10)+'" text-anchor="middle" fill="#94a3b8" font-size="5.5" font-family="\'Segoe UI\',sans-serif">42\u00B0</text></svg>';
+}
+
+function renderBoardroomPanel() {
+  var agentIds = Object.keys(ROLES).filter(function(r){ return r !== selectedRole; });
+  var barsHtml = agentIds.map(function(id) {
+    var r = ROLES[id];
+    var m = moods[id] || 50;
+    var pm = prevMoods[id] || m;
+    var delta = m - pm;
+    var info = getMoodInfo(m);
+    var initials = r.full.split(' ').filter(function(w){ return w[0]===w[0].toUpperCase(); }).map(function(w){ return w[0]; }).join('').substring(0,2);
+    return '<div class="bp-agent-row"><div class="bp-agent-top"><div class="bp-agent-left"><div class="bp-agent-avatar" style="background:'+r.color+'15;color:'+r.color+';border:1.5px solid '+r.color+'">'+initials+'</div><span class="bp-agent-name">'+r.title+'</span></div><div class="bp-agent-right"><span class="bp-mood-label" style="color:'+info.color+'">'+info.label+'</span>'+(delta!==0?'<span class="bp-mood-delta" style="color:'+(delta>0?'#16a34a':'#dc2626')+'">'+(delta>0?'+'+delta:delta)+'</span>':'')+'</div></div><div class="bp-bar-track"><div class="bp-bar-fill" style="width:'+m+'%;background:'+info.color+';box-shadow:0 0 6px '+info.color+'40"></div></div></div>';
+  }).join('');
+  document.getElementById('persona-bars').innerHTML = barsHtml;
+  var temp = getRoomTemp(moods);
+  var degrees = getRoomDegrees(temp.avg);
+  document.getElementById('temp-dial-container').innerHTML = renderTempDial(degrees, temp.label, temp.color);
+}
+
+function addChatMessage(content, type, agentName, agentColor) {
+  var div = document.createElement('div');
+  div.className = 'chat-msg ' + type;
+  if (type === 'agent' && agentName) {
+    div.innerHTML = '<span class="agent-name" style="color:' + (agentColor||'var(--text-dark)') + '">' + escapeHtml(agentName) + '</span>' + escapeHtml(content);
+  } else {
+    div.textContent = content;
+  }
+  var container = document.getElementById('chat-messages');
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function addLoading() {
+  var div = document.createElement('div');
+  div.className = 'loading'; div.id = 'loading-indicator';
+  div.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div> Agent is thinking...';
+  var container = document.getElementById('chat-messages');
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function removeLoading() {
+  var el = document.getElementById('loading-indicator');
+  if (el) el.remove();
+}
+
+// ── Mock offline boardroom ──
+async function mockBoardroomOpen() {
+  var script = MOCK_SCRIPTS[selectedRole] || MOCK_SCRIPTS.cpo;
+  for (var i = 0; i < script.open.length; i++) {
+    addLoading();
+    await _delay(800 + Math.random() * 600);
+    removeLoading();
+    var entry = script.open[i];
+    var role = ROLES[entry.agent];
+    addChatMessage(entry.text, 'agent', role.full, role.color);
+    prevMoods = Object.assign({}, moods);
+    moods[entry.agent] = 50 + Math.floor(Math.random() * 10 - 5);
+    renderBoardroomPanel();
+    messageCount++;
+  }
+  document.getElementById('chat-send').disabled = false;
+  document.getElementById('chat-input').focus();
+}
+
+async function mockBoardroomReply() {
+  var script = MOCK_SCRIPTS[selectedRole] || MOCK_SCRIPTS.cpo;
+  var replies = script.replies;
+  if (mockTurnIndex >= replies.length) mockTurnIndex = 0;
+  var entry = replies[mockTurnIndex];
+  mockTurnIndex++;
+  addLoading();
+  await _delay(600 + Math.random() * 800);
+  removeLoading();
+  var role = ROLES[entry.agent];
+  addChatMessage(entry.text, 'agent', role.full, role.color);
+  prevMoods = Object.assign({}, moods);
+  var delta = Math.floor(Math.random() * 16 - 5);
+  moods[entry.agent] = Math.max(10, Math.min(95, (moods[entry.agent]||50) + delta));
+  renderBoardroomPanel();
+  messageCount++;
+}
+
+function _delay(ms) { return new Promise(function(r){ setTimeout(r, ms); }); }
+
+async function sendBoardroomMessage(message) {
+  var sendBtn = document.getElementById('chat-send');
+  var input = document.getElementById('chat-input');
+  sendBtn.disabled = true;
+  if (message) addChatMessage(message, 'user');
+
+  if (offlineMode) {
+    await mockBoardroomReply();
+    sendBtn.disabled = false;
+    input.focus();
+    return;
+  }
+
+  addLoading();
+  try {
+    var resp = await fetch(API_BASE + '/boardroom', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
+      body: JSON.stringify({ sessionId:sessionId, message:message }),
+    });
+    removeLoading();
+    if (!resp.ok) {
+      var err = await resp.json().catch(function(){ return {}; });
+      addChatMessage('System: ' + (err.error || 'Connection error'), 'agent', 'System', '#ef4444');
+      sendBtn.disabled = false;
+      return;
+    }
+    var data = await resp.json();
+    var agentId = data.agentId;
+    var role = ROLES[agentId];
+    var content = data.content || data.message || '';
+    addChatMessage(content, 'agent', role ? role.full : agentId, role ? role.color : '#666');
+    if (data.moods) {
+      prevMoods = Object.assign({}, moods);
+      Object.assign(moods, data.moods);
+      renderBoardroomPanel();
+    }
+    messageCount++;
+  } catch (err) {
+    removeLoading();
+    addChatMessage('Connection error. Please try again.', 'agent', 'System', '#ef4444');
+  }
+  sendBtn.disabled = false;
+  input.focus();
+}
+
+function sendMessage() {
+  var input = document.getElementById('chat-input');
+  var msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  input.style.height = 'auto';
+  sendBoardroomMessage(msg);
+}
+
+function handleChatKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  setTimeout(function(){ e.target.style.height = 'auto'; e.target.style.height = Math.min(e.target.scrollHeight,120) + 'px'; },0);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// DECISION & SCORING
+// ═══════════════════════════════════════════════════════════════
+function goToDecision() {
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  showPhase('phase-decision');
+}
+
+function updateWordCount() {
+  var text = document.getElementById('decision-text').value.trim();
+  var words = text ? text.split(/\s+/).length : 0;
+  document.getElementById('wc').textContent = words;
+  document.getElementById('btn-submit').disabled = words < 50;
+}
+
+async function submitDecision() {
+  var btn = document.getElementById('btn-submit');
+  var text = document.getElementById('decision-text').value.trim();
+  btn.disabled = true; btn.textContent = 'Evaluating...';
+
+  if (offlineMode) {
+    await _delay(1200);
+    renderFallbackResults(text);
+    showPhase('phase-results');
+    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
+    return;
+  }
+
+  try {
+    await fetch(API_BASE + '/submit', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
+      body: JSON.stringify({ sessionId:sessionId, decision:text.substring(0,500), reasoning:text, confidence:75 }),
+    });
+    var scoreResp = await fetch(API_BASE + '/score', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken },
+      body: JSON.stringify({ sessionId:sessionId }),
+    });
+    if (scoreResp.ok) {
+      var scoreData = await scoreResp.json();
+      renderResults(scoreData);
+    } else {
+      renderFallbackResults(text);
+    }
+    showPhase('phase-results');
+    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
+  } catch (err) {
+    renderFallbackResults(text);
+    showPhase('phase-results');
+    trackEvent('sim_completed', { sim:'cxo-airbnb', role:selectedRole, messages:messageCount });
+  }
+}
+
+function renderResults(data) {
+  var scores = data.scores || data;
+  var overall = scores.overall || scores.weighted || 0;
+  var tier = scores.tier || getTier(overall);
+  document.getElementById('score-num').textContent = Math.round(overall);
+  var ring = document.getElementById('score-ring');
+  var color = tier==='Gold'?'#f59e0b':tier==='Silver'?'#94a3b8':tier==='Bronze'?'#fb923c':'#ef4444';
+  ring.style.borderColor = color;
+  document.getElementById('tier-badge').innerHTML = '<div class="tier-badge tier-' + tier.toLowerCase().replace(/\s/g,'') + '">' + tier + '</div>';
+  document.getElementById('rubric-grid').innerHTML =
+    '<div class="rubric-item"><div class="label">Strategic Reasoning (40%)</div><div class="val">' + Math.round(scores.strategic_reasoning||scores.calculation||0) + '</div></div>' +
+    '<div class="rubric-item"><div class="label">Framework Application (30%)</div><div class="val">' + Math.round(scores.framework_application||scores.anomaly||0) + '</div></div>' +
+    '<div class="rubric-item"><div class="label">Boardroom Engagement (30%)</div><div class="val">' + Math.round(scores.boardroom_engagement||scores.recommendation||0) + '</div></div>';
+  document.getElementById('feedback-text').textContent = scores.feedback || scores.panelFeedback || 'Your performance has been evaluated based on your boardroom engagement and strategic recommendation.';
+  trackEvent('score_received', { score:Math.round(overall), tier:tier });
+}
+
+function renderFallbackResults(text) {
+  var avgMood = Object.values(moods).reduce(function(a,b){ return a+b; },0) / (Object.values(moods).length||1);
+  var words = text.split(/\s+/).length;
+  var engagement = Math.min(100, Math.round(messageCount*8 + avgMood*0.3));
+  var reasoning = Math.min(100, Math.round(words*0.4 + avgMood*0.3));
+  var framework = Math.min(100, Math.round((engagement+reasoning)/2));
+  var overall = Math.round(reasoning*0.4 + framework*0.3 + engagement*0.3);
+  renderResults({ overall:overall, tier:getTier(overall), strategic_reasoning:reasoning, framework_application:framework, boardroom_engagement:engagement, feedback:'Based on ' + messageCount + ' boardroom exchanges and a ' + words + '-word recommendation. Average agent mood: ' + Math.round(avgMood) + '/100. This is an estimated score \u2014 the full AI evaluation requires the scoring engine.' });
+}
+
+function getTier(score) {
+  if (score >= 90) return 'Gold';
+  if (score >= 70) return 'Silver';
+  if (score >= 50) return 'Bronze';
+  return 'No Award';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FEEDBACK
+// ═══════════════════════════════════════════════════════════════
+function goToFeedback() {
+  showPhase('phase-feedback');
+}
+
+function setFbRating(r) {
+  fbRating = r;
+  document.querySelectorAll('.fb-star').forEach(function(s) {
+    s.classList.toggle('active', parseInt(s.dataset.r) <= r);
+  });
+}
+
+function submitFeedback() {
+  var good = document.getElementById('fb-good').value.trim();
+  var improve = document.getElementById('fb-improve').value.trim();
+  var msgEl = document.getElementById('fb-msg');
+  var btn = document.getElementById('btn-fb-submit');
+
+  if (!fbRating && !good && !improve) {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = 'Please share at least a rating or comment.';
+    return;
+  }
+
+  btn.disabled = true; btn.textContent = 'Sending...';
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.send('service_a6x573k', 'template_xt90q9j', {
+      from_name: 'CXO Beta Feedback',
+      reply_to: 'noreply@cxosimulabs.com',
+      to_name: 'Mohan',
+      message: 'CXO Beta Feedback\n\nRating: ' + fbRating + '/5\nRole: ' + (selectedRole||'unknown') + '\nMessages: ' + messageCount + '\n\nWhat worked: ' + (good||'(empty)') + '\n\nImprovements: ' + (improve||'(empty)'),
+    }).then(function() {
+      msgEl.className = 'form-msg success';
+      msgEl.textContent = 'Thank you for your feedback!';
+      btn.textContent = 'Sent';
+    }).catch(function() {
+      msgEl.className = 'form-msg success';
+      msgEl.textContent = 'Thank you for your feedback!';
+      btn.textContent = 'Sent';
+    });
+  } else {
+    msgEl.className = 'form-msg success';
+    msgEl.textContent = 'Thank you for your feedback!';
+    btn.textContent = 'Sent';
+  }
+}
+
+function replaySim() {
+  selectedRole = null; sessionId = null; authToken = null;
+  moods = {}; prevMoods = {}; messageCount = 0; fbRating = 0;
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  document.getElementById('chat-messages').innerHTML = '';
+  document.getElementById('decision-text').value = '';
+  document.getElementById('wc').textContent = '0';
+  document.querySelectorAll('.role-card').forEach(function(c){ c.classList.remove('selected'); });
+  document.getElementById('btn-start').disabled = true;
+  document.getElementById('btn-enter-boardroom').disabled = false;
+  document.getElementById('btn-enter-boardroom').textContent = 'Enter the Boardroom';
+  document.getElementById('btn-submit').disabled = true;
+  document.getElementById('btn-submit').textContent = 'Submit Recommendation';
+  showPhase('phase-select');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════════════════
+function showPhase(id) {
+  document.querySelectorAll('#view-sim .phase').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function escapeHtml(text) {
+  var div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GA4
+// ═══════════════════════════════════════════════════════════════
+function trackEvent(name, params) {
+  if (typeof gtag === 'function') gtag('event', name, params);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// IRON CLAD: CLIENT-SIDE PROTECTIONS
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12') { e.preventDefault(); return; }
+  if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) { e.preventDefault(); return; }
+  if (e.ctrlKey && e.key.toUpperCase() === 'U') { e.preventDefault(); return; }
+  if (e.metaKey && e.altKey && ['I','J','C'].includes(e.key.toUpperCase())) { e.preventDefault(); return; }
+  if (e.metaKey && e.key.toUpperCase() === 'U') { e.preventDefault(); return; }
+});
+console.log('%cStop!', 'color:#e23744;font-size:48px;font-weight:900');
+console.log('%cThis is a CXO Simulabs\u2122 protected simulation. Unauthorised access to console, source code, or network requests is prohibited under Iron Clad\u2122 security.', 'color:#1a1a2e;font-size:14px');
+
+// ═══════════════════════════════════════════════════════════════
+// FOUNDER MODE: Triple-click logo bypasses access gate
+// ═══════════════════════════════════════════════════════════════
+(function() {
+  var _fc = 0, _ft = 0;
+  document.querySelector('.nav-logo').addEventListener('click', function() {
+    var now = Date.now();
+    if (now - _ft > 600) _fc = 0;
+    _fc++; _ft = now;
+    if (_fc >= 3) {
+      _fc = 0;
+      sessionStorage.setItem('cxo_beta_access', 'granted');
+      showView('view-sim');
+    }
+  });
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+renderTrackGrid();
+renderSelection();
+
+// Handle direct hash navigation
+(function() {
+  var hash = window.location.hash.replace('#','');
+  if (hash && document.getElementById('view-' + hash)) {
+    showView('view-' + hash, false);
+  }
+})();
+</script>
+</body>
+</html>
