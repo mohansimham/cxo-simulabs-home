@@ -116,23 +116,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 .track-body-dark{background:var(--navy);padding:0 48px 60px}
 .track-body-inner{max-width:1200px;margin:0 auto}
 
-/* ── Discipline Sections (Dark Cloak) ── */
-.disc-section{margin-bottom:32px}
-.disc-section-header{margin-bottom:14px}
-.disc-section-num{font-size:.7em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:2px}
-.disc-section-title{font-size:1.1em;font-weight:800;color:#fff;margin-top:2px}
-.sim-grid-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.sim-tile-t{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;gap:8px;transition:all .25s;text-decoration:none;min-height:130px}
+/* ── SIM Tiles (matching homepage sim-grid) ── */
+.sim-grid-track{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:28px}
+.sim-tile-t{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;gap:8px;transition:all .25s;cursor:pointer;min-height:140px}
 .sim-tile-t:hover{background:rgba(255,255,255,.08);border-color:rgba(226,55,68,.35);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .sim-tile-t .st-num{font-size:.7em;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.sim-tile-t .st-company{color:#fff;font-size:.92em;font-weight:700;line-height:1.35;flex:1}
-.sim-tile-t .st-accent{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
-.sim-tile-t .st-tiers{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
-.sim-tile-t .st-tier{font-size:.62em;padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.st-tier-1{background:rgba(59,130,246,.15);color:#93c5fd}
-.st-tier-2{background:rgba(226,55,68,.15);color:#ff9aa2}
-.sim-tile-t .st-action{font-size:.75em;color:var(--red);font-weight:700;opacity:0;transition:opacity .2s;margin-top:4px}
-.sim-tile-t:hover .st-action{opacity:1}
+.sim-tile-t .st-name{color:#fff;font-size:.92em;font-weight:700;line-height:1.35;flex:1}
+.sim-tile-t .st-co{font-size:.78em;color:#ccd6e0;font-weight:500}
+.sim-tile-t .st-play{font-size:.75em;color:var(--red);font-weight:700;opacity:0;transition:opacity .2s;margin-top:4px}
+.sim-tile-t:hover .st-play{opacity:1}
 
 /* ── Forms ── */
 .form-container{max-width:520px;margin:0 auto;padding:0 24px}
@@ -333,7 +325,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .track-body-dark{padding:0 20px 40px}
   .track-stats{gap:12px;flex-wrap:wrap}
   .track-stat{padding:10px 18px}
-  .sim-grid-track{grid-template-columns:repeat(2,1fr)}
+  .sim-grid-track{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important}
@@ -345,7 +337,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .hero h1{font-size:1.7em}
   [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr!important}
-  .sim-grid-track{grid-template-columns:1fr}
+  .sim-grid-track{grid-template-columns:1fr!important}
 }
 </style>
 </head>
@@ -1121,38 +1113,28 @@ function openTrack(trackId) {
 
   var bodyHtml = '<div class="track-body-inner">';
 
-  bodyHtml += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;padding-top:36px;flex-wrap:wrap;gap:12px">' +
-    '<div><div style="font-size:.78em;text-transform:uppercase;letter-spacing:2.5px;color:#ff9aa2;font-weight:700;margin-bottom:4px">Disciplines &amp; Simulations</div>' +
+  bodyHtml += '<div style="display:flex;align-items:center;justify-content:space-between;padding-top:36px;flex-wrap:wrap;gap:12px">' +
+    '<div><div style="font-size:.78em;text-transform:uppercase;letter-spacing:2.5px;color:#ff9aa2;font-weight:700;margin-bottom:4px">' + simCount + ' Simulations</div>' +
     '<p style="font-size:.88em;color:#ccd6e0;margin:0">Competency is the hero. The company provides context.</p></div>' +
     '<span onclick="showView(\'view-landing\')" style="color:var(--red);font-size:.82em;font-weight:700;cursor:pointer">All Tracks</span>' +
     '</div>';
 
-  var discIndex = 0;
+  bodyHtml += '<div class="sim-grid-track">';
   disciplines.forEach(function(d) {
-    discIndex++;
-    bodyHtml += '<div class="disc-section">' +
-      '<div class="disc-section-header">' +
-        '<div class="disc-section-num">Discipline ' + discIndex + '</div>' +
-        '<div class="disc-section-title">' + escapeHtml(d.name) + '</div>' +
-      '</div>' +
-      '<div class="sim-grid-track">';
     d.sims.forEach(function(s) {
       var ghUrl = 'https://CXO-Simulabs.github.io/' + s.repo + '/';
       var clickAction = s.tier1 ? 'onclick="window.open(\'' + ghUrl + '\',\'_blank\');trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})"' : '';
-      bodyHtml += '<div class="sim-tile-t" style="cursor:pointer" ' + clickAction + '>' +
+      bodyHtml += '<div class="sim-tile-t" ' + clickAction + '>' +
         '<div class="st-num">' + s.num + '</div>' +
-        '<div class="st-company"><span class="st-accent" style="background:' + s.accent + '"></span>' + escapeHtml(s.company) + '</div>' +
-        '<div class="st-tiers">';
-      if (s.tier1) bodyHtml += '<span class="st-tier st-tier-1">Tier 1: MCQ</span>';
-      if (s.tier2) bodyHtml += '<span class="st-tier st-tier-2">Tier 2: Boardroom</span>';
-      bodyHtml += '</div>' +
-        '<div class="st-action">' + (s.tier2 ? 'Enter Boardroom' : 'Open SIM') + '</div>' +
+        '<div class="st-name">' + escapeHtml(d.name) + '</div>' +
+        '<div class="st-co">' + escapeHtml(s.company) + '</div>' +
+        '<div class="st-play">' + (s.tier2 ? 'Enter Boardroom \u2192' : 'Play SIM \u2192') + '</div>' +
         '</div>';
     });
-    bodyHtml += '</div></div>';
   });
+  bodyHtml += '</div>';
 
-  bodyHtml += '<div style="text-align:center;margin-top:40px;padding:36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px">' +
+  bodyHtml += '<div style="text-align:center;margin-top:44px;padding:36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px">' +
     '<p style="color:#fff;font-size:.95em;font-weight:700;margin-bottom:14px">Ready to test your ' + track.title + ' skills?</p>' +
     '<button class="btn btn-red" onclick="showView(\'view-request\')" style="font-size:.9em;padding:12px 32px">Request Access</button>' +
     '</div>';
