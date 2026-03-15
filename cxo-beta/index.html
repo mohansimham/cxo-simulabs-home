@@ -115,22 +115,21 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 .track-stat .val{font-size:2em;font-weight:900;color:#fff}
 .track-stat .lbl{font-size:.72em;color:var(--text-light);text-transform:uppercase;letter-spacing:1.5px;margin-top:2px}
 
-/* ── Discipline Sections ── */
-.disc-card{background:#fff;border-radius:12px;padding:28px 28px 20px;margin-bottom:20px;border:1px solid var(--border);border-left:4px solid var(--red)}
-.disc-card .disc-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px}
-.disc-card h3{font-size:1.15em;font-weight:800;color:var(--navy);margin:0}
-.disc-card .disc-count{font-size:.7em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-.sim-list{display:flex;flex-direction:column;gap:10px}
-.sim-item{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--bg-light);border-radius:10px;transition:all .2s;border:1px solid transparent}
-.sim-item:hover{background:#eef1f5;border-color:var(--border);transform:translateX(4px)}
-.sim-item-left{display:flex;align-items:center;gap:14px}
-.sim-num{font-size:.72em;font-weight:700;color:var(--red);min-width:44px}
-.sim-company{font-size:.88em;font-weight:600;color:var(--text-dark)}
-.sim-accent{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(0,0,0,.06)}
-.sim-tier{font-size:.65em;padding:4px 12px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+/* ── Discipline Grid ── */
+.disc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.disc-card{background:#fff;border-radius:12px;padding:22px 24px;border:1px solid var(--border);display:flex;flex-direction:column}
+.disc-card:hover{border-color:rgba(226,55,68,.3);box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.disc-card .disc-num{font-size:.65em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.disc-card h3{font-size:1em;font-weight:800;color:var(--navy);margin:0 0 12px}
+.disc-sims{display:flex;flex-direction:column;gap:8px;flex:1}
+.disc-sim-row{display:flex;align-items:center;gap:10px}
+.disc-sim-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.disc-sim-company{font-size:.82em;font-weight:600;color:var(--text-dark);flex:1}
+.disc-sim-actions{display:flex;gap:6px;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--bg-light);flex-wrap:wrap}
+.sim-tier{font-size:.6em;padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
 .tier1-badge{background:#dbeafe;color:#1e40af}
 .tier2-badge{background:rgba(226,55,68,.12);color:var(--red)}
-.sim-link{color:var(--red);text-decoration:none;font-size:.82em;font-weight:700;white-space:nowrap;padding:6px 14px;border-radius:6px;transition:all .2s}.sim-link:hover{background:rgba(226,55,68,.08);text-decoration:none}
+.sim-link{color:var(--red);text-decoration:none;font-size:.78em;font-weight:700;white-space:nowrap;padding:5px 12px;border-radius:6px;border:1px solid rgba(226,55,68,.2);transition:all .2s}.sim-link:hover{background:rgba(226,55,68,.06);border-color:var(--red)}
 
 /* ── Forms ── */
 .form-container{max-width:520px;margin:0 auto;padding:0 24px}
@@ -331,9 +330,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .track-abbr-large{display:none!important}
   .track-stats{gap:12px;flex-wrap:wrap}
   .track-stat{padding:10px 18px}
-  .disc-card{padding:20px 18px 16px}
-  .disc-card .disc-header{flex-direction:column;gap:4px}
-  .sim-item{flex-direction:column;align-items:flex-start;gap:8px}
+  .disc-grid{grid-template-columns:1fr}
+  .disc-card{padding:18px 16px}
   [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
   [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important}
@@ -1120,44 +1118,42 @@ function openTrack(trackId) {
       '<div class="track-stat"><div class="val">' + (track.id === 'cpo' ? '15' : '8') + '</div><div class="lbl">Companies</div></div>' +
     '</div>';
 
-  var bodyHtml = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">' +
-    '<div><div class="section-label" style="margin-bottom:6px">Disciplines &amp; Simulations</div>' +
-    '<p style="font-size:.88em;color:var(--text-muted);margin:0">Competency is the hero. The company provides context.</p></div>' +
-    '<span class="nav-back" onclick="showView(\'view-landing\')" style="color:var(--red);font-size:.85em;font-weight:600;cursor:pointer">All Tracks</span>' +
+  var bodyHtml = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px">' +
+    '<div><div class="section-label" style="margin-bottom:4px">Disciplines &amp; Simulations</div>' +
+    '<p style="font-size:.85em;color:var(--text-muted);margin:0">Competency is the hero. The company provides context.</p></div>' +
+    '<span onclick="showView(\'view-landing\')" style="color:var(--red);font-size:.82em;font-weight:700;cursor:pointer">All Tracks</span>' +
     '</div>';
 
+  bodyHtml += '<div class="disc-grid">';
   var discIndex = 0;
   disciplines.forEach(function(d) {
     discIndex++;
-    var simCountInDisc = d.sims.length;
     bodyHtml += '<div class="disc-card">' +
-      '<div class="disc-header">' +
-        '<h3>' + escapeHtml(d.name) + '</h3>' +
-        '<span class="disc-count">' + simCountInDisc + (simCountInDisc === 1 ? ' SIM' : ' SIMs') + '</span>' +
-      '</div>' +
-      '<div class="sim-list">';
+      '<div class="disc-num">Discipline ' + discIndex + '</div>' +
+      '<h3>' + escapeHtml(d.name) + '</h3>' +
+      '<div class="disc-sims">';
+    d.sims.forEach(function(s) {
+      bodyHtml += '<div class="disc-sim-row">' +
+        '<div class="disc-sim-dot" style="background:' + s.accent + '"></div>' +
+        '<span class="disc-sim-company">' + s.num + ': ' + escapeHtml(s.company) + '</span>' +
+        '</div>';
+    });
+    bodyHtml += '</div><div class="disc-sim-actions">';
     d.sims.forEach(function(s) {
       var ghUrl = 'https://CXO-Simulabs.github.io/' + s.repo + '/';
-      bodyHtml += '<div class="sim-item"><div class="sim-item-left">' +
-        '<div class="sim-accent" style="background:' + s.accent + '"></div>' +
-        '<span class="sim-num">' + s.num + '</span>' +
-        '<span class="sim-company">' + escapeHtml(s.company) + '</span>' +
-        '</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">';
       if (s.tier1) {
-        bodyHtml += '<span class="sim-tier tier1-badge">Tier 1: MCQ</span>' +
-          '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="sim-link" onclick="trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})">Open SIM</a>';
+        bodyHtml += '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="sim-link" onclick="trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})">' + s.num + ' MCQ</a>';
       }
       if (s.tier2) {
-        bodyHtml += '<span class="sim-tier tier2-badge">Tier 2: AI Boardroom</span>' +
-          '<span class="sim-link" style="cursor:pointer" onclick="launchSim();trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier2\'})">Enter Boardroom</span>';
+        bodyHtml += '<span class="sim-link" style="cursor:pointer;border-color:var(--red);color:var(--red)" onclick="launchSim();trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier2\'})">Boardroom</span>';
       }
-      bodyHtml += '</div></div>';
     });
     bodyHtml += '</div></div>';
   });
+  bodyHtml += '</div>';
 
-  bodyHtml += '<div style="text-align:center;margin-top:32px;padding:24px;background:var(--navy);border-radius:12px">' +
-    '<p style="color:var(--text-light);font-size:.9em;margin-bottom:14px">Ready to test your ' + track.title + ' skills?</p>' +
+  bodyHtml += '<div style="text-align:center;margin-top:32px;padding:28px;background:var(--navy);border-radius:12px">' +
+    '<p style="color:var(--text-light);font-size:.92em;margin-bottom:14px">Ready to test your ' + track.title + ' skills?</p>' +
     '<button class="btn btn-red" onclick="showView(\'view-request\')" style="font-size:.9em;padding:12px 32px">Request Access</button>' +
     '</div>';
 
