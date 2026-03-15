@@ -327,10 +327,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   .track-hero{padding:40px 20px 36px}.track-hero h1{font-size:2em}
   .track-stats{gap:16px}
   .sim-item{flex-direction:column;align-items:flex-start;gap:8px}
+  [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+  [style*="padding:60px 48px"]{padding:40px 20px!important}
 }
 @media(max-width:480px){
   .track-grid{grid-template-columns:1fr}
   .hero h1{font-size:1.7em}
+  [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(2,1fr)!important}
 }
 </style>
 </head>
@@ -350,57 +355,94 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="view-landing" class="view active">
 
+<!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-eyebrow">CXO Beta &mdash; Controlled Access</div>
   <h1>Knowledge Is <span class="hl">Everywhere</span>. Application <span class="hl">Isn't</span>.</h1>
-  <p>16 C-suite tracks. Real company data. AI-powered boardroom simulations. Pick a role, debate agents with competing agendas, and make the strategic call.</p>
+  <p>You've read the case studies. You've watched the lectures. But have you ever sat in the boardroom and made the call &mdash; with AI executives pushing back on every word?</p>
   <div class="hero-sub">Complementary to courses, MBAs, certifications &mdash; not challenging them.</div>
 </div>
 
+<!-- ── SIGNATURE CAPABILITIES ── -->
 <div class="section-wide">
-  <div class="section-label">How It Works</div>
-  <h2 style="margin-bottom:20px">Three Steps to the Boardroom</h2>
-  <div class="hiw-grid">
-    <div class="hiw-step">
-      <div class="hiw-num">1</div>
-      <h4>Browse</h4>
-      <p>Explore 16 C-suite tracks. Each track covers the competencies that define a specific executive role.</p>
+  <div class="section-label">What Makes This Different</div>
+  <h2 style="margin-bottom:20px">Not Another Course. A Boardroom.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+    <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em">AI Agents With Agendas</h4>
+      <p style="font-size:.84em;color:var(--text-muted);line-height:1.55">Three AI executives debate you in real time. Each has a motive, a position, and data to back it up. They challenge your reasoning, not just your answers.</p>
     </div>
-    <div class="hiw-step">
-      <div class="hiw-num">2</div>
-      <h4>Request Access</h4>
-      <p>Submit your details. You'll receive a personal access code within 24 hours.</p>
+    <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em">Real Company Data</h4>
+      <p style="font-size:.84em;color:var(--text-muted);line-height:1.55">Every scenario uses publicly available financials, market metrics, and competitive data. No made-up numbers. SEC filings, industry reports, real decisions.</p>
     </div>
-    <div class="hiw-step">
-      <div class="hiw-num">3</div>
-      <h4>Simulate</h4>
-      <p>Enter the boardroom. Debate AI agents. Make the strategic call. Get scored on reasoning, frameworks, and engagement.</p>
+    <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em">Strategic Frameworks</h4>
+      <p style="font-size:.84em;color:var(--text-muted);line-height:1.55">Porter's Five Forces. Ansoff Matrix. Platform Economics. You don't just learn them &mdash; you apply them under pressure, with agents who know them too.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <div style="background:var(--navy);border-radius:12px;padding:24px;color:#fff">
+      <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:rgba(226,55,68,.15);color:#ff9aa2;border:1px solid rgba(226,55,68,.35);margin-bottom:10px">Dragon Fire Bloom&trade;</div>
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em;color:#fff">3 Intensity Levers</h4>
+      <p style="font-size:.84em;color:var(--text-light);line-height:1.55">Agent behaviour (guided to brutal). Time pressure (relaxed to crisis). Starting information (full briefing to cold start). You set the difficulty.</p>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:24px;color:#fff">
+      <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:rgba(226,55,68,.15);color:#ff9aa2;border:1px solid rgba(226,55,68,.35);margin-bottom:10px">Boardroom Pulse&trade;</div>
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em;color:#fff">Live Mood Tracking</h4>
+      <p style="font-size:.84em;color:var(--text-light);line-height:1.55">Watch agent moods shift as you speak. A temperature dial shows room tension. Impress them or lose the room &mdash; your score depends on it.</p>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:24px;color:#fff">
+      <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:rgba(226,55,68,.15);color:#ff9aa2;border:1px solid rgba(226,55,68,.35);margin-bottom:10px">Multi-Dimensional</div>
+      <h4 style="font-weight:800;margin-bottom:8px;font-size:.95em;color:#fff">3-Axis Scoring</h4>
+      <p style="font-size:.84em;color:var(--text-light);line-height:1.55">Strategic Reasoning (40%). Framework Application (30%). Boardroom Engagement (30%). Not what you know &mdash; how you apply it under fire.</p>
     </div>
   </div>
 </div>
 
+<!-- ── SIMULATION FLOW ── -->
 <div class="section-wide">
-  <div class="section-label">C-Suite Tracks</div>
-  <h2 style="margin-bottom:20px">16 Executive Simulation Tracks</h2>
-  <div class="track-grid" id="track-grid"></div>
-</div>
-
-<div class="section-wide">
-  <div class="featured-card">
-    <div class="section-label">Featured Simulation</div>
-    <h3>AI-Powered Boardroom &mdash; Platform Decisions &amp; Strategic Thinking</h3>
-    <p>Airbnb, late 2014. The board wants a single 12-month strategic priority. Four executives. Four agendas. One decision. You pick a role &mdash; the rest become AI agents powered by the <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> engine.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="btn btn-red" onclick="launchSim()">Try the Boardroom Beta</button>
-      <button class="btn btn-outline" onclick="showView('view-request')">Request Access</button>
+  <div class="section-label">The Experience</div>
+  <h2 style="margin-bottom:20px">Inside the Boardroom &mdash; Step by Step</h2>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px">
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">1</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Scenario</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Read the business crisis. See the challenges. Understand what's at stake.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">2</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Frameworks</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Review the strategic frameworks. Learn how they apply to the scenario.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">3</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Setup</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Pick your C-suite role. Configure intensity. Set the difficulty.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">4</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Boardroom</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Debate AI agents in real time. Watch moods shift. Build your case.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">5</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Decision</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Write your strategic recommendation. Defend your priority against the trade-offs.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:18px 14px;border:1px solid var(--border);text-align:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85em;margin:0 auto 10px">6</div>
+      <h4 style="font-weight:700;font-size:.82em;margin-bottom:4px">Score</h4>
+      <p style="font-size:.72em;color:var(--text-muted);line-height:1.45">Get scored on reasoning, framework use, and engagement. Gold, Silver, Bronze, or try again.</p>
     </div>
   </div>
 </div>
 
+<!-- ── TWO TIERS ── -->
 <div class="section-wide">
   <div class="section-label">Two Tiers of Simulation</div>
-  <h2 style="margin-bottom:20px">What You'll Experience</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <h2 style="margin-bottom:20px">Choose Your Challenge</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
     <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
       <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:#dbeafe;color:#1e40af;margin-bottom:10px">Tier 1: Strategic MCQ</div>
       <h4 style="font-weight:700;margin-bottom:6px">Scenario-Based Questions</h4>
@@ -409,8 +451,35 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
     <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border)">
       <div style="font-size:.65em;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:inline-block;background:rgba(226,55,68,.12);color:var(--red);margin-bottom:10px">Tier 2: AI Boardroom</div>
       <h4 style="font-weight:700;margin-bottom:6px">Live Agent Debate</h4>
-      <p style="font-size:.85em;color:var(--text-muted);line-height:1.55">Pick a C-suite role. Debate AI agents with hidden agendas. Configure intensity with <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> levers. Get evaluated on reasoning, frameworks, and boardroom engagement.</p>
+      <p style="font-size:.85em;color:var(--text-muted);line-height:1.55">Pick a C-suite role. Debate AI agents with competing agendas. Configure intensity with <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> levers. Get evaluated on reasoning, frameworks, and boardroom engagement.</p>
     </div>
+  </div>
+</div>
+
+<!-- ── C-SUITE TRACKS ── -->
+<div class="section-wide">
+  <div class="section-label">C-Suite Tracks</div>
+  <h2 style="margin-bottom:20px">16 Executive Simulation Tracks</h2>
+  <div class="track-grid" id="track-grid"></div>
+</div>
+
+<!-- ── FEATURED SIM ── -->
+<div class="section-wide">
+  <div class="featured-card">
+    <div class="section-label">Featured Simulation</div>
+    <h3>Platform Decisions &amp; Strategic Thinking &mdash; Airbnb</h3>
+    <p>Late 2014. The board wants a single 12-month strategic priority. Four executives. Four agendas. One decision. You pick a role &mdash; the rest become AI agents powered by the <span style="color:var(--red)">Dragon Fire Bloom&trade;</span> engine.</p>
+    <button class="btn btn-red" onclick="launchSim()">Enter the Boardroom</button>
+  </div>
+</div>
+
+<!-- ── REQUEST ACCESS CTA ── -->
+<div style="background:linear-gradient(150deg,var(--navy) 0%,var(--navy-mid) 60%,var(--navy-light) 100%);padding:60px 48px;text-align:center;color:#fff">
+  <div style="max-width:600px;margin:0 auto">
+    <div class="section-label" style="margin-bottom:12px">Ready?</div>
+    <h2 style="font-size:2em;font-weight:900;color:#fff;margin-bottom:12px">Get Your Access Code</h2>
+    <p style="font-size:1em;color:var(--text-light);line-height:1.65;margin-bottom:24px">Submit your details. You'll receive a personal access code within 24 hours. No automated signups &mdash; every beta tester is hand-picked.</p>
+    <button class="btn btn-red" onclick="showView('view-request')" style="font-size:1.05em;padding:16px 40px">Request Access</button>
   </div>
 </div>
 
