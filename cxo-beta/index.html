@@ -1131,13 +1131,11 @@ function openTrack(trackId) {
   bodyHtml += '<div class="sim-grid-track">';
   disciplines.forEach(function(d) {
     d.sims.forEach(function(s) {
-      var ghUrl = 'https://CXO-Simulabs.github.io/' + s.repo + '/';
-      var clickAction = s.tier1 ? 'onclick="window.open(\'' + ghUrl + '\',\'_blank\');trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'tier1\'})"' : '';
-      bodyHtml += '<div class="sim-tile-t" ' + clickAction + '>' +
+      bodyHtml += '<div class="sim-tile-t" onclick="showView(\'view-request\');trackEvent(\'sim_clicked\',{sim_id:\'' + s.repo + '\',track:\'' + trackId + '\',tier:\'' + (s.tier2 ? 'tier2' : 'tier1') + '\'})">' +
         '<div class="st-num">' + s.num + '</div>' +
         '<div class="st-name">' + escapeHtml(d.name) + '</div>' +
         '<div class="st-co">' + escapeHtml(s.company) + '</div>' +
-        '<div class="st-play">' + (s.tier2 ? 'Enter Boardroom \u2192' : 'Play SIM \u2192') + '</div>' +
+        '<div class="st-play">Request Access \u2192</div>' +
         '</div>';
     });
   });
