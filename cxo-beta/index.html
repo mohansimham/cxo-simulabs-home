@@ -495,7 +495,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="view-sim" class="view">
 
-<!-- PHASE: ROLE SELECTION -->
+<!-- PHASE: SCENARIO BRIEFING -->
 <div id="phase-select" class="phase active">
 <div class="hero">
   <div class="hero-eyebrow">CXO Beta &mdash; Tier 2 Simulation</div>
@@ -513,11 +513,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   <div class="section-label">All Motives &mdash; Transparent</div>
   <p class="section-desc">Every agent's agenda is visible to you. No hidden information. No sealed briefs. The tension comes from competing priorities, not secrets.</p>
   <div class="motives-board" id="motives-board"></div>
-  <div class="section-label">Pick Your Role</div>
-  <p class="section-desc">You are 1 vs all. The 3 roles you don't pick become AI agents who will push their own agenda in the boardroom.</p>
-  <div class="role-grid" id="role-grid"></div>
   <div class="btn-center">
-    <button class="btn btn-red" id="btn-start" disabled onclick="goToPrimer()">Continue to Framework Primer</button>
+    <button class="btn btn-red" onclick="goToPrimer()">Continue to Framework Primer</button>
   </div>
 </div>
 </div>
@@ -526,11 +523,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 <div id="phase-primer" class="phase">
 <div class="section" style="max-width:760px">
   <div class="primer-flow">
-    <div class="primer-step done"><div class="primer-step-num">1</div> Role</div>
+    <div class="primer-step done"><div class="primer-step-num">1</div> Scenario</div>
     <span class="primer-arrow">&#9654;</span>
     <div class="primer-step active"><div class="primer-step-num">2</div> Frameworks</div>
     <span class="primer-arrow">&#9654;</span>
-    <div class="primer-step"><div class="primer-step-num">3</div> Intensity</div>
+    <div class="primer-step"><div class="primer-step-num">3</div> Setup</div>
     <span class="primer-arrow">&#9654;</span>
     <div class="primer-step"><div class="primer-step-num">4</div> Boardroom</div>
     <span class="primer-arrow">&#9654;</span>
@@ -580,15 +577,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
 </div>
 </div>
 
-<!-- PHASE: INTENSITY SETUP -->
+<!-- PHASE: ROLE + INTENSITY SETUP -->
 <div id="phase-intensity" class="phase">
 <div class="section" style="max-width:760px">
   <div class="primer-flow">
-    <div class="primer-step done"><div class="primer-step-num">1</div> Role</div>
+    <div class="primer-step done"><div class="primer-step-num">1</div> Scenario</div>
     <span class="primer-arrow">&#9654;</span>
     <div class="primer-step done"><div class="primer-step-num">2</div> Frameworks</div>
     <span class="primer-arrow">&#9654;</span>
-    <div class="primer-step active"><div class="primer-step-num">3</div> Intensity</div>
+    <div class="primer-step active"><div class="primer-step-num">3</div> Setup</div>
     <span class="primer-arrow">&#9654;</span>
     <div class="primer-step"><div class="primer-step-num">4</div> Boardroom</div>
     <span class="primer-arrow">&#9654;</span>
@@ -596,9 +593,17 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
     <span class="primer-arrow">&#9654;</span>
     <div class="primer-step"><div class="primer-step-num">6</div> Score</div>
   </div>
+
+  <div class="section-label">Pick Your Role</div>
+  <h2>Role Selection</h2>
+  <p class="section-desc">You are 1 vs all. The 3 roles you don't pick become AI agents who will push their own agenda in the boardroom.</p>
+  <div class="role-grid" id="role-grid"></div>
+
+  <div style="border-top:1px solid var(--border);margin:28px 0;padding-top:28px">
   <div class="section-label"><span style="color:var(--red)">Dragon Fire Bloom&trade;</span> Engine</div>
   <h2>Intensity Configuration</h2>
   <p class="section-desc">Configure the simulation difficulty. These levers control how the AI agents behave, how much time you have, and how much context you start with.</p>
+  </div>
 
   <div class="intensity-section">
     <h3>Lever A &mdash; Agent Behaviour</h3>
@@ -666,7 +671,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg-light);color:va
   </div>
 
   <div class="btn-center" style="margin-top:28px">
-    <button class="btn btn-red" id="btn-enter-boardroom" onclick="startSimulation()">Enter the Boardroom</button>
+    <button class="btn btn-red" id="btn-enter-boardroom" disabled onclick="startSimulation()">Enter the Boardroom</button>
   </div>
 </div>
 </div>
@@ -1164,7 +1169,7 @@ function selectRole(roleId) {
   selectedRole = roleId;
   document.querySelectorAll('.role-card').forEach(function(c){ c.classList.remove('selected'); });
   document.getElementById('rc-' + roleId).classList.add('selected');
-  document.getElementById('btn-start').disabled = false;
+  document.getElementById('btn-enter-boardroom').disabled = false;
   trackEvent('role_selected', { sim: 'cxo-airbnb', role: roleId });
 }
 
@@ -1683,8 +1688,7 @@ function replaySim() {
   document.getElementById('decision-text').value = '';
   document.getElementById('wc').textContent = '0';
   document.querySelectorAll('.role-card').forEach(function(c){ c.classList.remove('selected'); });
-  document.getElementById('btn-start').disabled = true;
-  document.getElementById('btn-enter-boardroom').disabled = false;
+  document.getElementById('btn-enter-boardroom').disabled = true;
   document.getElementById('btn-enter-boardroom').textContent = 'Enter the Boardroom';
   document.getElementById('btn-submit').disabled = true;
   document.getElementById('btn-submit').textContent = 'Submit Recommendation';
