@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CXO Simulabs — Faculty Feedback Request</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a2e;
+      line-height: 1.6;
+      font-size: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e23744;
+      margin-bottom: 28px;
+    }
+    .logo { font-size: 1.4em; font-weight: 800; letter-spacing: 0.5px; }
+    .logo span { color: #e23744; }
+    .logo sup { font-size: 0.45em; color: #999; vertical-align: super; margin-left: 1px; }
+    .tag { font-size: 0.7em; font-weight: 700; color: #e23744; text-transform: uppercase; letter-spacing: 2px; }
+
+    /* Sections */
+    h1 { font-size: 1.55em; font-weight: 900; color: #1a1a2e; margin-bottom: 6px; line-height: 1.25; }
+    h2 { font-size: 0.85em; font-weight: 700; color: #e23744; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; margin-top: 24px; }
+    p { margin-bottom: 10px; color: #333; font-size: 0.92em; }
+    .subtitle { font-size: 1.05em; color: #666; margin-bottom: 20px; }
+
+    /* Grid */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+    .card {
+      background: #f8f9fb;
+      border: 1px solid #e8eaee;
+      border-radius: 10px;
+      padding: 16px 14px;
+    }
+    .card-num { font-size: 1.6em; font-weight: 900; color: #e23744; margin-bottom: 4px; }
+    .card-label { font-size: 0.82em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .card-desc { font-size: 0.75em; color: #666; line-height: 1.5; }
+
+    /* Scoring */
+    .scoring { display: flex; gap: 10px; margin-bottom: 20px; }
+    .score-pill {
+      flex: 1;
+      text-align: center;
+      background: #1a1a2e;
+      border-radius: 8px;
+      padding: 12px 8px;
+    }
+    .score-pct { font-size: 1.3em; font-weight: 900; color: #e23744; }
+    .score-label { font-size: 0.68em; color: #ccd6e0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+    /* Flow */
+    .flow { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+    .flow-step {
+      background: #1a1a2e;
+      color: #ffffff;
+      font-size: 0.7em;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .flow-arrow { color: #e23744; font-size: 0.8em; font-weight: 700; }
+
+    /* Ask */
+    .ask-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
+    .ask-box h2 { color: #ff9aa2; margin-top: 0; }
+    .ask-box p { color: #ccd6e0; }
+    .ask-box strong { color: #ffffff; }
+    .ask-list { list-style: none; padding: 0; }
+    .ask-list li {
+      font-size: 0.85em;
+      color: #ccd6e0;
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .ask-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: #e23744;
+      border-radius: 50%;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e8eaee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer p { font-size: 0.72em; color: #999; margin: 0; }
+    .footer .engine { color: #e23744; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 20px; }
+      .header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      h1 { font-size: 1.25em; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr !important; }
+      .scoring { flex-direction: column; }
+      .flow { gap: 4px; }
+      .flow-step { font-size: 0.6em; padding: 5px 8px; }
+      .ask-box { padding: 18px 16px; }
+      .footer { flex-direction: column; gap: 6px; text-align: center; }
+    }
+    #interest-form input, #interest-form select { transition: border-color 0.2s; }
+    #interest-form input:focus, #interest-form select:focus { outline: none; border-color: #e23744; }
+    #submitBtn:hover { background: #c42f3a; }
+    @media print {
+      body { padding: 36px 44px; }
+      .ask-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .score-pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .flow-step { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">CXO <span>Simulabs</span><sup>&trade;</sup></div>
+    <div class="tag">Faculty Feedback Request</div>
+  </div>
+
+  <!-- Title -->
+  <h1>CPO Level 2: AI-Powered Boardroom Simulations</h1>
+  <p class="subtitle">We are building the next generation of product management simulations and would be grateful to learn from your wide expertise in this area.</p>
+
+  <!-- What It Is -->
+  <h2>What We Have Built</h2>
+  <p>CPO Level 2 is a series of 15 boardroom simulations where students step into a C-suite role at a real global tech company (Airbnb, Spotify, Netflix, Amazon, and others) and navigate competing executive priorities to make a single strategic decision. Each simulation is powered by 4 AI agents with transparent motives, real-time mood tracking, and AI-scored performance evaluation.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-num">15</div>
+      <div class="card-label">Simulations</div>
+      <div class="card-desc">One pivotal strategic moment per company. Real data, real tensions, real trade-offs.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">4</div>
+      <div class="card-label">AI Agents Per SIM</div>
+      <div class="card-desc">CEO, CTO, CPO, VP Growth. Each pushes a different agenda. Motives are transparent.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">3</div>
+      <div class="card-label">Scoring Dimensions</div>
+      <div class="card-desc">Strategic Reasoning, Framework Application, Boardroom Engagement. All AI-scored.</div>
+    </div>
+  </div>
+
+  <!-- Boardroom Mechanics -->
+  <h2>Boardroom Mechanics</h2>
+  <p>Unlike the MBA Series (which uses sealed briefs and information asymmetry), CPO Level 2 gives every agent a <strong>transparent motive</strong>. The student knows what each executive wants before the simulation begins. The challenge is not uncovering hidden data but navigating legitimate competing priorities under pressure.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">Transparent Motives</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        Every agent's agenda is visible upfront. The CPO wants trust features. The CTO wants a platform rebuild. The VP Growth wants expansion. The CEO wants all of it. No hidden information. The drama comes from the tension between legitimate priorities.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Agent Behaviour</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        <strong style="color:#1a1a2e;">Guided:</strong> Agents help you think through trade-offs.<br><br>
+        <strong style="color:#1a1a2e;">Standard:</strong> Agents advocate their position. Push back when challenged.<br><br>
+        <strong style="color:#e23744;">Brutal:</strong> Agents are territorial and will pressure you aggressively.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Boardroom Pulse&trade;</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        Real-time mood tracking across all agents. Data-backed arguments increase engagement. Dismissing an agent's priority drops their mood. The aggregate "Room Temperature" reflects how the boardroom perceives the student's leadership.
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.82em; color: #666;">Two intensity levers: Agent Behaviour and Time Pressure (Relaxed / Standard 25 min / Boardroom 15 min / Crisis 8 min). No "Starting Information" lever because all data is public by design. No calculations. The entire assessment is on strategic reasoning, framework application, and boardroom engagement.</p>
+
+  <!-- How It Works -->
+  <h2>Student Journey</h2>
+  <div class="flow">
+    <span class="flow-step">Pick a Role</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Study Scenario</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Boardroom (4 Rounds)</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Decide</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Defend</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Results</span>
+  </div>
+
+  <!-- Scoring -->
+  <h2>Scoring Rubric</h2>
+  <div class="scoring">
+    <div class="score-pill">
+      <div class="score-pct">40%</div>
+      <div class="score-label">Strategic Reasoning</div>
+    </div>
+    <div class="score-pill">
+      <div class="score-pct">30%</div>
+      <div class="score-label">Framework Application</div>
+    </div>
+    <div class="score-pill">
+      <div class="score-pct">30%</div>
+      <div class="score-label">Boardroom Engagement</div>
+    </div>
+  </div>
+
+  <!-- The Ask -->
+  <div class="ask-box">
+    <h2>What We Are Asking</h2>
+    <p>Given your wide expertise in this area, we would be honoured if you could spare <strong>30 minutes</strong> to walk through the pilot simulation (Airbnb, 2014). Your guidance would be invaluable as we shape the platform:</p>
+    <ul class="ask-list">
+      <li>Does the scenario accurately represent the strategic tensions a CPO faces?</li>
+      <li>Are the AI agent personalities and motives realistic and pedagogically useful?</li>
+      <li>Is the scoring rubric (40/30/30) appropriate for assessing product leadership?</li>
+      <li>Would you consider using this in your curriculum? What would need to change?</li>
+      <li>What competencies or company scenarios should we prioritise for SIMs 2-15?</li>
+    </ul>
+    <p style="margin-top: 14px;"><strong>We deeply respect your time and would be grateful for any insights you are willing to share.</strong></p>
+  </div>
+
+  <!-- How to Access -->
+  <h2>How to Access the Pilot</h2>
+  <p>The simulation runs in any modern browser. No installation required. We would be happy to provide you with a private access link and can schedule a guided walkthrough at your convenience, or share the link for you to explore independently. A typical run takes 30-45 minutes.</p>
+
+  <!-- Interest Form -->
+  <div id="interest-form" style="background: #f8f9fb; border: 2px solid #e23744; border-radius: 12px; padding: 28px; margin-top: 24px; margin-bottom: 20px;">
+    <h2 style="margin-top: 0;">Interested? Let Us Know</h2>
+    <p style="font-size: 0.85em; color: #666; margin-bottom: 16px;">Fill in your details and we will reach out to schedule a walkthrough.</p>
+    <form id="facultyForm" onsubmit="return submitForm(event)">
+      <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Full Name *</label>
+          <input type="text" name="name" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="Dr. / Prof.">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Email *</label>
+          <input type="email" name="email" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="you@university.edu">
+        </div>
+      </div>
+      <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Institution *</label>
+          <input type="text" name="institution" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="University / Business School">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Subject Area *</label>
+          <select name="subject" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em; background: #fff;">
+            <option value="">Select your subject</option>
+            <option value="Product Management">Product Management</option>
+            <option value="Strategic Management">Strategic Management</option>
+            <option value="Marketing Management">Marketing Management</option>
+            <option value="Technology Management">Technology Management</option>
+            <option value="Entrepreneurship">Entrepreneurship</option>
+            <option value="Operations Management">Operations Management</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Preferred Format</label>
+        <div style="display: flex; gap: 16px; font-size: 0.85em; color: #333; flex-wrap: wrap;">
+          <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            <input type="radio" name="format" value="guided" checked style="accent-color: #e23744;"> Guided walkthrough (30 min call)
+          </label>
+          <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            <input type="radio" name="format" value="independent" style="accent-color: #e23744;"> Independent exploration (send me the link)
+          </label>
+        </div>
+      </div>
+      <button type="submit" id="submitBtn" style="background: #e23744; color: #fff; border: none; padding: 12px 32px; border-radius: 8px; font-weight: 700; font-size: 0.92em; cursor: pointer; font-family: 'Segoe UI', Arial, sans-serif; width: 100%;">
+        I'm Interested - Send Me Access
+      </button>
+    </form>
+    <div id="formSuccess" style="display: none; text-align: center; padding: 20px 0;">
+      <p style="font-size: 1.1em; font-weight: 800; color: #1a1a2e; margin-bottom: 6px;">Thank you!</p>
+      <p style="font-size: 0.88em; color: #666;">We will be in touch within 24 hours with your access link.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <h2>Contact</h2>
+  <p><strong>Mohan Simham</strong>, Founder, CXO Simulabs&trade;<br>
+  mohansimham@gmail.com<br>
+  www.cxosimulabs.com</p>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2026 CXO Simulabs&trade;. All rights reserved.</p>
+    <p>Powered by the <span class="engine">Dragon Fire Bloom&trade;</span> Simulation Engine</p>
+  </div>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('facultyForm');
+  var btn = document.getElementById('submitBtn');
+  var data = new FormData(form);
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('https://script.google.com/macros/s/AKfycbzPd5X0OpbnA_ykJURj5bOx85Ebd5jxR67LcA7tgyG8EVlI9Wd9d22LGEhLAtOBGpb3/exec', {
+    method: 'POST',
+    body: JSON.stringify({
+      name: data.get('name'),
+      email: data.get('email'),
+      institution: data.get('institution'),
+      subject: data.get('subject'),
+      format: data.get('format'),
+      source: 'CPO Level 2 Faculty Feedback'
+    })
+  }).then(function() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }).catch(function() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  return false;
+}
+</script>
+</body>
+</html>

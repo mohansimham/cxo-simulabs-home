@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CXO Simulabs — MBA Faculty Feedback Request</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a2e;
+      line-height: 1.6;
+      font-size: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e23744;
+      margin-bottom: 28px;
+    }
+    .logo { font-size: 1.4em; font-weight: 800; letter-spacing: 0.5px; }
+    .logo span { color: #e23744; }
+    .logo sup { font-size: 0.45em; color: #999; vertical-align: super; margin-left: 1px; }
+    .tag { font-size: 0.7em; font-weight: 700; color: #e23744; text-transform: uppercase; letter-spacing: 2px; }
+
+    h1 { font-size: 1.55em; font-weight: 900; color: #1a1a2e; margin-bottom: 6px; line-height: 1.25; }
+    h2 { font-size: 0.85em; font-weight: 700; color: #e23744; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; margin-top: 24px; }
+    p { margin-bottom: 10px; color: #333; font-size: 0.92em; }
+    .subtitle { font-size: 1.05em; color: #666; margin-bottom: 20px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+    .card {
+      background: #f8f9fb;
+      border: 1px solid #e8eaee;
+      border-radius: 10px;
+      padding: 16px 14px;
+    }
+    .card-num { font-size: 1.6em; font-weight: 900; color: #e23744; margin-bottom: 4px; }
+    .card-label { font-size: 0.82em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .card-desc { font-size: 0.75em; color: #666; line-height: 1.5; }
+
+    .scoring { display: flex; gap: 10px; margin-bottom: 20px; }
+    .score-pill {
+      flex: 1;
+      text-align: center;
+      background: #1a1a2e;
+      border-radius: 8px;
+      padding: 12px 8px;
+    }
+    .score-pct { font-size: 1.3em; font-weight: 900; color: #e23744; }
+    .score-label { font-size: 0.68em; color: #ccd6e0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+    .flow { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+    .flow-step {
+      background: #1a1a2e;
+      color: #ffffff;
+      font-size: 0.7em;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .flow-arrow { color: #e23744; font-size: 0.8em; font-weight: 700; }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .subj {
+      font-size: 0.68em;
+      font-weight: 600;
+      color: #1a1a2e;
+      background: #f0f2f5;
+      border: 1px solid #e2e5ea;
+      border-radius: 6px;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .ask-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
+    .ask-box h2 { color: #ff9aa2; margin-top: 0; }
+    .ask-box p { color: #ccd6e0; }
+    .ask-box strong { color: #ffffff; }
+    .ask-list { list-style: none; padding: 0; }
+    .ask-list li {
+      font-size: 0.85em;
+      color: #ccd6e0;
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .ask-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: #e23744;
+      border-radius: 50%;
+    }
+
+    .footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e8eaee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer p { font-size: 0.72em; color: #999; margin: 0; }
+    .footer .engine { color: #e23744; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 20px; }
+      .header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      h1 { font-size: 1.25em; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .subjects { grid-template-columns: repeat(2, 1fr); }
+      .scoring { flex-direction: column; }
+      .flow { gap: 4px; }
+      .flow-step { font-size: 0.6em; padding: 5px 8px; }
+      .ask-box { padding: 18px 16px; }
+      .footer { flex-direction: column; gap: 6px; text-align: center; }
+      #interest-form .grid-2 { grid-template-columns: 1fr !important; }
+    }
+    #interest-form input, #interest-form select { transition: border-color 0.2s; }
+    #interest-form input:focus, #interest-form select:focus { outline: none; border-color: #e23744; }
+    #submitBtn:hover { background: #c42f3a; }
+    @media print {
+      body { padding: 36px 44px; }
+      .ask-box, .score-pill, .flow-step { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">CXO <span>Simulabs</span><sup>&trade;</sup></div>
+    <div class="tag">Faculty Feedback Request</div>
+  </div>
+
+  <h1>MBA Simulation Series: AI-Powered Case Simulations</h1>
+  <p class="subtitle">We are building a full-curriculum MBA simulation platform and would be grateful to learn from your wide expertise in this area.</p>
+
+  <h2>What We Have Built</h2>
+  <p>The MBA Series is a collection of 120 simulations (40 subjects, 3 use cases each) where students pick a senior executive role, analyse financial or strategic data, consult with AI boardroom agents, make a recommendation under time pressure, and defend it in an AI-powered cross-examination panel. Every simulation uses fictional Indian companies with realistic data, sealed role briefs with information asymmetry, and a 4-stage scoring rubric mapped to Bloom's Taxonomy.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-num">120</div>
+      <div class="card-label">Simulations</div>
+      <div class="card-desc">40 subjects across 22 MBA disciplines. 3 use cases per subject. Fictional Indian companies with realistic data.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">4</div>
+      <div class="card-label">Sealed Role Briefs</div>
+      <div class="card-desc">Each role sees different data. Information asymmetry is by design. Students must extract what others know.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">6</div>
+      <div class="card-label">Bloom's Levels</div>
+      <div class="card-desc">Remember through Create. Deterministic calculation scoring + AI-scored reasoning and defence.</div>
+    </div>
+  </div>
+
+  <!-- Boardroom Mechanics -->
+  <h2>Boardroom Mechanics</h2>
+  <p>The boardroom is where the simulation comes alive. Three AI executives, each with a sealed brief containing data the student does not have, engage the student across 4 rounds. The intensity of this interaction is controlled by three independent levers that the student sets before entering.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">Agent Behaviour</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        <strong style="color:#1a1a2e;">Guided:</strong> Agents volunteer information and help the student think through the problem.<br><br>
+        <strong style="color:#1a1a2e;">Standard:</strong> Agents answer what is asked. Nothing more, nothing less. Push back when challenged.<br><br>
+        <strong style="color:#e23744;">Brutal:</strong> Agents have hidden agendas, withhold data, and will actively mislead if it serves their position.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Time Pressure</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        <strong style="color:#1a1a2e;">Relaxed:</strong> No timer. Think at your own pace.<br><br>
+        <strong style="color:#1a1a2e;">Standard:</strong> 25 minutes. Enough if you stay focused.<br><br>
+        <strong style="color:#1a1a2e;">Boardroom:</strong> 15 minutes. The board is waiting.<br><br>
+        <strong style="color:#e23744;">Crisis:</strong> 8 minutes. Breaking news. Every second counts.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Starting Information</div>
+      <div class="card-desc" style="margin-top: 6px;">
+        <strong style="color:#1a1a2e;">Full Briefing:</strong> Complete background, all documents, full context.<br><br>
+        <strong style="color:#1a1a2e;">Partial:</strong> Role brief only. Extract the rest from agent conversations.<br><br>
+        <strong style="color:#e23744;">Cold Start:</strong> One sentence. You figure out the rest.
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.82em; color: #666;">Information asymmetry is central to the MBA design. Each agent holds data the student does not have. In Guided mode, agents offer it. In Standard mode, the student must ask the right questions. In Brutal mode, agents actively protect their information advantage and may mislead. This forces students to think critically about what they are being told and why.</p>
+
+  <h2>MBA Disciplines Covered</h2>
+  <div class="subjects">
+    <div class="subj">Financial Accounting</div>
+    <div class="subj">Managerial Economics</div>
+    <div class="subj">Quantitative Methods</div>
+    <div class="subj">Organisational Behaviour</div>
+    <div class="subj">Marketing Management</div>
+    <div class="subj">Corporate Finance</div>
+    <div class="subj">Operations Management</div>
+    <div class="subj">Macroeconomics</div>
+    <div class="subj">Cost Accounting</div>
+    <div class="subj">HR Management</div>
+    <div class="subj">Strategic Management</div>
+    <div class="subj">Go-to-Market</div>
+    <div class="subj">Business Communication</div>
+    <div class="subj">Business Law</div>
+    <div class="subj">IT & Systems</div>
+    <div class="subj">Ethics & Decision Making</div>
+    <div class="subj">Securities Analysis</div>
+    <div class="subj">M&A Advisory</div>
+    <div class="subj">Risk Management</div>
+    <div class="subj">Corporate Governance</div>
+    <div class="subj">Brand Management</div>
+    <div class="subj">Negotiation</div>
+    <div class="subj">Entrepreneurship</div>
+    <div class="subj">International Business</div>
+  </div>
+
+  <h2>Student Journey</h2>
+  <div class="flow">
+    <span class="flow-step">Pick a Role</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Study & Calculate</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Boardroom (4 Rounds)</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Decide</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Defend</span>
+    <span class="flow-arrow">&rarr;</span>
+    <span class="flow-step">Results</span>
+  </div>
+
+  <h2>Scoring Rubric</h2>
+  <div class="scoring">
+    <div class="score-pill">
+      <div class="score-pct">30%</div>
+      <div class="score-label">Calculation Accuracy</div>
+    </div>
+    <div class="score-pill">
+      <div class="score-pct">25%</div>
+      <div class="score-label">Anomaly Identification</div>
+    </div>
+    <div class="score-pill">
+      <div class="score-pct">25%</div>
+      <div class="score-label">Decision Quality</div>
+    </div>
+    <div class="score-pill">
+      <div class="score-pct">20%</div>
+      <div class="score-label">Panel Defence</div>
+    </div>
+  </div>
+
+  <div class="ask-box">
+    <h2>What We Are Asking</h2>
+    <p>Given your wide expertise in this area, we would be honoured if you could spare <strong>30 minutes</strong> to walk through a simulation in the subject you teach. Your guidance would be invaluable as we shape the platform:</p>
+    <ul class="ask-list">
+      <li>Is the case data realistic and pedagogically sound for your subject area?</li>
+      <li>Are the calculation fields and answer keys appropriate for the learning level?</li>
+      <li>Do the AI agent personalities create meaningful learning through debate?</li>
+      <li>Is the scoring rubric (30/25/25/20) fair for assessing student competence?</li>
+      <li>Would you consider integrating this into your course? What would need to change?</li>
+      <li>Which use cases or scenarios would add the most value for your students?</li>
+    </ul>
+    <p style="margin-top: 14px;"><strong>We deeply respect your time and would be grateful for any insights you are willing to share.</strong></p>
+  </div>
+
+  <h2>How to Access</h2>
+  <p>The simulation runs in any modern browser. No installation required. We would be happy to provide you with a private access link to the specific subject simulation relevant to your teaching area. We can schedule a guided walkthrough at your convenience or share the link for you to explore independently. A typical run takes 30-45 minutes.</p>
+
+  <!-- Interest Form -->
+  <div id="interest-form" style="background: #f8f9fb; border: 2px solid #e23744; border-radius: 12px; padding: 28px; margin-top: 24px; margin-bottom: 20px;">
+    <h2 style="margin-top: 0;">Interested? Let Us Know</h2>
+    <p style="font-size: 0.85em; color: #666; margin-bottom: 16px;">Fill in your details and we will reach out to schedule a walkthrough.</p>
+    <form id="facultyForm" onsubmit="return submitForm(event)">
+      <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Full Name *</label>
+          <input type="text" name="name" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="Dr. / Prof.">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Email *</label>
+          <input type="email" name="email" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="you@university.edu">
+        </div>
+      </div>
+      <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Institution *</label>
+          <input type="text" name="institution" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em;" placeholder="University / Business School">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Subject Area *</label>
+          <select name="subject" required style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.88em; background: #fff;">
+            <option value="">Select your subject</option>
+            <option value="Financial Accounting">Financial Accounting</option>
+            <option value="Managerial Economics">Managerial Economics</option>
+            <option value="Quantitative Methods">Quantitative Methods</option>
+            <option value="Organisational Behaviour">Organisational Behaviour</option>
+            <option value="Marketing Management">Marketing Management</option>
+            <option value="Corporate Finance">Corporate Finance</option>
+            <option value="Operations Management">Operations Management</option>
+            <option value="Macroeconomics">Macroeconomics</option>
+            <option value="Cost Accounting">Cost Accounting</option>
+            <option value="HR Management">HR Management</option>
+            <option value="Strategic Management">Strategic Management</option>
+            <option value="Business Communication">Business Communication</option>
+            <option value="Business Law">Business Law</option>
+            <option value="IT & Systems">IT & Systems</option>
+            <option value="Ethics">Ethics & Decision Making</option>
+            <option value="Securities Analysis">Securities Analysis</option>
+            <option value="Entrepreneurship">Entrepreneurship</option>
+            <option value="Product Management">Product Management (CPO)</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 0.75em; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Preferred Format</label>
+        <div style="display: flex; gap: 16px; font-size: 0.85em; color: #333;">
+          <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            <input type="radio" name="format" value="guided" checked style="accent-color: #e23744;"> Guided walkthrough (30 min call)
+          </label>
+          <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            <input type="radio" name="format" value="independent" style="accent-color: #e23744;"> Independent exploration (send me the link)
+          </label>
+        </div>
+      </div>
+      <button type="submit" id="submitBtn" style="background: #e23744; color: #fff; border: none; padding: 12px 32px; border-radius: 8px; font-weight: 700; font-size: 0.92em; cursor: pointer; font-family: 'Segoe UI', Arial, sans-serif; width: 100%;">
+        I'm Interested - Send Me Access
+      </button>
+    </form>
+    <div id="formSuccess" style="display: none; text-align: center; padding: 20px 0;">
+      <p style="font-size: 1.1em; font-weight: 800; color: #1a1a2e; margin-bottom: 6px;">Thank you!</p>
+      <p style="font-size: 0.88em; color: #666;">We will be in touch within 24 hours with your access link.</p>
+    </div>
+  </div>
+
+  <h2>Contact</h2>
+  <p><strong>Mohan Simham</strong>, Founder, CXO Simulabs&trade;<br>
+  mohansimham@gmail.com<br>
+  www.cxosimulabs.com</p>
+
+  <div class="footer">
+    <p>&copy; 2026 CXO Simulabs&trade;. All rights reserved.</p>
+    <p>Powered by the <span class="engine">Dragon Fire Bloom&trade;</span> Simulation Engine</p>
+  </div>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('facultyForm');
+  var btn = document.getElementById('submitBtn');
+  var data = new FormData(form);
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('https://script.google.com/macros/s/AKfycbzPd5X0OpbnA_ykJURj5bOx85Ebd5jxR67LcA7tgyG8EVlI9Wd9d22LGEhLAtOBGpb3/exec', {
+    method: 'POST',
+    body: JSON.stringify({
+      name: data.get('name'),
+      email: data.get('email'),
+      institution: data.get('institution'),
+      subject: data.get('subject'),
+      format: data.get('format'),
+      source: 'MBA Faculty Feedback'
+    })
+  }).then(function() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }).catch(function() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  return false;
+}
+</script>
+</body>
+</html>
